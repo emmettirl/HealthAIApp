@@ -10,8 +10,8 @@
         android:id="@+id/headingLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:background="@color/primary"
+        android:orientation="horizontal"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -28,5 +28,50 @@
             android:layout_height="115dp"
             android:text="TextView" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="135dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="304dp"
+        android:textSize="18sp"
+        android:backgroundTint="#00DBFF"
+        app:strokeColor="#000000"
+        app:strokeWidth="1dp"
+        android:text="Button 1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="135dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginEnd="160dp"
+        android:textSize="18sp"
+        android:backgroundTint="#00DBFF"
+        android:text="Button 2"
+        app:strokeColor="#000000"
+        app:strokeWidth="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="135dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="304dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="18sp"
+        android:backgroundTint="#00DBFF"
+        app:strokeColor="#000000"
+        app:strokeWidth="1dp"
+        android:text="Button 3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
