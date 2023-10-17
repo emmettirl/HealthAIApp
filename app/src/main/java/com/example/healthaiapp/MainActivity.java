@@ -21,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
         UserViewModel userViewModel = new UserViewModel();
         userViewModel.addUser(user);
         userViewModel.addUser(user2);
+
+
+        userViewModel.readUser(user);
+        userViewModel.readUsername("Test");
         //End test code
 
     }
