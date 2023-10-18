@@ -1,3 +1,8 @@
 <resources>
+    <string name="placeholder_one_word">Placeholder</string>
     <string name="app_name">HealthAIApp</string>
+    <string name="landing_greeting">Welcome to the Health AI App</string>
+    <string name="ai_predict_button">AI Predict</string>
+    <string name="user_profile_button">User Profile</string>
+    <string name="fitness_button">Fitness</string>
 </resources>
