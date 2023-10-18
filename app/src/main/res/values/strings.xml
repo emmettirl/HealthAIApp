@@ -10,4 +10,6 @@
     <string name="ai_predict_button">AI Predict</string>
     <string name="user_profile_button">User Profile</string>
     <string name="fitness_button">Fitness</string>
+    <string name="rating_quick_access_button">Leave a rating!</string>
+    <string name="health_ai_quick_access_button">Health AI</string>
 </resources>
