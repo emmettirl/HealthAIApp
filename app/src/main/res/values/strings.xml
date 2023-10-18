@@ -1,5 +1,10 @@
 <resources>
     <string name="placeholder_one_word">Placeholder</string>
+    <string name="placeholder_medium">Medium length placeholder, I think this should be long enough</string>
+    <string name="placeholder_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+    <string name="placeholder_paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</string>
+    <string name="quick_access">Quick Access</string>
     <string name="app_name">HealthAIApp</string>
     <string name="landing_greeting">Welcome to the Health AI App</string>
     <string name="ai_predict_button">AI Predict</string>
