@@ -1,63 +1,75 @@
 package com.example.healthaiapp.data;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import static com.example.healthaiapp.data.Constants.NODE_USERS;
 
 import android.util.Log;
 
+import java.util.ArrayList;
+
 public class UserViewModel extends ViewModel {
-    public void addUser(User user) {
-        FirebaseDatabase database = FirebaseDatabase.getInstance("https://healthai-group-project-default-rtdb.europe-west1.firebasedatabase.app/");
-        DatabaseReference dbUsers = database.getReference(NODE_USERS);
 
-        dbUsers.child(user.getUsername()).setValue(user);
-
-        Log.d("MyDebug", "addUser: wrote to " + dbUsers.getRoot().toString() );
-
-    }
+    FirebaseDatabase database;
+    DatabaseReference dbUsers;
+    ArrayList<User> userArrayList;
 
 
-    public void readUsername(String username) {
-        FirebaseDatabase database = FirebaseDatabase.getInstance("https://healthai-group-project-default-rtdb.europe-west1.firebasedatabase.app/");
-        DatabaseReference dbUsers = database.getReference(NODE_USERS);
+    public UserViewModel(){
+        database = FirebaseDatabase.getInstance("https://healthai-group-project-default-rtdb.europe-west1.firebasedatabase.app/");
+        dbUsers = database.getReference(NODE_USERS);
+        userArrayList = new ArrayList<User>();
 
-        dbUsers.child(username).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+         ValueEventListener valueEventListener =  (new ValueEventListener() {
             @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    Log.e("firebase", "Error getting data", task.getException());
-                } else {
-                    Log.d("firebase", String.valueOf(task.getResult().getValue()));
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot childSnapshot : snapshot.getChildren()) {
+                    User user = childSnapshot.getValue(User.class);
+
+                    if (userArrayList.isEmpty() ) {
+                        userArrayList.add(user);
+                    } else if (!userArrayList.contains((user))) {
+                        userArrayList.add(user);
+                    }
                 }
+                Log.d("myDebug", userArrayList.toString());
             }
-        });
-    }
 
-    public void readUser(User user) {
-        FirebaseDatabase database = FirebaseDatabase.getInstance("https://healthai-group-project-default-rtdb.europe-west1.firebasedatabase.app/");
-        DatabaseReference dbUsers = database.getReference(NODE_USERS);
-
-        dbUsers.child(user.username).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    Log.e("firebase", "Error getting data", task.getException());
-                } else {
-                    Log.d("firebase", String.valueOf(task.getResult().getValue()));
-                }
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.w("myDebug", "loadPost:onCancelled", error.toException());
             }
         });
 
+         dbUsers.addValueEventListener(valueEventListener);
+    }
 
+    public void addUser(User newUser) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance("https://healthai-group-project-default-rtdb.europe-west1.firebasedatabase.app/");
+        DatabaseReference dbUsers = database.getReference(NODE_USERS);
+
+        int userNameExists = 0;
+        for (User listUser: userArrayList) {
+            if (listUser.getUsername().equals(newUser.getUsername())){
+                userNameExists = 1;
+                Log.d("myDebug", "addUser: username already exists");
+            }
+        }
+        if (userNameExists == 0) {
+            dbUsers.child(newUser.getUsername()).setValue(newUser);
+            Log.d("MyDebug", "addUser: wrote to " + dbUsers.getRoot().toString() );
+        }
+
+
+    }
+
+    public ArrayList<User> getUserArrayList() {
+        return userArrayList;
     }
 }
