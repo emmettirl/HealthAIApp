@@ -20,10 +20,10 @@
             android:name=".LogIn"
             android:exported="false" />
         <activity
-            android:name=".register"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Register"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
