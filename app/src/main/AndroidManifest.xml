@@ -14,7 +14,7 @@
         android:theme="@style/Theme.HealthAIApp"
         tools:targetApi="31">
         <activity
-            android:name=".ActivityMedialInfoForm"
+            android:name=".ActivityMedicalInfoForm"
             android:exported="false" />
         <activity
             android:name=".ActivityLandingPage"
