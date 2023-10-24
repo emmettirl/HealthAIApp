@@ -1,12 +1,16 @@
 <resources>
+    <!--region PLACEHOLDERS -->
     <string name="placeholder_one_word">Placeholder</string>
     <string name="placeholder_medium">Medium length placeholder, I think this should be long enough</string>
     <string name="placeholder_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
     <string name="placeholder_paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </string>
+    <!--endregion -->
+
+    <!--region LANDING PAGE -->
     <string name="quick_access">Quick Access</string>
     <string name="app_name">HealthAIApp</string>
-    <string name="landing_greeting">Welcome to the Health AI App</string>
+    <string name="landing_greeting">Welcome, %1$s</string>
     <string name="ai_predict_button">AI Predict</string>
     <string name="user_profile_button">User Profile</string>
     <string name="fitness_button">Fitness</string>
@@ -14,4 +18,14 @@
     <string name="health_ai_quick_access_button">Health AI</string>
     <string name="health_ai_subscription_quick_access_button">AI Subscription</string>
     <string name="support_quick_access_button">Support</string>
+    <!--endregion -->
+
+    <!--region SUBSCRIPTION -->
+    <string name="subscription_page">Health AI&#10;Subscription</string>
+    <string name="subscribe">Proceed To Payment</string>
+    <string name="subscribe_benefits">Discover The Benefits</string>
+    <string name="subscribe_benefit_1">Benefit 1</string>
+    <string name="subscribe_benefit_2">Benefit 2</string>
+    <string name="subscribe_benefit_3">Benefit 3</string>
+    <!--endregion -->
 </resources>
