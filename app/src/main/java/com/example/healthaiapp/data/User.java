@@ -3,19 +3,18 @@ package com.example.healthaiapp.data;
 import com.google.firebase.database.Exclude;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class User implements Serializable {
     @Exclude
     String username;
     String password;
-
     String fName;
     String lName;
     String email;
+    ArrayList<MedicalDetails> medicalDetailsList;
 
-    public User(){
-
-    }
+    public User(){}
 
     public User(String username, String password){
         this.username = username;
@@ -29,7 +28,6 @@ public class User implements Serializable {
         this.lName = lName;
         this.email = email;
     }
-
 
     public String getUsername() {
         return username;
@@ -51,6 +49,10 @@ public class User implements Serializable {
         return email;
     }
 
+    public ArrayList<MedicalDetails> getMedicalDetailsList() {
+        return medicalDetailsList;
+    }
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -68,5 +70,13 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setMedicalDetailsList(ArrayList<MedicalDetails> medicalDetailsList) {
+        this.medicalDetailsList = medicalDetailsList;
+    }
+
+    public void addMedicalDetails(MedicalDetails medicalDetails) {
+        this.medicalDetailsList.add(medicalDetails);
     }
 }

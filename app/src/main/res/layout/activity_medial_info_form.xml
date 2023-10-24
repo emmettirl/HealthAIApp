@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityLogIn">
+    tools:context=".ActivityRegister">
 
     <LinearLayout
         android:id="@+id/headingLinearLayout"
@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:background="@color/primary"
         android:orientation="horizontal"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -20,8 +19,7 @@
             android:id="@+id/Logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
- />
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/Heading"
@@ -31,7 +29,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome Back!"
@@ -40,68 +38,76 @@
         app:layout_constraintTop_toBottomOf="@+id/headingLinearLayout" />
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="582dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/textView8">
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="User Name:" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textInputEditTextUsernameLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="username" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Password:" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textInputEditTextPasswordLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="password" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+<!--        <TextView-->
+<!--            android:id="@+id/textView10"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="TextView" />-->
 
         <Button
-            android:id="@+id/buttonSubmitLogin"
+            android:id="@+id/ButtonGPInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Log In" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Not a member?" />
+            android:text="Edit G.P. Details" />
 
         <Button
-            android:id="@+id/loginToRegister"
+            android:id="@+id/ButtonContactInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Register" />
+            android:text="Edit Contact Information" />
+
+        <Button
+            android:id="@+id/ButtonEmergencyInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Edit Emergency Contact" />
+
+        <Button
+            android:id="@+id/ButtonInsuranceInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Edit Insurance Information" />
+
+        <Button
+            android:id="@+id/ButtonAddMedicalHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Edit Medical History" />
+
+        <Button
+            android:id="@+id/ButtonAddMedications"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Edit Medications" />
+
+        <Button
+            android:id="@+id/ButtonAdditionalInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Edit Additional Info" />
+
+
 
     </LinearLayout>
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

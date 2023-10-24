@@ -21,9 +21,6 @@ public class UserViewModel extends ViewModel {
 
     FirebaseDatabase database;
     DatabaseReference dbUsers;
-    ArrayList<User> userArrayList;
-
-
 
 
     public UserViewModel() {
@@ -58,7 +55,6 @@ public class UserViewModel extends ViewModel {
                     dbUsers.child(newUser.getUsername()).setValue(newUser);
                     Log.d("MyDebug", "addUser: wrote to " + dbUsers.getRoot().toString() );
 
-
                     registeredUser.postValue(newUser);
                 }
             }
@@ -69,6 +65,13 @@ public class UserViewModel extends ViewModel {
             }
         });
     }
+
+    public void updateUser(User updatedUser){
+        FirebaseDatabase database = FirebaseDatabase.getInstance("https://healthai-group-project-default-rtdb.europe-west1.firebasedatabase.app/");
+        DatabaseReference dbUsers = database.getReference(NODE_USERS);
+        dbUsers.child(updatedUser.username).setValue(updatedUser);
+    }
+
 
     public void logIn(User loginUser) {
         FirebaseDatabase database = FirebaseDatabase.getInstance("https://healthai-group-project-default-rtdb.europe-west1.firebasedatabase.app/");
