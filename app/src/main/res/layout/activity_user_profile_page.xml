@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.HealthAIApp"
+    tools:context=".LandingPage">
 
     <Button
         android:id="@+id/FitnessNavButton"
@@ -39,6 +41,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- THIS ONE WONT LEAD TO ANYWHERE IN SPRINT 1! -->
     <Button
         android:id="@+id/AIPredictNavButton"
         android:layout_width="110dp"
@@ -53,5 +56,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
