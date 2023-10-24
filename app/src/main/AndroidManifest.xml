@@ -17,7 +17,17 @@
             android:name=".LandingPage"
             android:exported="false" />
         <activity
-            android:name=".UserProfilePage"/>
+            android:name=".UserProfilePage"
+            android:exported="false" />
+        <activity
+            android:name=".RatingPage"
+            android:exported="false" />
+        <activity
+            android:name=".SubscriptionPage"
+            android:exported="false" />
+        <activity
+            android:name=".SupportPage"
+            android:exported="false" />
         <activity
             android:name=".LogIn"
             android:exported="false" />
