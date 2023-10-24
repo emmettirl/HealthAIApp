@@ -32,11 +32,15 @@ public class UserViewModel extends ViewModel {
     }
 
     private MutableLiveData<User> registeredUser = new MutableLiveData<>();
-
-
     public LiveData<User> getRegistrationSuccess() {
         return registeredUser;
-    }
+    };
+
+    private MutableLiveData<User> loggedInUser = new MutableLiveData<>();
+    public LiveData<User> getLoginSuccess() {
+        return loggedInUser;
+    };
+
 
     public void addUser(User newUser) {
         FirebaseDatabase database = FirebaseDatabase.getInstance("https://healthai-group-project-default-rtdb.europe-west1.firebasedatabase.app/");
@@ -83,9 +87,8 @@ public class UserViewModel extends ViewModel {
 
                         // Check if the password matches
                         if (user != null && user.getPassword().equals(loginUser.password)) {
-                            Log.d("MyDebug", "Password matches, you can proceed with user authentication");
-
-
+                            Log.d("MyDebug", "Password matches, proceed with user authentication");
+                            loggedInUser.postValue(user);
                         } else {
                             Log.d("MyDebug", "Password doesn't match");
                         }

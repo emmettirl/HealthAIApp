@@ -35,11 +35,13 @@ public class LogIn extends AppCompatActivity {
         username = findViewById(R.id.textInputEditTextUsernameLogin);
         password = findViewById(R.id.textInputEditTextPasswordLogin);
 
+        uvm = new UserViewModel();
+
+
 
         Intent thisIntent = getIntent();
         if (thisIntent.hasExtra("registeredUser")) {
             User registeredUser = (User) thisIntent.getSerializableExtra("registeredUser");
-            Log.d("mydebug", registeredUser.toString());
 
             username.setText(registeredUser.getUsername());
             password.setText(registeredUser.getPassword());
@@ -70,7 +72,6 @@ public class LogIn extends AppCompatActivity {
 
                         user =  new User(usernameValue, passwordValue);
 
-                        uvm = new UserViewModel();
                         uvm.logIn(user);
                     } else {
                         Log.d("myDebug", "Please enter both username and password: ");
@@ -78,5 +79,17 @@ public class LogIn extends AppCompatActivity {
                 }
             }
         );
+
+        uvm.getLoginSuccess().observe(this, loggedInUser -> {
+            if (loggedInUser != null) {
+                // Login is successful, navigate to LoginActivity
+                Intent intent = new Intent(LogIn.this, LandingPage.class);
+                intent.putExtra("loggedInUser", loggedInUser);
+                Log.d("mydebug", loggedInUser.getUsername());
+                startActivity(intent);
+                finish();
+            }
+
+        });
     }
 }
