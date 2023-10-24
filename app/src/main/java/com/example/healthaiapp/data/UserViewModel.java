@@ -1,6 +1,8 @@
 package com.example.healthaiapp.data;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,33 +24,18 @@ public class UserViewModel extends ViewModel {
     ArrayList<User> userArrayList;
 
 
-    public UserViewModel(){
+
+
+    public UserViewModel() {
         database = FirebaseDatabase.getInstance("https://healthai-group-project-default-rtdb.europe-west1.firebasedatabase.app/");
         dbUsers = database.getReference(NODE_USERS);
-        userArrayList = new ArrayList<User>();
+    }
 
-         ValueEventListener valueEventListener =  (new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot childSnapshot : snapshot.getChildren()) {
-                    User user = childSnapshot.getValue(User.class);
+    private MutableLiveData<User> registeredUser = new MutableLiveData<>();
 
-                    if (userArrayList.isEmpty() ) {
-                        userArrayList.add(user);
-                    } else if (!userArrayList.contains((user))) {
-                        userArrayList.add(user);
-                    }
-                }
-                Log.d("myDebug", userArrayList.toString());
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.w("myDebug", "loadPost:onCancelled", error.toException());
-            }
-        });
-
-         dbUsers.addValueEventListener(valueEventListener);
+    public LiveData<User> getRegistrationSuccess() {
+        return registeredUser;
     }
 
     public void addUser(User newUser) {
@@ -66,6 +53,9 @@ public class UserViewModel extends ViewModel {
                 } else {
                     dbUsers.child(newUser.getUsername()).setValue(newUser);
                     Log.d("MyDebug", "addUser: wrote to " + dbUsers.getRoot().toString() );
+
+
+                    registeredUser.postValue(newUser);
                 }
             }
 
@@ -76,7 +66,42 @@ public class UserViewModel extends ViewModel {
         });
     }
 
-    public ArrayList<User> getUserArrayList() {
-        return userArrayList;
+    public void logIn(User loginUser) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance("https://healthai-group-project-default-rtdb.europe-west1.firebasedatabase.app/");
+        DatabaseReference dbUsers = database.getReference(NODE_USERS);
+
+        Query usernameQuery = dbUsers.orderByChild("username").equalTo(loginUser.username);
+        usernameQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    // User with the given username exists
+                    for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                        // Get the user object
+                        User user = userSnapshot.getValue(User.class);
+
+                        // Check if the password matches
+                        if (user != null && user.getPassword().equals(loginUser.password)) {
+                            Log.d("MyDebug", "Password matches, you can proceed with user authentication");
+
+
+                        } else {
+                            Log.d("MyDebug", "Password doesn't match");
+                        }
+                    }
+                } else {
+                    Log.d("MyDebug", "Login: User does not exist");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Handle any errors that may occur
+            }
+        });
+
     }
+
+
 }

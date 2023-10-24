@@ -57,9 +57,10 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditTextUsernameLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="email address" />
+                android:hint="username" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -74,6 +75,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditTextPasswordLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="password" />
@@ -81,11 +83,24 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/buttonSubmitLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Submit" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Not a member?" />
+
+        <Button
+            android:id="@+id/loginToRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Register" />
 
     </LinearLayout>
 
