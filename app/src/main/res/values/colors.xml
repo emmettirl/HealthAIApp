@@ -8,4 +8,5 @@
     <color name="analagous2">#4332dd</color>
     <color name="triadic1">#9832dd</color>
     <color name="triadic2">#dd3276</color>
+    <color name="hintTextColor">#000000</color>
 </resources>

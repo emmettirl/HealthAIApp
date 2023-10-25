@@ -2,6 +2,7 @@
 <resources>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:fontFamily">@font/bahnschrift_font</item>
+        <item name="hintTextAppearance">@color/hintTextColor</item>
     </style>
 
 </resources>

@@ -7,6 +7,30 @@
 </string>
     <!--endregion -->
 
+    <!--region GLOBAL USAGE -->
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="user_name">User Name</string>
+    <string name="email">Email</string>
+    <string name="Send">Send</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <!--endregion -->
+
+    <!--region LOGIN PAGE -->
+    <string name="login">Login</string>
+    <string name="not_member">Not a Member?</string>
+    <!--endregion -->
+
+    <!--region REGISTER  PAGE -->
+    <string name="register">Register</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name_hint">John</string>
+    <string name="last_name_hint">Doe</string>
+    <string name="email_hint">john.doe@test.com</string>
+    <string name="already_member">Already a Member?</string>
+    <!--endregion -->
+
     <!--region LANDING PAGE -->
     <string name="quick_access">Quick Access</string>
     <string name="app_name">HealthAIApp</string>
@@ -20,7 +44,7 @@
     <string name="support_quick_access_button">Support</string>
     <!--endregion -->
 
-    <!--region SUBSCRIPTION -->
+    <!--region SUBSCRIPTION PAGE -->
     <string name="subscription_page">Health AI&#10;Subscription</string>
     <string name="subscribe">Proceed To Payment</string>
     <string name="subscribe_benefits">Discover The Benefits</string>
@@ -28,4 +52,18 @@
     <string name="subscribe_benefit_2">Benefit 2</string>
     <string name="subscribe_benefit_3">Benefit 3</string>
     <!--endregion -->
+
+    <!--region RATING PAGE -->
+    <string name="rating_page">Rating &amp; Reviews</string>
+    <string name="leave_a_rating">Leave A Rating</string>
+    <string name="existing_ratings">Existing Ratings</string>
+    <!--endregion -->
+
+    <!--region SUPPORT PAGE -->
+    <string name="support_page">Health AI Support</string>
+    <string name="need_help">Need Help?&#10;Contact Us</string>
+    <string name="why_need_help">What do you need help with?</string>
+    <string name="provide_details">Provide some details</string>
+    <!--endregion -->
+
 </resources>
