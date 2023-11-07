@@ -59,6 +59,11 @@
     <string name="existing_ratings">Existing Ratings</string>
     <!--endregion -->
 
+    <!--region LEAVE RATING PAGE -->
+    <string name="leave_rating_large_textbox">Please tell us about your thoughts and experience!</string>
+    <string name="leave_rating_small_textbox">Review Title/Summary</string>
+    <!--endregion -->
+
     <!--region SUPPORT PAGE -->
     <string name="support_page">Health AI Support</string>
     <string name="need_help">Need Help?&#10;Contact Us</string>
