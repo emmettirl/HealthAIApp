@@ -11,7 +11,7 @@ public class RatingPage  extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rating_page);
+        setContentView(R.layout.activity_rating_overview_page);
 
         Button userProfileButton = findViewById(R.id.userProfileNavButton);
         Button AIPredictPLACEHOLDER = findViewById(R.id.FitnessNavButton);

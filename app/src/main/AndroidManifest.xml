@@ -23,6 +23,9 @@
             android:name=".RatingPage"
             android:exported="false" />
         <activity
+            android:name=".LeaveRatingPage"
+            android:exported="false" />
+        <activity
             android:name=".SubscriptionPage"
             android:exported="false" />
         <activity
