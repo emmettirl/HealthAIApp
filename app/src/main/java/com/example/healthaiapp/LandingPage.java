@@ -54,7 +54,7 @@ public class LandingPage extends AppCompatActivity {
         });
 
         supportButton.setOnClickListener(view -> {
-            Intent intent = new Intent(LandingPage.this, SupportPage.class);
+            Intent intent = new Intent(LandingPage.this, ContactPage.class);
             startActivity(intent);
         });
 

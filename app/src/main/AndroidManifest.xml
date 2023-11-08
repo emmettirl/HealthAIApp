@@ -29,7 +29,7 @@
             android:name=".SubscriptionPage"
             android:exported="false" />
         <activity
-            android:name=".SupportPage"
+            android:name=".ContactPage"
             android:exported="false" />
         <activity
             android:name=".LogIn"

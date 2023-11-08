@@ -9,11 +9,14 @@
 
     <!--region GLOBAL USAGE -->
     <string name="name">Name</string>
+    <string name="insurance">Insurance</string>
+    <string name="gp">GP</string>
     <string name="password">Password</string>
     <string name="user_name">User Name</string>
     <string name="email">Email</string>
     <string name="Send">Send</string>
     <string name="welcome_back">Welcome Back!</string>
+    <string name="toggle_button">Toggle Button</string>
     <!--endregion -->
 
     <!--region LOGIN PAGE -->
@@ -64,11 +67,12 @@
     <string name="leave_rating_small_textbox">Review Title/Summary</string>
     <!--endregion -->
 
-    <!--region SUPPORT PAGE -->
-    <string name="support_page">Health AI Support</string>
-    <string name="need_help">Need Help?&#10;Contact Us</string>
+    <!--region CONTACT PAGE -->
+    <string name="contact_page">Contact&#10;Professionals</string>
+    <string name="who_to_contact">Who are you contacting?</string>
     <string name="why_need_help">What do you need help with?</string>
     <string name="provide_details">Provide some details</string>
+    <string name="write_email">Write an email</string>
     <!--endregion -->
 
 </resources>
