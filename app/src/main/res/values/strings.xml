@@ -69,6 +69,8 @@
     <!--region LEAVE RATING PAGE -->
     <string name="leave_rating_large_textbox">Tell us about your thoughts and experience!</string>
     <string name="leave_rating_small_textbox">Review Title/Summary</string>
+    <string name="invalid_review">Error, invalid review</string>
+    <string name="invalid_review_explanation">Ensure all fields are filled in</string>
     <!--endregion -->
 
     <!--region CONTACT PAGE -->
