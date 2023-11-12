@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityMedications">
+    tools:context=".ActivityMedicalHistory">
 
 
     <LinearLayout
@@ -48,7 +48,7 @@
             android:id="@+id/textViewAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter Medications:" />
+            android:text="Enter Medical History:" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutAge"
@@ -59,7 +59,7 @@
                 android:id="@+id/textInputEditTextHistory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="medication" />
+                android:hint="History" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button

@@ -114,6 +114,19 @@ public class ActivityAdditionalInfo extends AppCompatActivity {
                 }
         );
 
+        historyButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(ActivityAdditionalInfo.this, ActivityMedicalHistory.class);
+                        intent.putExtra("loggedInUser", user);
+                        Log.d("mydebug", user.getUsername());
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+        );
+
 
     }
 }
