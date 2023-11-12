@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.healthaiapp.data.ContactInfo;
 import com.example.healthaiapp.data.User;
@@ -27,6 +28,7 @@ public class ActivityAdditionalInfo extends AppCompatActivity {
     EditText insuranceEmail;
     EditText insurancePhone;
     EditText insuranceName;
+    TextView updatedStatus;
 
 
     @Override
@@ -53,15 +55,17 @@ public class ActivityAdditionalInfo extends AppCompatActivity {
         insurancePhone = (EditText) findViewById(R.id.textInputEditTextInsurancePhone);
         insuranceName = (EditText) findViewById(R.id.textInputEditTextInsuranceName);
 
+        updatedStatus = (TextView) findViewById(R.id.updatedStatus);
+
         submitButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         user.getMedicalDetails().setAge(age.getText().toString());
                         user.getMedicalDetails().setHeight(height.getText().toString());
-                        user.getMedicalDetails().setAge(weight.getText().toString());
-                        user.getMedicalDetails().setAge(gender.getText().toString());
-                        user.getMedicalDetails().setAge(gpEmail.getText().toString());
+                        user.getMedicalDetails().setWeight(weight.getText().toString());
+                        user.getMedicalDetails().setGender(gender.getText().toString());
+                        user.getMedicalDetails().setGpEmail(gpEmail.getText().toString());
 
                         user.getMedicalDetails().getInsurance().setName(
                                 insuranceName.getText().toString());
@@ -71,6 +75,7 @@ public class ActivityAdditionalInfo extends AppCompatActivity {
                                 insurancePhone.getText().toString());
 
                         uvm.updateUser(user);
+                        updatedStatus.setText("User Updated");
                     }
                 }
         );

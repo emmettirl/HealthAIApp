@@ -61,7 +61,7 @@ public class UserViewModel extends ViewModel {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle any errors that may occur
+                Log.d("MyDebug", "Something went wrong adding the user to the database");
             }
         });
     }
@@ -69,31 +69,28 @@ public class UserViewModel extends ViewModel {
     public void updateUser(User updatedUser){
         FirebaseDatabase database = FirebaseDatabase.getInstance("https://healthai-group-project-default-rtdb.europe-west1.firebasedatabase.app/");
         DatabaseReference dbUsers = database.getReference(NODE_USERS);
-        dbUsers.child(updatedUser.username).setValue(updatedUser);
 
-        Query usernameQuery = dbUsers.orderByChild("username").equalTo(updatedUser.username);
+        Query usernameQuery = dbUsers.orderByChild("username").equalTo(updatedUser.getUsername());
         usernameQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    Log.d("myDebug", "addUser: username already exists");
-                } else {
-                    dbUsers.child(updatedUser.getUsername()).setValue(updatedUser);
-                    Log.d("MyDebug", "addUser: wrote to " + dbUsers.getRoot().toString() );
+                    for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                        String userId = userSnapshot.getKey();
+                        dbUsers.child(userId).setValue(updatedUser);
+                        Log.d("MyDebug", "updateUser: updated user with ID " + userId);
 
-                    registeredUser.postValue(updatedUser);
+                    }
+                } else {
+                    Log.d("MyDebug", "updateUser: user not found");
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle any errors that may occur
+                Log.d("MyDebug", "Something went wrong updating the user in the database");
             }
         });
-
-
-
     }
 
 
