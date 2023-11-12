@@ -143,12 +143,12 @@
         android:id="@+id/sendEmailButton"
         android:layout_width="145dp"
         android:layout_height="48dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/button_style_1"
         android:text="@string/Send"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/emailContentInput"
         app:layout_constraintTop_toBottomOf="@+id/emailContentInput" />
 
     <TextView
@@ -178,5 +178,17 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <Button
+        android:id="@+id/callButton"
+        android:layout_width="145dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/button_style_1"
+        android:text="@string/call"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/emailContentInput"
+        app:layout_constraintTop_toBottomOf="@+id/emailContentInput" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

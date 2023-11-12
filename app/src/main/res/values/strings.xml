@@ -73,6 +73,7 @@
     <string name="why_need_help">What do you need help with?</string>
     <string name="provide_details">Provide some details</string>
     <string name="write_email">Write an email</string>
+    <string name="call">Call</string>
     <!--endregion -->
 
 </resources>

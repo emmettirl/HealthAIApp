@@ -8,6 +8,7 @@ import android.widget.ToggleButton;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textfield.TextInputEditText;
+import android.net.Uri;
 
 import java.util.Objects;
 
@@ -17,7 +18,7 @@ public class ContactPage extends AppCompatActivity {
     private Button sendEmailButton;
     private TextInputEditText emailTitleInput;
     private TextInputEditText emailContentInput;
-
+    private Button callButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class ContactPage extends AppCompatActivity {
         sendEmailButton = findViewById(R.id.sendEmailButton);
         TextInputLayout emailTitleInputLayout = findViewById(R.id.emailTitleInput);
         TextInputLayout emailContentInputLayout = findViewById(R.id.emailContentInput);
+        callButton = findViewById(R.id.callButton);
 
         // Retrieve TextInputEditText from TextInputLayout
         emailTitleInput = (TextInputEditText) emailTitleInputLayout.getEditText();
@@ -57,6 +59,8 @@ public class ContactPage extends AppCompatActivity {
 
             composeEmail(recipientEmail, emailTitle, emailContent);
         });
+
+        callButton.setOnClickListener(v -> initiatePhoneCall());
     }
 
     private void composeEmail(String recipient, String subject, String body) {
@@ -67,5 +71,12 @@ public class ContactPage extends AppCompatActivity {
         emailIntent.putExtra(Intent.EXTRA_TEXT, body);
 
         startActivity(Intent.createChooser(emailIntent, "Send email using:"));
+    }
+
+    private void initiatePhoneCall() {
+        String phoneNumber = contactToggleButton.isChecked() ? "0871642511" : "0871656573";
+        Uri phoneUri = Uri.parse("tel:" + phoneNumber);
+        Intent callIntent = new Intent(Intent.ACTION_CALL, phoneUri);
+        startActivity(callIntent);
     }
 }
