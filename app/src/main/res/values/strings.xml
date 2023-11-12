@@ -48,7 +48,7 @@
     <string name="rating_quick_access_button">Leave a rating!</string>
     <string name="health_ai_quick_access_button">Health AI</string>
     <string name="health_ai_subscription_quick_access_button">AI Subscription</string>
-    <string name="support_quick_access_button">Support</string>
+    <string name="contact_quick_access_button">Contact</string>
     <!--endregion -->
 
     <!--region SUBSCRIPTION PAGE -->
