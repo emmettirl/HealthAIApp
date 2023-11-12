@@ -3,28 +3,18 @@ package com.example.healthaiapp.data;
 import java.io.Serializable;
 
 public class ContactInfo implements Serializable {
-    String fname;
-    String lname;
+    String name;
     String phone;
     String email;
-    String address;
 
     public ContactInfo(){}
 
-    public String getFname() {
-        return fname;
+    public String getName() {
+        return name;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
-    }
-
-    public String getLname() {
-        return lname;
-    }
-
-    public void setLname(String lname) {
-        this.lname = lname;
+    public void setName(String fname) {
+        this.name = fname;
     }
 
     public String getPhone() {
@@ -41,13 +31,5 @@ public class ContactInfo implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 }

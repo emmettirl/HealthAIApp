@@ -4,45 +4,66 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MedicalDetails implements Serializable {
-    ContactInfo gpContact;
-    ContactInfo userContact;
-    ContactInfo emergencyContact;
-    String insurance;
+
+    String age;
+    String height;
+    String weight;
+    String gender;
+    String gpEmail;
+    ContactInfo insurance;
 
     ArrayList<String> medicalConditions;
     ArrayList<String> medications;
 
-    Boolean smoker;
-
-    public ContactInfo getGpContact() {
-        return gpContact;
+    public MedicalDetails() {
+        this.insurance = new ContactInfo();
     }
 
-    public void setGpContact(ContactInfo gpContact) {
-        this.gpContact = gpContact;
+    public String getAge() {
+        return age;
     }
 
-    public ContactInfo getUserContact() {
-        return userContact;
+    public void setAge(String age) {
+        this.age = age;
     }
 
-    public void setUserContact(ContactInfo userContact) {
-        this.userContact = userContact;
+    public String getHeight() {
+        return height;
     }
 
-    public ContactInfo getEmergencyContact() {
-        return emergencyContact;
+    public void setHeight(String height) {
+        this.height = height;
     }
 
-    public void setEmergencyContact(ContactInfo emergencyContact) {
-        this.emergencyContact = emergencyContact;
+    public String getWeight() {
+        return weight;
     }
 
-    public String getInsurance() {
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getGpEmail() {
+        return gpEmail;
+    }
+
+    public void setGpEmail(String gpEmail) {
+        this.gpEmail = gpEmail;
+    }
+
+    public ContactInfo getInsurance() {
         return insurance;
     }
 
-    public void setInsurance(String insurance) {
+    public void setInsurance(ContactInfo insurance) {
         this.insurance = insurance;
     }
 
@@ -54,27 +75,11 @@ public class MedicalDetails implements Serializable {
         this.medicalConditions = medicalConditions;
     }
 
-    public void addMedicalConditions(String medicalCondition) {
-        this.medicalConditions.add(medicalCondition);
-    }
-
     public ArrayList<String> getMedications() {
         return medications;
     }
 
     public void setMedications(ArrayList<String> medications) {
         this.medications = medications;
-    }
-
-    public void addMedications(String medication){
-        this.medications.add(medication);
-    }
-
-    public Boolean getSmoker() {
-        return smoker;
-    }
-
-    public void setSmoker(Boolean smoker) {
-        this.smoker = smoker;
     }
 }

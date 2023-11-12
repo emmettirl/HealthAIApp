@@ -3,7 +3,6 @@ package com.example.healthaiapp.data;
 import com.google.firebase.database.Exclude;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class User implements Serializable {
     @Exclude
@@ -13,14 +12,18 @@ public class User implements Serializable {
     String lName;
     String email;
     MedicalDetails medicalDetails;
+    Boolean isPremium;
 
     public User(){
+        this.medicalDetails = new MedicalDetails();
+
     }
 
 
     public User(String username, String password){
         this.username = username;
         this.password = password;
+        this.medicalDetails = new MedicalDetails();
     }
 
     public User(String username, String password, String fName, String lName, String email){
@@ -29,17 +32,8 @@ public class User implements Serializable {
         this.fName = fName;
         this.lName = lName;
         this.email = email;
+        this.medicalDetails = new MedicalDetails();
     }
-
-    public User(String username, String password, String fName, String lName, String email, MedicalDetails medicalDetails){
-        this.username = username;
-        this.password = password;
-        this.fName = fName;
-        this.lName = lName;
-        this.email = email;
-        this.medicalDetails = medicalDetails;
-    }
-
     public String getUsername() {
         return username;
     }
@@ -83,7 +77,7 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public void setMedicalDetailsList(MedicalDetails medicalDetails) {
+    public void setMedicalDetails(MedicalDetails medicalDetails) {
         this.medicalDetails = medicalDetails;
     }
 

@@ -14,7 +14,7 @@
         android:theme="@style/Theme.HealthAIApp"
         tools:targetApi="31" >
         <activity
-            android:name=".ActivityContactInfo"
+            android:name=".ActivityAdditionalInfo"
             android:exported="false" />
         <activity
             android:name=".ActivityAdditionalInfo"
