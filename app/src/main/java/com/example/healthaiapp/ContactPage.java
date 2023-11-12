@@ -42,7 +42,6 @@ public class ContactPage extends AppCompatActivity {
         TextInputLayout emailContentInputLayout = findViewById(R.id.emailContentInput);
         callButton = findViewById(R.id.callButton);
 
-        // Retrieve TextInputEditText from TextInputLayout
         emailTitleInput = (TextInputEditText) emailTitleInputLayout.getEditText();
         emailContentInput = (TextInputEditText) emailContentInputLayout.getEditText();
 
@@ -52,6 +51,7 @@ public class ContactPage extends AppCompatActivity {
             String emailContent = Objects.requireNonNull(emailContentInput.getText()).toString();
 
             if (contactToggleButton.isChecked()) {
+                // REPLACE WITH DATABASE VALUES
                 recipientEmail = "patryk.dudek@mycit.ie";
             } else {
                 recipientEmail = "patryk.dudek@mycit.ie";
@@ -60,7 +60,16 @@ public class ContactPage extends AppCompatActivity {
             composeEmail(recipientEmail, emailTitle, emailContent);
         });
 
-        callButton.setOnClickListener(v -> initiatePhoneCall());
+        callButton.setOnClickListener(v -> {
+            String phoneNumber;
+            if (contactToggleButton.isChecked()) {
+                // REPLACE WITH DATABASE VALUES
+                phoneNumber = "0871642511";
+            } else {
+                phoneNumber = "0871656573";
+            }
+            makeCall(phoneNumber);
+        });
     }
 
     private void composeEmail(String recipient, String subject, String body) {
@@ -73,10 +82,9 @@ public class ContactPage extends AppCompatActivity {
         startActivity(Intent.createChooser(emailIntent, "Send email using:"));
     }
 
-    private void initiatePhoneCall() {
-        String phoneNumber = contactToggleButton.isChecked() ? "0871642511" : "0871656573";
-        Uri phoneUri = Uri.parse("tel:" + phoneNumber);
-        Intent callIntent = new Intent(Intent.ACTION_CALL, phoneUri);
+    private void makeCall(String phoneNumber) {
+        Intent callIntent = new Intent(Intent.ACTION_DIAL);
+        callIntent.setData(Uri.parse("tel:" + phoneNumber));
         startActivity(callIntent);
     }
 }
