@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.RatingBar;
 import androidx.lifecycle.ViewModelProvider;
 import com.example.healthaiapp.data.ReviewViewModel;
+import com.example.healthaiapp.data.User;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.FirebaseApp;
@@ -18,6 +19,7 @@ public class LeaveRatingPage extends AppCompatActivity {
     private RatingBar ratingBar;
     private Button sendReviewButton;
     private ReviewViewModel reviewViewModel;
+    private User loggedInUser;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leave_rating_page);
@@ -33,6 +35,10 @@ public class LeaveRatingPage extends AppCompatActivity {
             startActivity(intent);
         });
         //endregion
+
+        if (getIntent().hasExtra("loggedInUser")) {
+            loggedInUser = (User) getIntent().getSerializableExtra("loggedInUser");
+        }
 
         reviewViewModel = new ViewModelProvider(this).get(ReviewViewModel.class);
 
@@ -53,9 +59,8 @@ public class LeaveRatingPage extends AppCompatActivity {
 
             if (isValidReview(rating, reviewTitle, reviewContent)) {
                 // THIS TREATS THE USER AS A NULL OBJECT, DOES NOT KNOW WHO IS LOGGED IN
-//                User loggedInUser = (User) getIntent().getSerializableExtra("loggedInUser");
-//                String userEmail = loggedInUser.getEmail();
-                String userEmail = "test";
+                User loggedInUser = (User) getIntent().getSerializableExtra("loggedInUser");
+                String userEmail = loggedInUser.getEmail();
                 reviewViewModel.addReview(rating, reviewTitle, reviewContent, userEmail);
                     // Replace with a "Thank you for your review" screen
                 }

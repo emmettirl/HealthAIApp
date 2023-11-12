@@ -4,13 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 import com.example.healthaiapp.data.User;
 
 public class LandingPage extends AppCompatActivity {
+    private User loggedInUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +20,7 @@ public class LandingPage extends AppCompatActivity {
         Intent thisIntent = getIntent();
         if (thisIntent.hasExtra("loggedInUser")) {
             User loggedInUser = (User) thisIntent.getSerializableExtra("loggedInUser");
+
             assert loggedInUser != null;
             String name = loggedInUser.getUsername();
 
@@ -45,16 +47,19 @@ public class LandingPage extends AppCompatActivity {
 
         ratingButton.setOnClickListener(view -> {
             Intent intent = new Intent(LandingPage.this, RatingPage.class);
+            intent.putExtra("loggedInUser", loggedInUser);
             startActivity(intent);
         });
 
         subscriptionButton.setOnClickListener(view -> {
             Intent intent = new Intent(LandingPage.this, SubscriptionPage.class);
+            intent.putExtra("loggedInUser", loggedInUser);
             startActivity(intent);
         });
 
         supportButton.setOnClickListener(view -> {
             Intent intent = new Intent(LandingPage.this, ContactPage.class);
+            intent.putExtra("loggedInUser", loggedInUser);
             startActivity(intent);
         });
 
