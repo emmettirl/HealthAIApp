@@ -17,6 +17,8 @@ public class MedicalDetails implements Serializable {
 
     public MedicalDetails() {
         this.insurance = new ContactInfo();
+        this.medicalConditions = new ArrayList<String>();
+        this.medications = new ArrayList<String>();
     }
 
     public String getAge() {

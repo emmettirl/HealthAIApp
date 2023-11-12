@@ -101,6 +101,19 @@ public class ActivityAdditionalInfo extends AppCompatActivity {
                 }
         );
 
+        medicationsButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(ActivityAdditionalInfo.this, ActivityMedications.class);
+                        intent.putExtra("loggedInUser", user);
+                        Log.d("mydebug", user.getUsername());
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+        );
+
 
     }
 }
