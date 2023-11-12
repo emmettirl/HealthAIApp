@@ -104,12 +104,8 @@ public class UserViewModel extends ViewModel {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    // User with the given username exists
                     for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
-                        // Get the user object
                         User user = userSnapshot.getValue(User.class);
-
-                        // Check if the password matches
                         if (user != null && user.getPassword().equals(loginUser.password)) {
                             Log.d("MyDebug", "Password matches, proceed with user authentication");
                             loggedInUser.postValue(user);
@@ -124,7 +120,7 @@ public class UserViewModel extends ViewModel {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle any errors that may occur
+                // Handle errors TO DO
             }
         });
 

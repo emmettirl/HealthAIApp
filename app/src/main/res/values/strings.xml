@@ -73,6 +73,12 @@
     <string name="invalid_review_explanation">Ensure all fields are filled in</string>
     <!--endregion -->
 
+    <!--region RATING SUCCESS PAGE -->
+    <string name="review_received">Feedback Received!</string>
+    <string name="feedback_appreciated">Thanks for your feedback! We have received it and we will use it to make our services better! Thank you for using the Health AI App.</string>
+    <string name="return_to_home">Return to Home Page</string>
+    <!--endregion -->
+
     <!--region CONTACT PAGE -->
     <string name="contact_page">Contact&#10;Professionals</string>
     <string name="who_to_contact">Who are you contacting?</string>
@@ -86,7 +92,7 @@
     <string name="fitnessOverview">Body Overview</string>
     <string name="bmi">BMI</string>
     <string name="bmr">BMR</string>
-    <string name="recommended_caloric_intake">Recommended caloric intake placeholder. This should display the values the user burns, and how much they should consume to lose/maintain/gain weight gradually.</string>
+    <string name="recommended_caloric_intake">Recommended caloric intake placeholder. This should display the values the user burns, and how much they should consume to lose/maintain/gain weight gradually. Sprint 3 TO DO</string>
     <!--endregion -->
 
 </resources>

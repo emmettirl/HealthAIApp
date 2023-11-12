@@ -57,6 +57,9 @@
             android:name=".ReviewAdapter"
             android:exported="false" />
         <activity
+            android:name=".ReviewSuccess"
+            android:exported="false" />
+        <activity
             android:name=".FitnessOverviewPage"
             android:exported="false" />
         <activity

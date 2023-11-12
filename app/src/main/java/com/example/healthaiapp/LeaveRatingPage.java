@@ -74,8 +74,10 @@ public class LeaveRatingPage extends AppCompatActivity {
 
             if (loggedInUser != null && isValidReview(rating, reviewTitle, reviewContent, userEmail)) {
                 reviewViewModel.addReview(rating, reviewTitle, reviewContent, userEmail);
-                // TO DO: Add page that will notify user of success
-                Log.e("RatingPage", "User Email: " + userEmail);
+
+                Intent successIntent = new Intent(LeaveRatingPage.this, ReviewSuccess.class);
+                startActivity(successIntent);
+                finish();
             } else {
                 TextView errorTextView = findViewById(R.id.invalidReviewText);
                 TextView errorExplanationTextView = findViewById(R.id.invalidReviewExplanationText);
