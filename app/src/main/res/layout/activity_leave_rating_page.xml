@@ -78,7 +78,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/LeaveARatingTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -90,30 +90,31 @@
         app:layout_constraintTop_toBottomOf="@+id/headingLinearLayout" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reviewContentInput"
         android:layout_width="361dp"
         android:layout_height="232dp"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+        app:layout_constraintTop_toBottomOf="@+id/reviewTitleInput">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="15sp"
-            android:textColor="@color/black"
             android:gravity="start|top"
-            android:hint="@string/leave_rating_large_textbox" />
+            android:hint="@string/leave_rating_large_textbox"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
+        android:id="@+id/reviewTitleInput"
         android:layout_width="361dp"
         android:layout_height="60dp"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20">
+        app:layout_constraintTop_toBottomOf="@+id/LeaveARatingTitle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -122,5 +123,27 @@
             android:textSize="15sp"
             android:hint="@string/leave_rating_small_textbox" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/reviewContentInput"
+        app:layout_constraintTop_toBottomOf="@+id/reviewContentInput" />
+
+    <Button
+        android:id="@+id/sendReviewButton"
+        android:layout_width="109dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/button_style_1"
+        android:textColor="@color/black"
+        android:text="@string/Send"
+        app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
+        app:layout_constraintEnd_toEndOf="@+id/reviewContentInput"
+        app:layout_constraintTop_toBottomOf="@+id/reviewContentInput"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

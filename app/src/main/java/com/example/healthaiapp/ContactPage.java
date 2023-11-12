@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.util.Objects;
+
 public class ContactPage extends AppCompatActivity {
 
     private ToggleButton contactToggleButton;
@@ -35,8 +37,6 @@ public class ContactPage extends AppCompatActivity {
 
         contactToggleButton = findViewById(R.id.contactToggleButton);
         sendEmailButton = findViewById(R.id.sendEmailButton);
-
-        // Fetching TextInputEditText from TextInputLayout
         TextInputLayout emailTitleInputLayout = findViewById(R.id.emailTitleInput);
         TextInputLayout emailContentInputLayout = findViewById(R.id.emailContentInput);
 
@@ -46,8 +46,8 @@ public class ContactPage extends AppCompatActivity {
 
         sendEmailButton.setOnClickListener(v -> {
             String recipientEmail;
-            String emailTitle = emailTitleInput.getText().toString();
-            String emailContent = emailContentInput.getText().toString();
+            String emailTitle = Objects.requireNonNull(emailTitleInput.getText()).toString();
+            String emailContent = Objects.requireNonNull(emailContentInput.getText()).toString();
 
             if (contactToggleButton.isChecked()) {
                 recipientEmail = "patryk.dudek@mycit.ie";
