@@ -4,9 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.healthaiapp.data.User;
-import com.example.healthaiapp.data.UserViewModel;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override

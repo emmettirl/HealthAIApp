@@ -8,18 +8,22 @@ public class User implements Serializable {
     @Exclude
     String username;
     String password;
-
     String fName;
     String lName;
     String email;
+    MedicalDetails medicalDetails;
+    Boolean isPremium;
 
     public User(){
+        this.medicalDetails = new MedicalDetails();
 
     }
+
 
     public User(String username, String password){
         this.username = username;
         this.password = password;
+        this.medicalDetails = new MedicalDetails();
     }
 
     public User(String username, String password, String fName, String lName, String email){
@@ -28,9 +32,8 @@ public class User implements Serializable {
         this.fName = fName;
         this.lName = lName;
         this.email = email;
+        this.medicalDetails = new MedicalDetails();
     }
-
-
     public String getUsername() {
         return username;
     }
@@ -51,6 +54,10 @@ public class User implements Serializable {
         return email;
     }
 
+    public MedicalDetails getMedicalDetails() {
+        return medicalDetails;
+    }
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -69,4 +76,10 @@ public class User implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public void setMedicalDetails(MedicalDetails medicalDetails) {
+        this.medicalDetails = medicalDetails;
+    }
+
+
 }

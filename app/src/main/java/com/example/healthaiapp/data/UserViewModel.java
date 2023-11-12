@@ -21,9 +21,6 @@ public class UserViewModel extends ViewModel {
 
     FirebaseDatabase database;
     DatabaseReference dbUsers;
-    ArrayList<User> userArrayList;
-
-
 
 
     public UserViewModel() {
@@ -58,17 +55,44 @@ public class UserViewModel extends ViewModel {
                     dbUsers.child(newUser.getUsername()).setValue(newUser);
                     Log.d("MyDebug", "addUser: wrote to " + dbUsers.getRoot().toString() );
 
-
                     registeredUser.postValue(newUser);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle any errors that may occur
+                Log.d("MyDebug", "Something went wrong adding the user to the database");
             }
         });
     }
+
+    public void updateUser(User updatedUser){
+        FirebaseDatabase database = FirebaseDatabase.getInstance("https://healthai-group-project-default-rtdb.europe-west1.firebasedatabase.app/");
+        DatabaseReference dbUsers = database.getReference(NODE_USERS);
+
+        Query usernameQuery = dbUsers.orderByChild("username").equalTo(updatedUser.getUsername());
+        usernameQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                        String userId = userSnapshot.getKey();
+                        dbUsers.child(userId).setValue(updatedUser);
+                        Log.d("MyDebug", "updateUser: updated user with ID " + userId);
+
+                    }
+                } else {
+                    Log.d("MyDebug", "updateUser: user not found");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.d("MyDebug", "Something went wrong updating the user in the database");
+            }
+        });
+    }
+
 
     public void logIn(User loginUser) {
         FirebaseDatabase database = FirebaseDatabase.getInstance("https://healthai-group-project-default-rtdb.europe-west1.firebasedatabase.app/");
