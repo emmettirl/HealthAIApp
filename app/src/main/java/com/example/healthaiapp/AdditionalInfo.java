@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.example.healthaiapp.data.User;
 import com.example.healthaiapp.data.UserViewModel;
 
-public class ActivityAdditionalInfo extends AppCompatActivity {
+public class AdditionalInfo extends AppCompatActivity {
 
     Button submitButton;
     Button medicationsButton;
@@ -101,7 +101,7 @@ public class ActivityAdditionalInfo extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(ActivityAdditionalInfo.this, ActivityLandingPage.class);
+                        Intent intent = new Intent(AdditionalInfo.this, LandingPage.class);
                         intent.putExtra("loggedInUser", user);
                         Log.d("mydebug", user.getUsername());
                         startActivity(intent);
@@ -114,7 +114,7 @@ public class ActivityAdditionalInfo extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(ActivityAdditionalInfo.this, ActivityMedications.class);
+                        Intent intent = new Intent(AdditionalInfo.this, Medications.class);
                         intent.putExtra("loggedInUser", user);
                         Log.d("mydebug", user.getUsername());
                         startActivity(intent);
@@ -127,7 +127,7 @@ public class ActivityAdditionalInfo extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(ActivityAdditionalInfo.this, ActivityMedicalHistory.class);
+                        Intent intent = new Intent(AdditionalInfo.this, MedicalHistory.class);
                         intent.putExtra("loggedInUser", user);
                         Log.d("mydebug", user.getUsername());
                         startActivity(intent);
