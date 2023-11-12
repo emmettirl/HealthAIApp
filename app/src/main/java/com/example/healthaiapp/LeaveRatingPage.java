@@ -29,10 +29,14 @@ public class LeaveRatingPage extends AppCompatActivity {
 
         //region Nav Buttons
         Button userProfileButton = findViewById(R.id.userProfileNavButton);
-        Button AIPredictPLACEHOLDER = findViewById(R.id.FitnessNavButton);
-        Button FitnessPLACEHOLDER = findViewById(R.id.AIPredictNavButton);
+        Button AIPredictPLACEHOLDER = findViewById(R.id.AIPredictNavButton);
+        Button FitnessPageButton = findViewById(R.id.FitnessNavButton);
         userProfileButton.setOnClickListener(view -> {
             Intent intent = new Intent(LeaveRatingPage.this, UserProfilePage.class);
+            startActivity(intent);
+        });
+        FitnessPageButton.setOnClickListener(view -> {
+            Intent intent = new Intent(LeaveRatingPage.this, FitnessPage.class);
             startActivity(intent);
         });
         //endregion

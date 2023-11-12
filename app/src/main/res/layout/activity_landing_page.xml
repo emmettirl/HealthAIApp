@@ -95,7 +95,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/fitnessOverviewImage"
         android:layout_width="82dp"
         android:layout_height="80dp"
         android:layout_marginStart="56dp"
@@ -105,15 +105,15 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageButton
-        android:id="@+id/healthAIQuickAccessImageButton"
+        android:id="@+id/fitnessOverviewButton"
         android:layout_width="200dp"
         android:layout_height="80dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/fitnessOverviewImage"
+        app:layout_constraintTop_toTopOf="@+id/fitnessOverviewImage"
         tools:src="@drawable/test_background" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/fitnessOverviewText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -121,8 +121,8 @@
         android:text="@string/health_ai_quick_access_button"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/healthAIQuickAccessImageButton"
-        app:layout_constraintTop_toTopOf="@+id/healthAIQuickAccessImageButton" />
+        app:layout_constraintStart_toStartOf="@+id/fitnessOverviewButton"
+        app:layout_constraintTop_toTopOf="@+id/fitnessOverviewButton" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -131,7 +131,7 @@
         android:layout_marginStart="56dp"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/fitnessOverviewImage"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
@@ -164,7 +164,7 @@
         android:text="@string/quick_access"
         android:textColor="@color/black"
         android:textSize="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/fitnessOverviewImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LandingPageWelcomeText" />

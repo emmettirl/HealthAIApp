@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/headingLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:orientation="horizontal"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/Logo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/Heading"
+            android:layout_width="176dp"
+            android:layout_height="115dp"
+            android:text="@string/placeholder_one_word" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/FitnessNavButton"
+        android:layout_width="110dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="304dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/button_style_1"
+        android:text="@string/fitness_button"
+        android:textColor="#000000"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/userProfileNavButton"
+        android:layout_width="110dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="304dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/button_style_1"
+        android:text="@string/user_profile_button"
+        android:textColor="#000000"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- THIS ONE WONT LEAD TO ANYWHERE IN SPRINT 1! -->
+    <Button
+        android:id="@+id/AIPredictNavButton"
+        android:layout_width="110dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/button_style_1"
+        android:text="@string/ai_predict_button"
+        android:textColor="#000000"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/fitnessOverviewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/fitnessOverview"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headingLinearLayout" />
+
+    <TextView
+        android:id="@+id/bmiHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/bmi"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fitnessOverviewTitle" />
+
+    <TextView
+        android:id="@+id/bmrHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="76dp"
+        android:text="@string/bmr"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fitnessOverviewTitle" />
+
+    <TextView
+        android:id="@+id/caloricIntakeRecommendation"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/recommended_caloric_intake"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bmiValue" />
+
+    <TextView
+        android:id="@+id/bmiValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/placeholder_2_digits"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="@+id/bmiHeader"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bmiHeader" />
+
+    <TextView
+        android:id="@+id/bmrValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/placeholder_4_digits"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="@+id/bmrHeader"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintStart_toStartOf="@+id/bmrHeader"
+        app:layout_constraintTop_toBottomOf="@+id/bmrHeader" />
+
+    <TextView
+        android:id="@+id/bmiLevelDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Low/Med/High"
+        app:layout_constraintEnd_toEndOf="@+id/bmiValue"
+        app:layout_constraintStart_toStartOf="@+id/bmiValue"
+        app:layout_constraintTop_toBottomOf="@+id/bmiValue" />
+
+    <TextView
+        android:id="@+id/bmrLevelDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Low/Med/High"
+        app:layout_constraintEnd_toEndOf="@+id/bmrValue"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="@+id/bmrValue"
+        app:layout_constraintTop_toBottomOf="@+id/bmrValue" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

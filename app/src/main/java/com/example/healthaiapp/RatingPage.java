@@ -34,12 +34,16 @@ public class RatingPage  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rating_overview_page);
 
-        //region Nav Bar
+        //region Nav Buttons
         Button userProfileButton = findViewById(R.id.userProfileNavButton);
-        Button AIPredictPLACEHOLDER = findViewById(R.id.FitnessNavButton);
-        Button FitnessPLACEHOLDER = findViewById(R.id.AIPredictNavButton);
+        Button AIPredictPLACEHOLDER = findViewById(R.id.AIPredictNavButton);
+        Button FitnessPageButton = findViewById(R.id.FitnessNavButton);
         userProfileButton.setOnClickListener(view -> {
             Intent intent = new Intent(RatingPage.this, UserProfilePage.class);
+            startActivity(intent);
+        });
+        FitnessPageButton.setOnClickListener(view -> {
+            Intent intent = new Intent(RatingPage.this, FitnessPage.class);
             startActivity(intent);
         });
         //endregion

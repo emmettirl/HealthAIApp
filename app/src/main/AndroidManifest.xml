@@ -48,6 +48,12 @@
             android:name=".ReviewAdapter"
             android:exported="false" />
         <activity
+            android:name=".FitnessOverviewPage"
+            android:exported="false" />
+        <activity
+            android:name=".FitnessPage"
+            android:exported="false" />
+        <activity
             android:name=".Register"
             android:exported="true">
             <intent-filter>
