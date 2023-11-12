@@ -104,14 +104,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/emailTitleInput"
         android:layout_width="370dp"
         android:layout_height="52dp"
         android:layout_marginTop="56dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toggleButton">
+        app:layout_constraintTop_toBottomOf="@+id/contactToggleButton">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -121,14 +121,14 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/emailContentInput"
         android:layout_width="370dp"
         android:layout_height="150dp"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+        app:layout_constraintTop_toBottomOf="@+id/emailTitleInput">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -138,7 +138,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/sendEmailButton"
         android:layout_width="145dp"
         android:layout_height="48dp"
         android:layout_marginTop="24dp"
@@ -147,7 +147,7 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/emailContentInput" />
 
     <TextView
         android:id="@+id/textView21"
@@ -157,15 +157,15 @@
         android:text="@string/write_email"
         android:textSize="15sp"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        app:layout_constraintBottom_toTopOf="@+id/emailTitleInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toggleButton"
+        app:layout_constraintTop_toBottomOf="@+id/contactToggleButton"
         app:layout_constraintVertical_bias="1.0" />
 
     <ToggleButton
-        android:id="@+id/toggleButton"
+        android:id="@+id/contactToggleButton"
         android:layout_width="136dp"
         android:layout_height="35dp"
         android:layout_marginTop="24dp"
