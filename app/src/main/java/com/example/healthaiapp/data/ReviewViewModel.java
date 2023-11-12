@@ -17,6 +17,7 @@ public class ReviewViewModel extends ViewModel {
     }
 
     public void addReview(float rating, String title, String content, String userEmail) {
+        Log.d("ReviewViewModel", "User Email in ReviewViewModel: " + userEmail);
         String reviewId = reviewsReference.push().getKey();
         if (reviewId != null) {
             Review review = new Review(rating, title, content, userEmail);

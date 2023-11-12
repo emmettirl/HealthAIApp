@@ -2,6 +2,7 @@ package com.example.healthaiapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.RatingBar;
 import androidx.lifecycle.ViewModelProvider;
@@ -56,20 +57,25 @@ public class LeaveRatingPage extends AppCompatActivity {
             float rating = ratingBar.getRating();
             String reviewTitle = reviewTitleInput.getText().toString();
             String reviewContent = reviewContentInput.getText().toString();
+            String userEmail = loggedInUser.getEmail();
 
-            if (isValidReview(rating, reviewTitle, reviewContent)) {
-                // THIS TREATS THE USER AS A NULL OBJECT, DOES NOT KNOW WHO IS LOGGED IN
-                User loggedInUser = (User) getIntent().getSerializableExtra("loggedInUser");
-                String userEmail = loggedInUser.getEmail();
+            User loggedInUser = null;
+            Intent intent = getIntent();
+            if (intent.hasExtra("loggedInUser")) {
+                loggedInUser = (User) intent.getSerializableExtra("loggedInUser");
+            }
+
+            if (loggedInUser != null && isValidReview(rating, reviewTitle, reviewContent, userEmail)) {
                 reviewViewModel.addReview(rating, reviewTitle, reviewContent, userEmail);
-                    // Replace with a "Thank you for your review" screen
-                }
-            else {
-                // If invalid, show modal?
+                // Show Success Page
+                Log.e("RatingPage", "User Email: " + userEmail);
+            } else {
+                // Handle invalid review or unavailability of loggedInUser
             }
         });
+
     }
-        private boolean isValidReview ( float rating, String title, String content){
-            return (rating > 0 && !title.isEmpty() && !content.isEmpty());
+        private boolean isValidReview ( float rating, String title, String content, String userEmail){
+            return (rating > 0 && !title.isEmpty() && !content.isEmpty() && !userEmail.isEmpty());
         }
     }

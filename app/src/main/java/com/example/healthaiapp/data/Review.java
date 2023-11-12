@@ -29,6 +29,10 @@ public class Review {
         return title;
     }
 
+    public String getUserEmail() {
+        return userEmail;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -39,5 +43,9 @@ public class Review {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 }

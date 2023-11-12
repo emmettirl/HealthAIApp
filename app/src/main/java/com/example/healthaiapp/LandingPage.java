@@ -19,7 +19,7 @@ public class LandingPage extends AppCompatActivity {
 
         Intent thisIntent = getIntent();
         if (thisIntent.hasExtra("loggedInUser")) {
-            User loggedInUser = (User) thisIntent.getSerializableExtra("loggedInUser");
+            this.loggedInUser = (User) thisIntent.getSerializableExtra("loggedInUser");
 
             assert loggedInUser != null;
             String name = loggedInUser.getUsername();
