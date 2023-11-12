@@ -10,7 +10,7 @@ import android.widget.Button;
 
 import com.example.healthaiapp.data.User;
 
-public class ActivityLandingPage extends AppCompatActivity {
+public class LandingPage extends AppCompatActivity {
 
     Button buttonToUserProfile;
     User user;
@@ -37,7 +37,7 @@ public class ActivityLandingPage extends AppCompatActivity {
                         Log.d("TAG", user.getUsername());
 
                         if (user != null) {
-                            Intent intent = new Intent(ActivityLandingPage.this, ActivityAdditionalInfo.class);
+                            Intent intent = new Intent(LandingPage.this, AdditionalInfo.class);
                             intent.putExtra("loggedInUser", user);
                             Log.d("mydebug", user.getUsername());
                             startActivity(intent);

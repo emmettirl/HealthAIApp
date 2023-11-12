@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.example.healthaiapp.data.User;
 import com.example.healthaiapp.data.UserViewModel;
 
-public class ActivityMedicalHistory extends AppCompatActivity {
+public class Medications extends AppCompatActivity {
 
 
     User user;
@@ -21,45 +21,45 @@ public class ActivityMedicalHistory extends AppCompatActivity {
 
     Button submitButton;
     Button backButton;
-    EditText history;
+    EditText medication;
     TextView updatedStatus;
-    TextView displayHistory;
+    TextView displayMedications;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_medical_history);
+        setContentView(R.layout.activity_medications);
 
 
         submitButton = (Button) findViewById(R.id.buttonSubmit);
         backButton = (Button) findViewById(R.id.buttonBack);
 
-        history = (EditText) findViewById(R.id.textInputEditTextHistory);
+        medication = (EditText) findViewById(R.id.textInputEditTextHistory);
 
         updatedStatus = (TextView) findViewById(R.id.updatedStatus);
-        displayHistory = (TextView)  findViewById(R.id.TextViewDisplayHistory);
+        displayMedications = (TextView)  findViewById(R.id.TextViewDisplayHistory);
 
         uvm = new UserViewModel();
 
         Intent thisIntent = getIntent();
         if (thisIntent.hasExtra("loggedInUser")) {
             this.user = (User) thisIntent.getSerializableExtra("loggedInUser");
-        }
+            }
 
-        displayHistory.setText(user.getMedicalDetails().getMedicalConditions().toString());
+        displayMedications.setText(user.getMedicalDetails().getMedications().toString());
 
 
         submitButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        user.getMedicalDetails().getMedicalConditions().add(history.getText().toString());
+                        user.getMedicalDetails().getMedications().add(medication.getText().toString());
 
                         uvm.updateUser(user);
                         updatedStatus.setText("User Updated");
-                        history.setText("");
+                        medication.setText("");
 
-                        displayHistory.setText(user.getMedicalDetails().getMedicalConditions().toString());
+                        displayMedications.setText(user.getMedicalDetails().getMedications().toString());
 
 
                     }
@@ -70,7 +70,7 @@ public class ActivityMedicalHistory extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(ActivityMedicalHistory.this, ActivityLandingPage.class);
+                        Intent intent = new Intent(Medications.this, LandingPage.class);
                         intent.putExtra("loggedInUser", user);
                         Log.d("mydebug", user.getUsername());
                         startActivity(intent);

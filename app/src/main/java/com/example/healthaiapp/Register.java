@@ -12,7 +12,7 @@ import android.widget.EditText;
 import com.example.healthaiapp.data.User;
 import com.example.healthaiapp.data.UserViewModel;
 
-public class ActivityRegister extends AppCompatActivity {
+public class Register extends AppCompatActivity {
 
     Button submitButton;
     Button registerToLogin;
@@ -46,7 +46,7 @@ public class ActivityRegister extends AppCompatActivity {
         registerToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentStart = new Intent(ActivityRegister.this, ActivityLogIn.class);
+                Intent intentStart = new Intent(Register.this, LogIn.class);
                 startActivity(intentStart);
             }
         });
@@ -80,7 +80,7 @@ public class ActivityRegister extends AppCompatActivity {
         uvm.getRegistrationSuccess().observe(this, registeredUser -> {
             if (registeredUser != null) {
                 // Registration is successful, navigate to LoginActivity
-                Intent intent = new Intent(ActivityRegister.this, ActivityLogIn.class);
+                Intent intent = new Intent(Register.this, LogIn.class);
                 intent.putExtra("registeredUser", registeredUser);
                 Log.d("mydebug", registeredUser.getUsername());
                 startActivity(intent);

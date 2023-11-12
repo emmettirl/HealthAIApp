@@ -14,25 +14,25 @@
         android:theme="@style/Theme.HealthAIApp"
         tools:targetApi="31">
         <activity
-            android:name=".ActivityMedicalHistory"
+            android:name=".MedicalHistory"
             android:exported="false" />
         <activity
-            android:name=".ActivityMedications"
+            android:name=".Medications"
             android:exported="false" />
         <activity
-            android:name=".ActivityAdditionalInfo"
+            android:name=".AdditionalInfo"
             android:exported="false" />
         <activity
-            android:name=".ActivityLandingPage"
+            android:name=".LandingPage"
             android:exported="false" />
         <activity
-            android:name=".ActivityLogIn"
+            android:name=".LogIn"
             android:exported="false" />
         <activity
-            android:name=".ActivityMain"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ActivityRegister"
+            android:name=".Register"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
