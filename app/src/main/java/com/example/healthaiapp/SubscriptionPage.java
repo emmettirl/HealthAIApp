@@ -13,6 +13,7 @@ public class SubscriptionPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subscription_page);
 
+        //region Nav Bar
         Button userProfileButton = findViewById(R.id.userProfileNavButton);
         Button AIPredictPLACEHOLDER = findViewById(R.id.FitnessNavButton);
         Button FitnessPLACEHOLDER = findViewById(R.id.AIPredictNavButton);
@@ -20,5 +21,7 @@ public class SubscriptionPage extends AppCompatActivity {
             Intent intent = new Intent(SubscriptionPage.this, UserProfilePage.class);
             startActivity(intent);
         });
+        //endregion
+
     }
 }

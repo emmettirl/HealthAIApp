@@ -13,7 +13,7 @@ public class RatingPage  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rating_overview_page);
 
-        Button leaveRatingButton = findViewById(R.id.leave_rating_button);
+        //region Nav Bar
         Button userProfileButton = findViewById(R.id.userProfileNavButton);
         Button AIPredictPLACEHOLDER = findViewById(R.id.FitnessNavButton);
         Button FitnessPLACEHOLDER = findViewById(R.id.AIPredictNavButton);
@@ -21,6 +21,10 @@ public class RatingPage  extends AppCompatActivity {
             Intent intent = new Intent(RatingPage.this, UserProfilePage.class);
             startActivity(intent);
         });
+        //endregion
+
+        Button leaveRatingButton = findViewById(R.id.leave_rating_button);
+
         leaveRatingButton.setOnClickListener(view -> {
             Intent intent = new Intent(RatingPage.this, LeaveRatingPage.class);
             startActivity(intent);

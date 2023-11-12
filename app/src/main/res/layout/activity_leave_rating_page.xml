@@ -100,8 +100,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="14sp"
-            android:inputType="textMultiLine"
+            android:textSize="15sp"
             android:textColor="@color/black"
             android:gravity="start|top"
             android:hint="@string/leave_rating_large_textbox" />
@@ -120,7 +119,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="@color/black"
-            android:textSize="14sp"
+            android:textSize="15sp"
             android:hint="@string/leave_rating_small_textbox" />
     </com.google.android.material.textfield.TextInputLayout>
 

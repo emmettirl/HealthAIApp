@@ -63,7 +63,7 @@
     <!--endregion -->
 
     <!--region LEAVE RATING PAGE -->
-    <string name="leave_rating_large_textbox">Please tell us about your thoughts and experience!</string>
+    <string name="leave_rating_large_textbox">Tell us about your thoughts and experience!</string>
     <string name="leave_rating_small_textbox">Review Title/Summary</string>
     <!--endregion -->
 

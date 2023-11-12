@@ -22,7 +22,7 @@ public class ContactPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_page);
 
-        //region NAVBAR
+        //region Nav Buttons
 
         Button userProfileButton = findViewById(R.id.userProfileNavButton);
         Button AIPredictPLACEHOLDER = findViewById(R.id.FitnessNavButton);
@@ -32,7 +32,6 @@ public class ContactPage extends AppCompatActivity {
             startActivity(intent);
         });
         //endregion
-
 
         contactToggleButton = findViewById(R.id.contactToggleButton);
         sendEmailButton = findViewById(R.id.sendEmailButton);
