@@ -70,6 +70,30 @@ public class UserViewModel extends ViewModel {
         FirebaseDatabase database = FirebaseDatabase.getInstance("https://healthai-group-project-default-rtdb.europe-west1.firebasedatabase.app/");
         DatabaseReference dbUsers = database.getReference(NODE_USERS);
         dbUsers.child(updatedUser.username).setValue(updatedUser);
+
+        Query usernameQuery = dbUsers.orderByChild("username").equalTo(updatedUser.username);
+        usernameQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    Log.d("myDebug", "addUser: username already exists");
+                } else {
+                    dbUsers.child(updatedUser.getUsername()).setValue(updatedUser);
+                    Log.d("MyDebug", "addUser: wrote to " + dbUsers.getRoot().toString() );
+
+                    registeredUser.postValue(updatedUser);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Handle any errors that may occur
+            }
+        });
+
+
+
     }
 
 

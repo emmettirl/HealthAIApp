@@ -10,26 +10,24 @@ import android.widget.Button;
 
 import com.example.healthaiapp.data.User;
 
-public class ActivityLandingPage extends AppCompatActivity {
+public class ActivityAdditionalInfo extends AppCompatActivity {
 
-    Button buttonToUserProfile;
+    Button buttonToUserContactInfo;
     User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_landing_page);
+        setContentView(R.layout.activity_additional_info);
 
-
-        this.buttonToUserProfile = findViewById(R.id.button4);
+        this.buttonToUserContactInfo = findViewById(R.id.ButtonContactInfo);
 
         Intent thisIntent = getIntent();
         if (thisIntent.hasExtra("loggedInUser")) {
             this.user = (User) thisIntent.getSerializableExtra("loggedInUser");
         }
 
-
-        buttonToUserProfile.setOnClickListener(
+        buttonToUserContactInfo.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -37,7 +35,7 @@ public class ActivityLandingPage extends AppCompatActivity {
                         Log.d("TAG", user.getUsername());
 
                         if (user != null) {
-                            Intent intent = new Intent(ActivityLandingPage.this, ActivityAdditionalInfo.class);
+                            Intent intent = new Intent(ActivityAdditionalInfo.this, ActivityContactInfo.class);
                             intent.putExtra("loggedInUser", user);
                             Log.d("mydebug", user.getUsername());
                             startActivity(intent);
@@ -46,5 +44,6 @@ public class ActivityLandingPage extends AppCompatActivity {
                     }
                 }
         );
+
     }
 }

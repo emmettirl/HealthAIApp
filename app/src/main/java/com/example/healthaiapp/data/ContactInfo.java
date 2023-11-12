@@ -9,7 +9,7 @@ public class ContactInfo implements Serializable {
     String email;
     String address;
 
-    ContactInfo(){}
+    public ContactInfo(){}
 
     public String getFname() {
         return fname;

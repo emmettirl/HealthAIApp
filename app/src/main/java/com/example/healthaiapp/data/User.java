@@ -12,9 +12,11 @@ public class User implements Serializable {
     String fName;
     String lName;
     String email;
-    ArrayList<MedicalDetails> medicalDetailsList;
+    MedicalDetails medicalDetails;
 
-    public User(){}
+    public User(){
+    }
+
 
     public User(String username, String password){
         this.username = username;
@@ -27,6 +29,15 @@ public class User implements Serializable {
         this.fName = fName;
         this.lName = lName;
         this.email = email;
+    }
+
+    public User(String username, String password, String fName, String lName, String email, MedicalDetails medicalDetails){
+        this.username = username;
+        this.password = password;
+        this.fName = fName;
+        this.lName = lName;
+        this.email = email;
+        this.medicalDetails = medicalDetails;
     }
 
     public String getUsername() {
@@ -49,8 +60,8 @@ public class User implements Serializable {
         return email;
     }
 
-    public ArrayList<MedicalDetails> getMedicalDetailsList() {
-        return medicalDetailsList;
+    public MedicalDetails getMedicalDetails() {
+        return medicalDetails;
     }
 
     public void setUsername(String username) {
@@ -72,11 +83,9 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public void setMedicalDetailsList(ArrayList<MedicalDetails> medicalDetailsList) {
-        this.medicalDetailsList = medicalDetailsList;
+    public void setMedicalDetailsList(MedicalDetails medicalDetails) {
+        this.medicalDetails = medicalDetails;
     }
 
-    public void addMedicalDetails(MedicalDetails medicalDetails) {
-        this.medicalDetailsList.add(medicalDetails);
-    }
+
 }
