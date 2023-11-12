@@ -18,7 +18,7 @@
 
         <ImageView
             android:id="@+id/Logo"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
  />
@@ -27,14 +27,14 @@
             android:id="@+id/Heading"
             android:layout_width="176dp"
             android:layout_height="115dp"
-            android:text="TextView" />
+            android:text="@string/placeholder_one_word" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome Back!"
+        android:text="@string/welcome_back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headingLinearLayout" />
@@ -50,7 +50,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="User Name:" />
+            android:text="@string/user_name" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -60,7 +60,7 @@
                 android:id="@+id/textInputEditTextUsernameLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="username" />
+                android:hint="@string/user_name" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,7 +68,7 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Password:" />
+            android:text="@string/password" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -78,7 +78,7 @@
                 android:id="@+id/textInputEditTextPasswordLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="password" />
+                android:hint="@string/password" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -87,20 +87,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Log In" />
+            android:text="@string/login" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Not a member?" />
+            android:text="@string/not_member" />
 
         <Button
             android:id="@+id/loginToRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Register" />
+            android:text="@string/register" />
 
     </LinearLayout>
 

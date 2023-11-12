@@ -28,17 +28,17 @@
             android:layout_width="176dp"
             android:layout_height="115dp"
             android:text="@string/placeholder_one_word" />
+
     </LinearLayout>
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/FitnessNavButton"
         android:layout_width="110dp"
         android:layout_height="48dp"
         android:layout_marginStart="304dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/button_style_1"
-        android:backgroundTint="#00DBFF"
         android:text="@string/fitness_button"
         android:textColor="#000000"
         android:textSize="11sp"
@@ -48,14 +48,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/userProfileNavButton"
         android:layout_width="110dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="304dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/button_style_1"
-        android:backgroundTint="#00DBFF"
         android:text="@string/user_profile_button"
         android:textColor="#000000"
         android:textSize="11sp"
@@ -64,8 +63,9 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- THIS ONE WONT LEAD TO ANYWHERE IN SPRINT 1! -->
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/AIPredictNavButton"
         android:layout_width="110dp"
         android:layout_height="48dp"
         android:layout_marginStart="160dp"
@@ -80,13 +80,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/LandingPageWelcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="130dp"
         android:layout_marginTop="141dp"
         android:layout_marginEnd="129dp"
         android:text="@string/landing_greeting"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -104,10 +105,9 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="180dp"
-        android:layout_height="78dp"
-        android:layout_marginStart="0dp"
+        android:id="@+id/healthAIQuickAccessImageButton"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView"
         tools:src="@drawable/test_background" />
@@ -116,13 +116,13 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="28dp"
         android:text="@string/health_ai_quick_access_button"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="@+id/imageButton" />
+        app:layout_constraintStart_toStartOf="@+id/healthAIQuickAccessImageButton"
+        app:layout_constraintTop_toTopOf="@+id/healthAIQuickAccessImageButton" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -134,6 +134,27 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         tools:srcCompat="@tools:sample/avatars" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="82dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="82dp"
+        android:layout_height="80dp"
+
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        tools:srcCompat="@tools:sample/avatars" />
+
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
@@ -141,18 +162,35 @@
         android:layout_marginTop="29dp"
         android:layout_marginBottom="36dp"
         android:text="@string/quick_access"
+        android:textColor="@color/black"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/LandingPageWelcomeText" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="180dp"
-        android:layout_height="79dp"
+        android:id="@+id/RatingQuickAccessImageButton"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="@+id/imageView2"
+        tools:src="@drawable/test_background" />
+
+    <ImageButton
+        android:id="@+id/subscriptionQuickAccessImageButton"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        tools:src="@drawable/test_background" />
+
+    <ImageButton
+        android:id="@+id/supportQuickAccessImageButton"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
         tools:src="@drawable/test_background" />
 
     <TextView
@@ -161,10 +199,34 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="28dp"
+        android:text="@string/health_ai_subscription_quick_access_button"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/subscriptionQuickAccessImageButton"
+        app:layout_constraintTop_toTopOf="@+id/subscriptionQuickAccessImageButton" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
         android:text="@string/rating_quick_access_button"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/imageButton2"
-        app:layout_constraintTop_toTopOf="@+id/imageButton2" />
+        app:layout_constraintStart_toStartOf="@+id/RatingQuickAccessImageButton"
+        app:layout_constraintTop_toTopOf="@+id/RatingQuickAccessImageButton" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/support_quick_access_button"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/supportQuickAccessImageButton"
+        app:layout_constraintTop_toTopOf="@+id/supportQuickAccessImageButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
