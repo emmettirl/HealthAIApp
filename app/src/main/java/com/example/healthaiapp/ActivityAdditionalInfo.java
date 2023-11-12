@@ -65,6 +65,15 @@ public class ActivityAdditionalInfo extends AppCompatActivity {
 
         updatedStatus = (TextView) findViewById(R.id.updatedStatus);
 
+        age.setText(user.getMedicalDetails().getAge());
+        height.setText(user.getMedicalDetails().getAge());
+        weight.setText(user.getMedicalDetails().getWeight());
+        gender.setText(user.getMedicalDetails().getGender());
+        gpEmail.setText(user.getMedicalDetails().getGpEmail());
+        insuranceEmail.setText((user.getMedicalDetails().getInsurance().getEmail()));
+        insurancePhone.setText((user.getMedicalDetails().getInsurance().getPhone()));
+        insuranceName.setText((user.getMedicalDetails().getInsurance().getName()));
+
         submitButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
