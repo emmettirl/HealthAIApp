@@ -102,7 +102,7 @@
         android:layout_marginTop="252dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:src="@tools:sample/avatars" />
 
     <ImageButton
         android:id="@+id/fitnessOverviewButton"
@@ -110,7 +110,7 @@
         android:layout_height="80dp"
         app:layout_constraintStart_toEndOf="@+id/fitnessOverviewImage"
         app:layout_constraintTop_toTopOf="@+id/fitnessOverviewImage"
-        tools:src="@drawable/test_background" />
+        app:srcCompat="@drawable/test_background" />
 
     <TextView
         android:id="@+id/fitnessOverviewText"
@@ -132,7 +132,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fitnessOverviewImage"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:src="@tools:sample/avatars" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -142,7 +142,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:src="@tools:sample/avatars" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -152,7 +152,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:src="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/textView6"
@@ -162,7 +162,7 @@
         android:layout_marginBottom="36dp"
         android:text="@string/quick_access"
         android:textColor="@color/black"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/fitnessOverviewImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -174,7 +174,7 @@
         android:layout_height="80dp"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="@+id/imageView2"
-        tools:src="@drawable/test_background" />
+        app:srcCompat="@drawable/test_background" />
 
     <ImageButton
         android:id="@+id/subscriptionQuickAccessImageButton"
@@ -182,7 +182,7 @@
         android:layout_height="80dp"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="@+id/imageView3"
-        tools:src="@drawable/test_background" />
+        app:srcCompat="@drawable/test_background" />
 
     <ImageButton
         android:id="@+id/supportQuickAccessImageButton"
@@ -190,7 +190,7 @@
         android:layout_height="80dp"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="@+id/imageView4"
-        tools:src="@drawable/test_background" />
+        app:srcCompat="@drawable/test_background" />
 
     <TextView
         android:id="@+id/textView7"

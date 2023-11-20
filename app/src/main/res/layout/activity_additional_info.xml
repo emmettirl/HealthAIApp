@@ -18,7 +18,7 @@
 
         <ImageView
             android:id="@+id/Logo"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
@@ -26,11 +26,10 @@
             android:id="@+id/Heading"
             android:layout_width="176dp"
             android:layout_height="115dp"
-            android:text="TextView" />
+            android:text="@string/placeholder_one_word" />
     </LinearLayout>
 
     <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@+id/headingLinearLayout"
@@ -56,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Age:" />
+                android:text="@string/age" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutAge"
@@ -68,7 +67,7 @@
                     android:id="@+id/textInputEditTextAge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Age" />
+                    android:hint="@string/age" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -76,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Height:" />
+                android:text="@string/height" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutHeight"
@@ -88,7 +87,7 @@
                     android:id="@+id/textInputEditTextHeight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Height" />
+                    android:hint="@string/height" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -96,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Weight:" />
+                android:text="@string/weight" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutWeight"
@@ -108,7 +107,7 @@
                     android:id="@+id/textInputEditTextWeight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Weight" />
+                    android:hint="@string/weight" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -116,7 +115,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Gender:" />
+                android:text="@string/gender" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutGender"
@@ -128,7 +127,7 @@
                     android:id="@+id/textInputEditTextGender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Gender" />
+                    android:hint="@string/gender" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -136,7 +135,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Gp Email address:" />
+                android:text="@string/gp_email" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutGpEmail"
@@ -148,7 +147,7 @@
                     android:id="@+id/textInputEditTextGpEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Gp Email" />
+                    android:hint="@string/gp_email" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -156,7 +155,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Insurance Email address:" />
+                android:text="@string/insurance_email" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutInsuranceEmail"
@@ -168,7 +167,7 @@
                     android:id="@+id/textInputEditTextInsuranceEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Insurance Email" />
+                    android:hint="@string/insurance_email" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -176,7 +175,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Insurance Phone Number:" />
+                android:text="@string/insurance_phone" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutInsurancePhone"
@@ -188,7 +187,7 @@
                     android:id="@+id/textInputEditTextInsurancePhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Insurance Phone" />
+                    android:hint="@string/insurance_phone" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -196,7 +195,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Insurance Name:" />
+                android:text="@string/insurance_name" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayoutInsuranceName"
@@ -208,7 +207,7 @@
                     android:id="@+id/textInputEditTextInsuranceName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Insurance Name" />
+                    android:hint="@string/insurance_name" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -216,28 +215,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Submit" />
+                android:text="@string/submit" />
 
             <Button
                 android:id="@+id/buttonMedications"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Medications" />
+                android:text="@string/medications" />
 
             <Button
                 android:id="@+id/buttonHistory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Medical History" />
+                android:text="@string/medical_history" />
 
             <Button
                 android:id="@+id/buttonBack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Back" />
+                android:text="@string/back" />
 
 
         </LinearLayout>
