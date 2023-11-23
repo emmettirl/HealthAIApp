@@ -66,7 +66,7 @@ public class AdditionalInfo extends AppCompatActivity {
         updatedStatus = (TextView) findViewById(R.id.updatedStatus);
 
         age.setText(user.getMedicalDetails().getAge());
-        height.setText(user.getMedicalDetails().getAge());
+        height.setText(user.getMedicalDetails().getHeight());
         weight.setText(user.getMedicalDetails().getWeight());
         gender.setText(user.getMedicalDetails().getGender());
         gpEmail.setText(user.getMedicalDetails().getGpEmail());
