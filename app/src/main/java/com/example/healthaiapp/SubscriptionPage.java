@@ -17,12 +17,19 @@ public class SubscriptionPage extends AppCompatActivity {
         Button userProfileButton = findViewById(R.id.userProfileNavButton);
         Button AIPredictPLACEHOLDER = findViewById(R.id.AIPredictNavButton);
         Button FitnessPageButton = findViewById(R.id.FitnessNavButton);
+        Button paymentPageButton = findViewById(R.id.SubscriptionPaymentButton);
+
         userProfileButton.setOnClickListener(view -> {
             Intent intent = new Intent(SubscriptionPage.this, UserProfilePage.class);
             startActivity(intent);
         });
         FitnessPageButton.setOnClickListener(view -> {
             Intent intent = new Intent(SubscriptionPage.this, FitnessPage.class);
+            startActivity(intent);
+        });
+
+        paymentPageButton.setOnClickListener(view -> {
+            Intent intent = new Intent(SubscriptionPage.this, PaymentPage.class);
             startActivity(intent);
         });
         //endregion
