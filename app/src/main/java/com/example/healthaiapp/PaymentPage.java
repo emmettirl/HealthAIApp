@@ -2,8 +2,11 @@ package com.example.healthaiapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 
 import com.stripe.android.paymentsheet.*;
 import com.stripe.android.PaymentConfiguration;
@@ -18,7 +21,6 @@ public class PaymentPage extends AppCompatActivity {
 
     private static final String TAG = "CheckoutActivity";
     PaymentSheet paymentSheet;
-    String paymentIntentClientSecret;
     private String paymentClientSecret;
     PaymentSheet.CustomerConfiguration customerConfig;
     @Override
@@ -29,7 +31,7 @@ public class PaymentPage extends AppCompatActivity {
         paymentSheet = new PaymentSheet(this, this::onPaymentSheetResult);
 
 
-        Fuel.INSTANCE.post("http://10.0.2.2:4567", null).responseString(new Handler<String>() {
+        Fuel.INSTANCE.post("http://10.0.2.2:4567/payment-sheet", null).responseString(new Handler<String>() {
             @Override
             public void success(String s) {
                 try {
@@ -38,16 +40,28 @@ public class PaymentPage extends AppCompatActivity {
                             result.getString("customer"),
                             result.getString("ephemeralKey")
                     );
-                    paymentIntentClientSecret = result.getString("paymentIntent");
+                    paymentClientSecret = result.getString("paymentIntent");
                     PaymentConfiguration.init(getApplicationContext(), result.getString("publishableKey"));
-                } catch (JSONException e) { /* handle error */ }
+                    Log.d(TAG, "success: ");
+                } catch (JSONException e) {
+                    Log.d(TAG, e.toString());
+                }
             }
 
             @Override
-            public void failure(@NonNull FuelError fuelError) { /* handle error */ }
+            public void failure(@NonNull FuelError fuelError) {
+                Log.d(TAG, "failure: " + fuelError.toString());
+            }
         });
 
-        presentPaymentSheet();
+
+
+        Button checkoutButton = findViewById(R.id.CheckoutButton);
+
+        checkoutButton.setOnClickListener(view -> {
+            presentPaymentSheet();
+
+        });
     }
 
     private void presentPaymentSheet() {
