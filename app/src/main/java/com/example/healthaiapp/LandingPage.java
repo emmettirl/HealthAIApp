@@ -33,25 +33,43 @@ public class LandingPage extends AppCompatActivity {
 
         //region Nav Buttons
         Button userProfileButton = findViewById(R.id.userProfileNavButton);
-        Button AIPredictPLACEHOLDER = findViewById(R.id.FitnessNavButton);
-        Button FitnessPLACEHOLDER = findViewById(R.id.AIPredictNavButton);
+        Button AIPredictPLACEHOLDER = findViewById(R.id.AIPredictNavButton);
+        Button fitnessPageButton = findViewById(R.id.FitnessNavButton);
 
-        userProfileButton.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Log.d("myDebug", "onClick: ");
-                        Log.d("TAG", loggedInUser.getUsername());
+        fitnessPageButton.setOnClickListener(
+            new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.d("myDebug", "onClick: ");
+                    Log.d("TAG", loggedInUser.getUsername());
 
-                        if (loggedInUser != null) {
-                            Intent intent = new Intent(LandingPage.this, AdditionalInfo.class);
-                            intent.putExtra("loggedInUser", loggedInUser);
-                            Log.d("mydebug", loggedInUser.getUsername());
-                            startActivity(intent);
-                            finish();
-                        }
+                    if (loggedInUser != null) {
+                        Intent intent = new Intent(LandingPage.this, FitnessOverviewPage.class);
+                        intent.putExtra("loggedInUser", loggedInUser);
+                        Log.d("mydebug", loggedInUser.getUsername());
+                        startActivity(intent);
+                        finish();
                     }
                 }
+            }
+        );
+
+        userProfileButton.setOnClickListener(
+            new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.d("myDebug", "onClick: ");
+                    Log.d("TAG", loggedInUser.getUsername());
+
+                    if (loggedInUser != null) {
+                        Intent intent = new Intent(LandingPage.this, AdditionalInfo.class);
+                        intent.putExtra("loggedInUser", loggedInUser);
+                        Log.d("mydebug", loggedInUser.getUsername());
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+            }
         );
 
         //endregion
@@ -75,9 +93,13 @@ public class LandingPage extends AppCompatActivity {
         });
 
         supportButton.setOnClickListener(view -> {
-            Intent intent = new Intent(LandingPage.this, ContactPage.class);
-            intent.putExtra("loggedInUser", loggedInUser);
-            startActivity(intent);
+            if (loggedInUser != null) {
+                Intent intent = new Intent(LandingPage.this, ContactPage.class);
+                intent.putExtra("loggedInUser", loggedInUser);
+                Log.d("mydebug", loggedInUser.getUsername());
+                startActivity(intent);
+                finish();
+            }
         });
 
         //endregion

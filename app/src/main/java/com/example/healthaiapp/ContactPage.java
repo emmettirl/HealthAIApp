@@ -2,9 +2,11 @@ package com.example.healthaiapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ToggleButton;
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.healthaiapp.data.User;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textfield.TextInputEditText;
 import android.net.Uri;
@@ -18,11 +20,16 @@ public class ContactPage extends AppCompatActivity {
     private TextInputEditText emailTitleInput;
     private TextInputEditText emailContentInput;
     private Button callButton;
+    private User loggedInUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_page);
+
+        if (getIntent().hasExtra("loggedInUser")) {
+            loggedInUser = (User) getIntent().getSerializableExtra("loggedInUser");
+        }
 
         //region Nav Buttons
 
@@ -54,10 +61,11 @@ public class ContactPage extends AppCompatActivity {
             String emailContent = Objects.requireNonNull(emailContentInput.getText()).toString();
 
             if (contactToggleButton.isChecked()) {
-                // REPLACE WITH DATABASE VALUES
-                recipientEmail = "patryk.dudek@mycit.ie";
+                // Insurance Email
+                recipientEmail = loggedInUser.getMedicalDetails().getInsurance().getEmail();
             } else {
-                recipientEmail = "patryk.dudek@mycit.ie";
+                // GP Email
+                recipientEmail = loggedInUser.getMedicalDetails().getGpEmail();
             }
 
             composeEmail(recipientEmail, emailTitle, emailContent);
@@ -66,10 +74,12 @@ public class ContactPage extends AppCompatActivity {
         callButton.setOnClickListener(v -> {
             String phoneNumber;
             if (contactToggleButton.isChecked()) {
-                // REPLACE WITH DATABASE VALUES
-                phoneNumber = "0871642511";
+                // Insurance Phone
+                phoneNumber = loggedInUser.getMedicalDetails().getInsurance().getPhone();
             } else {
-                phoneNumber = "0871656573";
+                // GP Phone
+                phoneNumber = "000";
+//                phoneNumber = loggedInUser.getMedicalDetails().getGpPhoneNumber();
             }
             makeCall(phoneNumber);
         });
