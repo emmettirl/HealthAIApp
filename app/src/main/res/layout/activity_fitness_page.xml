@@ -35,7 +35,7 @@
         android:layout_height="80dp"
         app:layout_constraintStart_toEndOf="@+id/fitnessOverviewImage"
         app:layout_constraintTop_toTopOf="@+id/fitnessOverviewImage"
-        tools:src="@drawable/test_background" />
+        android:src="@drawable/test_background" />
 
     <ImageView
         android:id="@+id/fitnessOverviewImage"

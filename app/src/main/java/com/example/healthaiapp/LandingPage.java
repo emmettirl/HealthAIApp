@@ -44,7 +44,7 @@ public class LandingPage extends AppCompatActivity {
                     Log.d("TAG", loggedInUser.getUsername());
 
                     if (loggedInUser != null) {
-                        Intent intent = new Intent(LandingPage.this, FitnessOverviewPage.class);
+                        Intent intent = new Intent(LandingPage.this, FitnessPage.class);
                         intent.putExtra("loggedInUser", loggedInUser);
                         Log.d("mydebug", loggedInUser.getUsername());
                         startActivity(intent);
