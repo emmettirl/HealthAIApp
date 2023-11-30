@@ -33,7 +33,7 @@ public class LandingPage extends AppCompatActivity {
 
         //region Nav Buttons
         Button userProfileButton = findViewById(R.id.userProfileNavButton);
-        Button AIPredictPLACEHOLDER = findViewById(R.id.AIPredictNavButton);
+        Button healthAIPredictButton = findViewById(R.id.AIPredictNavButton);
         Button fitnessPageButton = findViewById(R.id.FitnessNavButton);
 
         fitnessPageButton.setOnClickListener(
@@ -52,6 +52,23 @@ public class LandingPage extends AppCompatActivity {
                     }
                 }
             }
+        );
+        healthAIPredictButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("myDebug", "onClick: ");
+                        Log.d("TAG", loggedInUser.getUsername());
+
+                        if (loggedInUser != null) {
+                            Intent intent = new Intent(LandingPage.this, AIPredictMainPage.class);
+                            intent.putExtra("loggedInUser", loggedInUser);
+                            Log.d("mydebug", loggedInUser.getUsername());
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                }
         );
 
         userProfileButton.setOnClickListener(

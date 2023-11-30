@@ -34,7 +34,7 @@ public class ContactPage extends AppCompatActivity {
         //region Nav Buttons
 
         Button userProfileButton = findViewById(R.id.userProfileNavButton);
-        Button AIPredictPLACEHOLDER = findViewById(R.id.AIPredictNavButton);
+        Button healthAIPredictButton = findViewById(R.id.AIPredictNavButton);
         Button FitnessPageButton = findViewById(R.id.FitnessNavButton);
         userProfileButton.setOnClickListener(view -> {
             Intent intent = new Intent(ContactPage.this, UserProfilePage.class);
@@ -42,6 +42,10 @@ public class ContactPage extends AppCompatActivity {
         });
         FitnessPageButton.setOnClickListener(view -> {
             Intent intent = new Intent(ContactPage.this, FitnessPage.class);
+            startActivity(intent);
+        });
+        healthAIPredictButton.setOnClickListener(view -> {
+            Intent intent = new Intent(ContactPage.this, AIPredictMainPage.class);
             startActivity(intent);
         });
         //endregion

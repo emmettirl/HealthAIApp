@@ -113,4 +113,9 @@
     <string name="edit_user_details">Edit Your Details</string>
     <!--endregion -->
 
+    <!--region HEALTH AI PAGE -->
+    <string name="chatbot_title">Health AI Chatbot</string>
+    <string name="type_a_message">Type a Message</string>
+    <string name="disclaimer">The Health AI Chatbot is always developing to bring you the latest information. However, it is definitely recommended to seek advice from a medical professional if you feel something is wrong.</string>
+    <!--endregion -->
 </resources>

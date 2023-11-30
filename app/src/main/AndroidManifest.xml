@@ -66,6 +66,9 @@
             android:name=".FitnessPage"
             android:exported="false" />
         <activity
+            android:name=".AIPredictMainPage"
+            android:exported="false" />
+        <activity
             android:name=".Register"
             android:exported="true">
             <intent-filter>
