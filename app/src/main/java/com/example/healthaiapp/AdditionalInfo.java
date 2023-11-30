@@ -101,7 +101,7 @@ public class AdditionalInfo extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(AdditionalInfo.this, LandingPage.class);
+                        Intent intent = new Intent(AdditionalInfo.this, UserProfilePage.class);
                         intent.putExtra("loggedInUser", user);
                         Log.d("mydebug", user.getUsername());
                         startActivity(intent);

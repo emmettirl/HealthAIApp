@@ -62,7 +62,7 @@ public class LandingPage extends AppCompatActivity {
                     Log.d("TAG", loggedInUser.getUsername());
 
                     if (loggedInUser != null) {
-                        Intent intent = new Intent(LandingPage.this, AdditionalInfo.class);
+                        Intent intent = new Intent(LandingPage.this, UserProfilePage.class);
                         intent.putExtra("loggedInUser", loggedInUser);
                         Log.d("mydebug", loggedInUser.getUsername());
                         startActivity(intent);

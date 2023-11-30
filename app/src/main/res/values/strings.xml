@@ -108,6 +108,9 @@
     <string name="insurance_name">Insurance Name</string>
     <string name="medical_history">Medical History</string>
     <string name="medications">Medications</string>
+    <string name="health_ai_title">Your Health AI&#10;Analysis</string>
+    <string name="user_name_header">%1$s</string>
+    <string name="edit_user_details">Edit Your Details</string>
     <!--endregion -->
 
 </resources>
