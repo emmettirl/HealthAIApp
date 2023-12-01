@@ -108,6 +108,8 @@
     <string name="insurance_name">Insurance Name</string>
     <string name="medical_history">Medical History</string>
     <string name="medications">Medications</string>
+    <string name="already_subscribed">Already Subscribed</string>
+    <string name="loading_subscription_status">Loading Subscription Status</string>
     <!--endregion -->
 
 </resources>
