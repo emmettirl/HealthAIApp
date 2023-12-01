@@ -77,25 +77,33 @@ public class SubscriptionPage extends AppCompatActivity {
         });
 
         this.stripeID = this.loggedInUser.getStripeID();
-        sm.checkActiveSubscription(stripeID, new StripeModel.SubscriptionCallback(){
-            @Override
-            public void onSubscriptionCheckCompleted(boolean hasActiveSubscription) {
-                if (hasActiveSubscription) {
-                    paymentPageButton.setText(R.string.already_subscribed);
-                    paymentPageButton.setOnClickListener(null);
+        if (stripeID != null) {
+
+            sm.checkActiveSubscription(stripeID, new StripeModel.SubscriptionCallback() {
+                @Override
+                public void onSubscriptionCheckCompleted(boolean hasActiveSubscription) {
+                    if (hasActiveSubscription) {
+                        paymentPageButton.setText(R.string.already_subscribed);
+                        paymentPageButton.setOnClickListener(view -> {
+                            Intent intent = new Intent(SubscriptionPage.this, LandingPage.class);
+                            intent.putExtra("loggedInUser", loggedInUser);
+                            startActivity(intent);
+                        });
+                    } else {
+                        paymentPageButton.setText(getString(R.string.subscribe));
+                        paymentPageButton.setOnClickListener(view -> {
+                            createSubscription();
+                        });
+                    }
+
                 }
-                else {
-                    paymentPageButton.setText(getString(R.string.subscribe));
-                    paymentPageButton.setOnClickListener(view -> {
-                        createSubscription();
-                    });
-                }
-
-            }
-        });
-
-
-
+            });
+        } else {
+            paymentPageButton.setText(getString(R.string.subscribe));
+            paymentPageButton.setOnClickListener(view -> {
+                createSubscription();
+            });
+        }
     }
 
 
