@@ -117,5 +117,8 @@
     <string name="chatbot_title">Health AI Chatbot</string>
     <string name="type_a_message">Type a Message</string>
     <string name="disclaimer">The Health AI Chatbot is always developing to bring you the latest information. However, it is definitely recommended to seek advice from a medical professional if you feel something is wrong.</string>
+    <string name="already_subscribed">You are subscribed! Go back?</string>
+    <string name="loading_subscription_status">Loading Subscription Status</string>
     <!--endregion -->
+
 </resources>

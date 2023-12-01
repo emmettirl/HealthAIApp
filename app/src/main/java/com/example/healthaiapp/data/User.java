@@ -13,6 +13,7 @@ public class User implements Serializable {
     String email;
     MedicalDetails medicalDetails;
     Boolean isPremium;
+    String stripeID;
 
     public User(){
         this.medicalDetails = new MedicalDetails();
@@ -58,6 +59,14 @@ public class User implements Serializable {
         return medicalDetails;
     }
 
+    public String getStripeID() {
+        return stripeID;
+    }
+
+    public Boolean getPremium() {
+        return isPremium;
+    }
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -80,6 +89,11 @@ public class User implements Serializable {
     public void setMedicalDetails(MedicalDetails medicalDetails) {
         this.medicalDetails = medicalDetails;
     }
+    public void setStripeID(String stripeID){
+        this.stripeID = stripeID;
+    }
 
-
+    public void setPremium(Boolean premium) {
+        isPremium = premium;
+    }
 }

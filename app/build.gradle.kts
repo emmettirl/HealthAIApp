@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.healthaiapp"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.healthaiapp"
@@ -42,4 +42,6 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation("com.stripe:stripe-android:20.34.4")
+    implementation("com.github.kittinunf.fuel:fuel:2.3.1")
 }
