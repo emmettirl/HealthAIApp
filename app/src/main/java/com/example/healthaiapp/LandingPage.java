@@ -23,9 +23,6 @@ public class LandingPage extends AppCompatActivity {
         setContentView(R.layout.activity_landing_page);
         sm = new StripeModel();
 
-
-
-
         Intent thisIntent = getIntent();
         if (thisIntent.hasExtra("loggedInUser")) {
             this.loggedInUser = (User) thisIntent.getSerializableExtra("loggedInUser");
@@ -59,23 +56,6 @@ public class LandingPage extends AppCompatActivity {
                     }
                 }
             }
-        );
-        healthAIPredictButton.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Log.d("myDebug", "onClick: ");
-                        Log.d("TAG", loggedInUser.getUsername());
-
-                        if (loggedInUser != null) {
-                            Intent intent = new Intent(LandingPage.this, AIPredictMainPage.class);
-                            intent.putExtra("loggedInUser", loggedInUser);
-                            Log.d("mydebug", loggedInUser.getUsername());
-                            startActivity(intent);
-                            finish();
-                        }
-                    }
-                }
         );
 
         userProfileButton.setOnClickListener(
@@ -134,12 +114,24 @@ public class LandingPage extends AppCompatActivity {
             public void onSubscriptionCheckCompleted(boolean hasActiveSubscription) {
                 if (hasActiveSubscription) {
                     healthAIButtonPLACEHOLDER.setOnClickListener(view -> {
-                        // placeholder for intent to go to AIPredict Activity
-                    });;
+                        if (loggedInUser != null) {
+                            Intent intent = new Intent(LandingPage.this, AIPredictMainPage.class);
+                            intent.putExtra("loggedInUser", loggedInUser);
+                            Log.d("mydebug", loggedInUser.getUsername());
+                            startActivity(intent);
+                            finish();
+                        }
+                    });
 
-                    AIPredictPLACEHOLDER.setOnClickListener(view -> {
-                        // placeholder for intent to go to AIPredict Activity
-                    });;
+                    healthAIPredictButton.setOnClickListener(view -> {
+                        if (loggedInUser != null) {
+                            Intent intent = new Intent(LandingPage.this, AIPredictMainPage.class);
+                            intent.putExtra("loggedInUser", loggedInUser);
+                            Log.d("mydebug", loggedInUser.getUsername());
+                            startActivity(intent);
+                            finish();
+                        }
+                    });
                 }
                 else {
                     healthAIButtonPLACEHOLDER.setOnClickListener(view -> {
@@ -148,7 +140,7 @@ public class LandingPage extends AppCompatActivity {
                         startActivity(intent);
                     });
 
-                    AIPredictPLACEHOLDER.setOnClickListener(view -> {
+                    healthAIPredictButton.setOnClickListener(view -> {
                         Intent intent = new Intent(LandingPage.this, SubscriptionPage.class);
                         intent.putExtra("loggedInUser", loggedInUser);
                         startActivity(intent);

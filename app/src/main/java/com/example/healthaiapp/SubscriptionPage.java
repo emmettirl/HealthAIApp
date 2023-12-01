@@ -160,7 +160,11 @@ public class SubscriptionPage extends AppCompatActivity {
             loggedInUser.setStripeID(customerConfig.getId());
             loggedInUser.setPremium(Boolean.TRUE);
             paymentPageButton.setText(R.string.already_subscribed);
-            paymentPageButton.setOnClickListener(null);
+            paymentPageButton.setOnClickListener(view -> {
+                Intent intent = new Intent(SubscriptionPage.this, LandingPage.class);
+                intent.putExtra("loggedInUser", loggedInUser);
+                startActivity(intent);
+            });
             uvm.updateUser(loggedInUser);
             Log.d(TAG, "Completed");
         }
