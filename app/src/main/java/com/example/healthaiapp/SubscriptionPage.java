@@ -14,6 +14,7 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.healthaiapp.data.StripeModel;
 import com.example.healthaiapp.data.User;
 import com.example.healthaiapp.data.UserViewModel;
 import com.github.kittinunf.fuel.Fuel;
@@ -26,11 +27,11 @@ import com.stripe.android.paymentsheet.PaymentSheetResult;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.nio.charset.StandardCharsets;
 
 public class SubscriptionPage extends AppCompatActivity {
 
     UserViewModel uvm;
+    StripeModel sm;
 
 
     private static final String TAG = "SubscriptionPage";
@@ -39,7 +40,6 @@ public class SubscriptionPage extends AppCompatActivity {
     PaymentSheet paymentSheet;
     private String paymentClientSecret;
     PaymentSheet.CustomerConfiguration customerConfig;
-    Boolean premiumCheck = Boolean.FALSE;
     Button paymentPageButton;
 
     @Override
@@ -49,6 +49,7 @@ public class SubscriptionPage extends AppCompatActivity {
         setContentView(R.layout.activity_subscription_page);
 
         uvm = new UserViewModel();
+        sm = new StripeModel();
         paymentSheet = new PaymentSheet(this, this::onPaymentSheetResult);
 
         Intent thisIntent = getIntent();
@@ -76,44 +77,17 @@ public class SubscriptionPage extends AppCompatActivity {
         });
 
         this.stripeID = this.loggedInUser.getStripeID();
-        checkActiveSubscription(stripeID, new SubscriptionCallback(){
+        sm.checkActiveSubscription(stripeID, new StripeModel.SubscriptionCallback(){
             @Override
             public void onSubscriptionCheckCompleted(boolean hasActiveSubscription) {
                 if (hasActiveSubscription) {
-                    premiumCheck = Boolean.TRUE;
                     paymentPageButton.setText(R.string.already_subscribed);
                     paymentPageButton.setOnClickListener(null);
                 }
                 else {
                     paymentPageButton.setText(getString(R.string.subscribe));
-
                     paymentPageButton.setOnClickListener(view -> {
-                        Fuel.INSTANCE.post("http://10.0.2.2:4567/create-subscription", null).responseString(new Handler<String>() {
-
-                            @Override
-                            public void success(String s) {
-                                try {
-                                    final JSONObject result = new JSONObject(s);
-                                    customerConfig = new PaymentSheet.CustomerConfiguration(
-                                            result.getString("customer"),
-                                            result.getString("ephemeralKey")
-                                    );
-
-
-                                    paymentClientSecret = result.getString("clientSecret");
-                                    PaymentConfiguration.init(getApplicationContext(), result.getString("publishableKey"));
-                                    presentPaymentSheet();
-                                    Log.d(TAG, "success: ");
-                                } catch (JSONException e) {
-                                    Log.d(TAG, e.toString());
-                                }
-                            }
-
-                            @Override
-                            public void failure(@NonNull FuelError fuelError) {
-                                Log.d(TAG, "failure: " + fuelError);
-                            }
-                        });
+                        createSubscription();
                     });
                 }
 
@@ -124,32 +98,34 @@ public class SubscriptionPage extends AppCompatActivity {
 
     }
 
-    public interface SubscriptionCallback {
-        void onSubscriptionCheckCompleted(boolean hasActiveSubscription);
-    }
 
-    private void checkActiveSubscription(String stripeID, SubscriptionCallback callback) {
-        Fuel.INSTANCE.post("http://10.0.2.2:4567/check-subscription", null)
-                .body("customerId=" + stripeID, StandardCharsets.UTF_8)
-                .responseString(new Handler<String>() {
-                    @Override
-                    public void success(String s) {
-                        try {
-                            final JSONObject result = new JSONObject(s);
-                            boolean hasActiveSubscription = result.getBoolean("hasActiveSubscription");
-                            callback.onSubscriptionCheckCompleted(hasActiveSubscription);
-                        } catch (JSONException e) {
-                            Log.d(TAG, e.toString());
-                            callback.onSubscriptionCheckCompleted(false);
-                        }
-                    }
+    private void createSubscription(){
+        Fuel.INSTANCE.post("http://10.0.2.2:4567/create-subscription", null).responseString(new Handler<String>() {
 
-                    @Override
-                    public void failure(@NonNull FuelError fuelError) {
-                        Log.d(TAG, "failure: " + fuelError);
-                        callback.onSubscriptionCheckCompleted(false);
-                    }
-                });
+            @Override
+            public void success(String s) {
+                try {
+                    final JSONObject result = new JSONObject(s);
+                    customerConfig = new PaymentSheet.CustomerConfiguration(
+                            result.getString("customer"),
+                            result.getString("ephemeralKey")
+                    );
+
+
+                    paymentClientSecret = result.getString("clientSecret");
+                    PaymentConfiguration.init(getApplicationContext(), result.getString("publishableKey"));
+                    presentPaymentSheet();
+                    Log.d(TAG, "success: ");
+                } catch (JSONException e) {
+                    Log.d(TAG, e.toString());
+                }
+            }
+
+            @Override
+            public void failure(@NonNull FuelError fuelError) {
+                Log.d(TAG, "failure: " + fuelError);
+            }
+        });
     }
 
     private void presentPaymentSheet() {
@@ -175,7 +151,6 @@ public class SubscriptionPage extends AppCompatActivity {
         } else if (paymentSheetResult instanceof PaymentSheetResult.Completed) {
             loggedInUser.setStripeID(customerConfig.getId());
             loggedInUser.setPremium(Boolean.TRUE);
-            premiumCheck = Boolean.TRUE;
             paymentPageButton.setText(R.string.already_subscribed);
             paymentPageButton.setOnClickListener(null);
             uvm.updateUser(loggedInUser);
