@@ -84,7 +84,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/fitnessOverview"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headingLinearLayout" />
@@ -97,7 +97,7 @@
         android:layout_marginTop="60dp"
         android:text="@string/bmi"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fitnessOverviewTitle" />
 
@@ -109,22 +109,30 @@
         android:layout_marginEnd="76dp"
         android:text="@string/bmr"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fitnessOverviewTitle" />
 
-    <TextView
-        android:id="@+id/caloricIntakeRecommendation"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="@string/recommended_caloric_intake"
-        android:textColor="@color/black"
-        android:textSize="16sp"
+
+    <ScrollView
+        android:layout_width="360dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bmiValue" />
+        app:layout_constraintTop_toBottomOf="@+id/bmiLevelDisplay">
+
+        <TextView
+            android:id="@+id/caloricIntakeRecommendation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/placeholder_paragraph"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="30dp"
+            tools:layout_editor_absoluteY="356dp" />
+
+    </ScrollView>
 
     <TextView
         android:id="@+id/bmiValue"
@@ -134,7 +142,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/placeholder_2_digits"
         android:textColor="@color/black"
-        android:textSize="26sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="@+id/bmiHeader"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -147,7 +155,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/placeholder_4_digits"
         android:textColor="@color/black"
-        android:textSize="26sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="@+id/bmrHeader"
         app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintStart_toStartOf="@+id/bmrHeader"
@@ -158,20 +166,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Low/Med/High"
+        android:text="@string/placeholder_one_word"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/bmiValue"
         app:layout_constraintStart_toStartOf="@+id/bmiValue"
         app:layout_constraintTop_toBottomOf="@+id/bmiValue" />
-
-    <TextView
-        android:id="@+id/bmrLevelDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Low/Med/High"
-        app:layout_constraintEnd_toEndOf="@+id/bmrValueText"
-        app:layout_constraintHorizontal_bias="0.457"
-        app:layout_constraintStart_toStartOf="@+id/bmrValueText"
-        app:layout_constraintTop_toBottomOf="@+id/bmrValueText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

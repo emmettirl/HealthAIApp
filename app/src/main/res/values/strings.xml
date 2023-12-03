@@ -94,7 +94,21 @@
     <string name="fitnessOverview">Body Overview</string>
     <string name="bmi">BMI</string>
     <string name="bmr">BMR</string>
-    <string name="recommended_caloric_intake">Recommended caloric intake placeholder. This should display the values the user burns, and how much they should consume to lose/maintain/gain weight gradually. Sprint 3 TO DO</string>
+    <string name="recommended_caloric_intake_overweight">If your BMI is above normal, you need to lose weight to stay healthy. Below is information on losing weight. \n \n
+In order to lose weight, you must consume fewer calories than your BMR is at. More exercise will increase the number of calories you burn, but make sure that a good diet is your main plan of action for weight loss. We can offer you some tips below. \n \n
+- Eat fewer calorie-dense foods; this will help you reduce cravings. \n
+- Eating more filling foods such as vegetables or proteins, as these foods will make you feel full longer and not give in to temptations to snack. \n
+- Remember to eat something you like, as it is important you stick to a diet you will not be discouraged by. With the right nutrients and preparation, you can still eat your favorite dishes! \n \n
+Remember to read the food labels and prepare food accordingly, and keep in mind that 1 kilogram of body fat is around 7700 calories. Always make sure you stay within the daily recommended amounts of nutrients such as salt, fat, calcium, vitamins, or sugar, and make sure your plan accommodates your liking.</string>
+    <string name="recommended_caloric_intake_underweight">If your BMI is below normal, you need to gain weight to stay healthy. Below is information on gaining weight. \n \n
+        In order to gain weight, you must consume more calories than your BMR is at. Keep in mind this formula may not be accurate to you, and you may need to consume some more.We can offer you some tips below.\n \n
+        - Eat more calorie dense foods, this will help you eat smaller food sizes but gain more calories. \n
+        - Eating less filling foods like vegetables or proteins, as these foods will make you feel full longer. \n
+        - Allow yourself some snacking, but make sure to not overdo it. These can still be unhealthy since they contain nutrients you should not eat too much of. \n
+        - Remember to eat something you like, as it is important you stick to a diet you will not be discouraged by. With the right nutrients and preparation, you can still eat your favourite dishes! \n \n
+        Remember to read the food labels and prepare food accordingly, and keep in mind that even though 1 kilogram of body-fat is around 7700 calories, you should not aim for that much. For most people, 3000 is a good amount.Rapid weight gain is not a positive thing, so make sure to make it a steady growth. \n
+        Always make sure you stay within the daily recommended amounts of nutrients such as salt, fat, calcium, vitamins or sugar, and make sure your plan accommodates your liking. Additionally, if you feel like you still don\'t look fine, you may be suffering from body dysmorphia. Please, contact a professional in this regard. </string>
+    <string name="recommended_caloric_intake_normal">Your BMI is normal! You can continue to eat as much as you do right now, but make sure to keep in mind for your daily recommended amounts of nutrients such as salt, fat,calcium, vitamins or sugar. It is important that you not only stay in a healthy weight range, but also consume the correct nutrients.  </string>
     <!--endregion -->
 
     <!--region USER PAGE -->

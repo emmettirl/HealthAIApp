@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.healthaiapp.data.User;
 
-import java.text.BreakIterator;
 import java.util.Locale;
 
 public class FitnessOverviewPage extends AppCompatActivity {
@@ -61,7 +60,7 @@ public class FitnessOverviewPage extends AppCompatActivity {
         String bmiValue = String.format(Locale.getDefault(), "%.2f", bmi);
 
         bmiValueText.setText(bmiValue);
-        setBmiColorDisplay(bmi);
+        setTextDisplay(bmi);
         //endregion
 
         //region Nav Buttons
@@ -90,9 +89,10 @@ public class FitnessOverviewPage extends AppCompatActivity {
         }
     }
 
-    private void setBmiColorDisplay(double bmi) {
+    private void setTextDisplay(double bmi) {
         // Assuming you have a TextView named bmiLevelDisplay
         TextView bmiLevelDisplay = findViewById(R.id.bmiLevelDisplay);
+        TextView caloricIntakeRecommendation = findViewById(R.id.caloricIntakeRecommendation);
 
         // Define BMI ranges for categories
         double underweightThreshold = 18.5;
@@ -103,15 +103,19 @@ public class FitnessOverviewPage extends AppCompatActivity {
         if (bmi < underweightThreshold) {
             bmiLevelDisplay.setText("Underweight");
             bmiLevelDisplay.setTextColor(Color.BLUE);
+            caloricIntakeRecommendation.setText(R.string.recommended_caloric_intake_underweight);
         } else if (bmi <= normalWeightThreshold) {
             bmiLevelDisplay.setText("Normal");
             bmiLevelDisplay.setTextColor(Color.GREEN);
+            caloricIntakeRecommendation.setText(R.string.recommended_caloric_intake_normal);
         } else if (bmi <= overweightThreshold) {
             bmiLevelDisplay.setText("Overweight");
             bmiLevelDisplay.setTextColor(Color.rgb(255, 165, 0));
+            caloricIntakeRecommendation.setText(R.string.recommended_caloric_intake_overweight);
         } else {
             bmiLevelDisplay.setText("Obese");
             bmiLevelDisplay.setTextColor(Color.RED);
+            caloricIntakeRecommendation.setText(R.string.recommended_caloric_intake_overweight);
         }
     }
 }
