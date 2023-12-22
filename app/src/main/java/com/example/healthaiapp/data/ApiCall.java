@@ -34,7 +34,7 @@ public class ApiCall extends AsyncTask<Void, Void, ApiCall.ApiResponse> {
 
             try {
                 // Request method + header
-                urlConnection.setRequestMethod("POST");
+                urlConnection.setRequestMethod("GET");
                 urlConnection.setRequestProperty("Content-Type", "application/json");
 
                 urlConnection.setDoOutput(true);
