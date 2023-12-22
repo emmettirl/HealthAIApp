@@ -10,7 +10,7 @@
 
     <!--region HEADER-->
     <ImageView
-        android:id="@+id/Logo"
+        android:id="@+id/header_bar"
         android:layout_width="match_parent"
         android:layout_height="102dp"
         android:adjustViewBounds="true"
@@ -31,10 +31,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Logo" />
+        app:layout_constraintTop_toTopOf="@+id/header_bar" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logo"
         android:layout_width="91dp"
         android:layout_height="86dp"
         android:layout_marginStart="4dp"
