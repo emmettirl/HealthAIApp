@@ -41,7 +41,7 @@
         android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@raw/logo_white" />
+        app:srcCompat="@raw/logo_white" />
     <!--endregion-->
 
     <ImageButton
