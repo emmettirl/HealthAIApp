@@ -26,6 +26,7 @@ public class AIPredictMainPage extends AppCompatActivity {
 
         if (getIntent().hasExtra("loggedInUser")) {
             loggedInUser = (User) getIntent().getSerializableExtra("loggedInUser");
+            sendApiRequest();
         }
     }
 
