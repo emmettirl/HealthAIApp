@@ -28,7 +28,7 @@ public class FitnessPage extends AppCompatActivity {
         });
         //endregion
 
-        ImageButton bodyOverviewPage = findViewById(R.id.fitnessOverviewButton);
+        ImageButton bodyOverviewPage = findViewById(R.id.healthAIButton);
         ImageButton fitnessPlansPage = findViewById(R.id.fitnessPlansButton);
 
 

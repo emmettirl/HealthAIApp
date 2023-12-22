@@ -79,7 +79,7 @@ public class LandingPage extends AppCompatActivity {
         //endregion
 
         //region Quick Access Buttons
-        ImageButton healthAIButtonPLACEHOLDER = findViewById(R.id.fitnessOverviewButton);
+        ImageButton healthAIButtonPLACEHOLDER = findViewById(R.id.healthAIButton);
         ImageButton ratingButton = findViewById(R.id.RatingQuickAccessImageButton);
         ImageButton subscriptionButton = findViewById(R.id.subscriptionQuickAccessImageButton);
         ImageButton supportButton = findViewById(R.id.supportQuickAccessImageButton);

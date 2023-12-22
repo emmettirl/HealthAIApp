@@ -30,7 +30,7 @@
 
     </LinearLayout>
 
-    <!--WEIGHT LOSS EXPANDABLE-->
+
     <LinearLayout
         android:layout_width="350dp"
         android:layout_height="wrap_content"

@@ -30,7 +30,7 @@
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/fitnessOverviewButton"
+        android:id="@+id/healthAIButton"
         android:layout_width="200dp"
         android:layout_height="80dp"
         app:layout_constraintStart_toEndOf="@+id/fitnessOverviewImage"
@@ -48,7 +48,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/fitnessOverviewText"
+        android:id="@+id/healthAITex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -56,8 +56,8 @@
         android:text="@string/fitnessOverview"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/fitnessOverviewButton"
-        app:layout_constraintTop_toTopOf="@+id/fitnessOverviewButton" />
+        app:layout_constraintStart_toStartOf="@+id/healthAIButton"
+        app:layout_constraintTop_toTopOf="@+id/healthAIButton" />
 
     <ImageButton
         android:id="@+id/fitnessPlansButton"
@@ -74,7 +74,7 @@
         android:layout_marginStart="56dp"
         android:layout_marginTop="36dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fitnessOverviewButton"
+        app:layout_constraintTop_toBottomOf="@+id/healthAIButton"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
