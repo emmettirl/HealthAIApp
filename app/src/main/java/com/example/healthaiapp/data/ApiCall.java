@@ -12,13 +12,15 @@ import java.util.List;
 
 import com.google.gson.Gson;
 
+import org.json.JSONObject;
+
 public class ApiCall extends AsyncTask<Void, Void, ApiCall.ApiResponse> {
 
     private ApiCallback callback;
     private String apiUrl;
     private Object requestBody;
 
-    public ApiCall(String apiUrl, Object requestBody, ApiCallback callback) {
+    public ApiCall(String apiUrl, JSONObject requestBody, ApiCallback callback) {
         this.apiUrl = apiUrl;
         this.requestBody = requestBody;
         this.callback = callback;
@@ -34,14 +36,14 @@ public class ApiCall extends AsyncTask<Void, Void, ApiCall.ApiResponse> {
 
             try {
                 // Request method + header
-                urlConnection.setRequestMethod("GET");
+                urlConnection.setRequestMethod("POST");
                 urlConnection.setRequestProperty("Content-Type", "application/json");
 
                 urlConnection.setDoOutput(true);
 
                 // Request Body
                 OutputStream outputStream = urlConnection.getOutputStream();
-                outputStream.write(convertObjectToJson(requestBody).getBytes());
+                outputStream.write(requestBody.toString().getBytes());
                 outputStream.flush();
                 outputStream.close();
 

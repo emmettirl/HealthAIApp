@@ -7,11 +7,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.healthaiapp.data.ApiCall;
 import com.example.healthaiapp.data.ApiCall.ApiResponse;
-import com.example.healthaiapp.data.ApiCall.SymptomsRequestBody;
 import com.example.healthaiapp.data.User;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.Arrays;
-import java.util.List;
 
 
 public class AIPredictMainPage extends AppCompatActivity {
@@ -32,7 +33,8 @@ public class AIPredictMainPage extends AppCompatActivity {
 
     private void sendApiRequest() {
         String apiUrl = "http://10.0.2.2:5000/predictAI";
-        Object requestBody = createRequestBody(); // Create your request body here
+        JSONObject requestBody = createRequestBody(); // Create your request body here
+        Log.d(TAG, "sendApiRequest: " + requestBody);
 
         // Create an instance of ApiCall
         ApiCall apiCall = new ApiCall(apiUrl, requestBody, new ApiCall.ApiCallback() {
@@ -51,14 +53,23 @@ public class AIPredictMainPage extends AppCompatActivity {
                 }
             }
         });
-
         apiCall.execute();
     }
 
-    private Object createRequestBody() {
-        // Create and return your request body object here
-        // Example: new YourRequestBodyClass(parameters);
-        List<String> symptomsList = Arrays.asList("redness_of_eyes", "restlessness", "runny_nose");
-        return new SymptomsRequestBody(symptomsList);
+    private JSONObject createRequestBody() {
+        try {
+            // Create a JSON object
+            JSONObject requestBody = new JSONObject();
+
+            // Add the symptoms list to the JSON object
+            JSONArray symptomsJsonArray = new JSONArray(Arrays.asList("redness_of_eyes", "restlessness", "runny_nose"));
+
+            requestBody.put("symptomsList", symptomsJsonArray);
+
+            return requestBody;
+        } catch (Exception e) {
+            Log.e(TAG, "Error in creating request body", e);
+            return null;
+        }
     }
 }
