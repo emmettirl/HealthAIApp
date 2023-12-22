@@ -21,14 +21,14 @@ public class FitnessPage extends AppCompatActivity {
 
         //region Nav Buttons
         Button userProfileButton = findViewById(R.id.userProfileNavButton);
-        Button healthAIPredictButton = findViewById(R.id.AIPredictNavButton);
+        Button healthAIPredictButton = findViewById(R.id.homeNavButton);
         userProfileButton.setOnClickListener(view -> {
             Intent intent = new Intent(FitnessPage.this, UserProfilePage.class);
             startActivity(intent);
         });
         //endregion
 
-        ImageButton bodyOverviewPage = findViewById(R.id.fitnessOverviewButton);
+        ImageButton bodyOverviewPage = findViewById(R.id.healthAIButton);
         ImageButton fitnessPlansPage = findViewById(R.id.fitnessPlansButton);
 
 

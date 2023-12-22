@@ -30,7 +30,7 @@
 
     </LinearLayout>
 
-    <!--WEIGHT LOSS EXPANDABLE-->
+
     <LinearLayout
         android:layout_width="350dp"
         android:layout_height="wrap_content"
@@ -106,7 +106,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/AIPredictNavButton"
+        android:id="@+id/homeNavButton"
         android:layout_width="110dp"
         android:layout_height="48dp"
         android:layout_marginStart="160dp"

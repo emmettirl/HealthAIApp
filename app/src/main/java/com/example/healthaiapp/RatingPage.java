@@ -36,7 +36,7 @@ public class RatingPage  extends AppCompatActivity {
 
         //region Nav Buttons
         Button userProfileButton = findViewById(R.id.userProfileNavButton);
-        Button AIPredictPLACEHOLDER = findViewById(R.id.AIPredictNavButton);
+        Button AIPredictPLACEHOLDER = findViewById(R.id.homeNavButton);
         Button FitnessPageButton = findViewById(R.id.FitnessNavButton);
         userProfileButton.setOnClickListener(view -> {
             Intent intent = new Intent(RatingPage.this, UserProfilePage.class);

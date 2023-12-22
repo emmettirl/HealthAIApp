@@ -34,7 +34,7 @@ public class UserProfilePage extends AppCompatActivity {
 
         //region Nav Buttons
         Button editUserProfileButton = findViewById(R.id.editUserDetailsButton);
-        Button AIPredictPLACEHOLDER = findViewById(R.id.AIPredictNavButton);
+        Button AIPredictPLACEHOLDER = findViewById(R.id.homeNavButton);
         Button fitnessPageButton = findViewById(R.id.FitnessNavButton);
 
         fitnessPageButton.setOnClickListener(
