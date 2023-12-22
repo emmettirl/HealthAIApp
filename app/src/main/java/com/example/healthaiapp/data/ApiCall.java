@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
 import com.google.gson.Gson;
 
@@ -109,6 +110,23 @@ public class ApiCall extends AsyncTask<Void, Void, ApiCall.ApiResponse> {
 
         public String getError() {
             return error;
+        }
+    }
+
+    public static class SymptomsRequestBody {
+        private List<String> symptoms;
+
+        public SymptomsRequestBody(List<String> symptoms) {
+            this.symptoms = symptoms;
+        }
+
+        // Getter and Setter
+        public List<String> getSymptoms() {
+            return symptoms;
+        }
+
+        public void setSymptoms(List<String> symptoms) {
+            this.symptoms = symptoms;
         }
     }
 }
