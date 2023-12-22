@@ -2,7 +2,6 @@ package com.example.healthaiapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.ToggleButton;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,7 +33,7 @@ public class ContactPage extends AppCompatActivity {
         //region Nav Buttons
 
         Button userProfileButton = findViewById(R.id.userProfileNavButton);
-        Button healthAIPredictButton = findViewById(R.id.AIPredictNavButton);
+        Button healthAIPredictButton = findViewById(R.id.homeNavButton);
         Button FitnessPageButton = findViewById(R.id.FitnessNavButton);
         userProfileButton.setOnClickListener(view -> {
             Intent intent = new Intent(ContactPage.this, UserProfilePage.class);

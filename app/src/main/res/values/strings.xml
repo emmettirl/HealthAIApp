@@ -11,6 +11,7 @@
     <!--endregion -->
 
     <!--region GLOBAL USAGE -->
+    <string name="home">Home</string>
     <string name="name">Name</string>
     <string name="insurance">Insurance</string>
     <string name="gp">GP</string>
@@ -24,6 +25,23 @@
     <string name="submit">Submit</string>
     <string name="back">Back</string>
     <!--endregion -->
+
+    <!--region PAGE TITLES-->
+    <string name="landing_page">Home</string>
+    <string name="contact_page">Contact</string>
+    <string name="ai_predict">Health AI Chat</string>
+    <string name="rating_page">Reviews</string>
+    <string name="fitness_page">Fitness</string>
+    <string name="body_overview">Body Overview</string>
+    <string name="fitness_plan_page">Fitness Plans</string>
+    <string name="user_details_page">User Details</string>
+    <string name="user_profile_page">User Profile</string>
+    <string name="login_page">Login</string>
+    <string name="register_page">Register</string>
+    <string name="subscription_page">Subscription</string>
+
+
+    <!--endregion-->
 
     <!--region LOGIN PAGE -->
     <string name="login">Login</string>
@@ -54,7 +72,7 @@
     <!--endregion -->
 
     <!--region SUBSCRIPTION PAGE -->
-    <string name="subscription_page">Health AI&#10;Subscription</string>
+    <string name="subscription_page_header">Health AI&#10;Subscription</string>
     <string name="subscribe">Proceed To Payment</string>
     <string name="subscribe_benefits">Discover The Benefits</string>
     <string name="subscribe_benefit_1">Benefit 1</string>
@@ -63,7 +81,7 @@
     <!--endregion -->
 
     <!--region RATING PAGE -->
-    <string name="rating_page">Rating &amp; Reviews</string>
+    <string name="rating_page_header">Rating &amp; Reviews</string>
     <string name="leave_a_rating">Leave A Rating</string>
     <string name="existing_ratings">Existing Ratings</string>
     <!--endregion -->
@@ -82,7 +100,7 @@
     <!--endregion -->
 
     <!--region CONTACT PAGE -->
-    <string name="contact_page">Contact&#10;Professionals</string>
+    <string name="contact_page_title">Contact&#10;Professionals</string>
     <string name="who_to_contact">Who are you contacting?</string>
     <string name="why_need_help">What do you need help with?</string>
     <string name="provide_details">Provide some details</string>

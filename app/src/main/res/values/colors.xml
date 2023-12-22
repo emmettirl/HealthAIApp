@@ -2,6 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="bright_cyan">#00CCFF</color>
+    <color name="bright_blue">#00CCDD</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primary">#3276dd</color>
     <color name="complementary">#dd9832</color>
@@ -10,4 +11,9 @@
     <color name="triadic1">#9832dd</color>
     <color name="triadic2">#dd3276</color>
     <color name="hintTextColor">#000000</color>
+    <color name="almost_black">#101115</color>
+    <color name="dark_grey">#3A3E4C</color>
+    <color name="accent_grey">#3A4963</color>
+    <color name="dark_cyan">#0085A1</color>
+    <color name="accent_blue">#416DDB</color>
 </resources>
