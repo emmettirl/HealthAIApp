@@ -62,7 +62,7 @@ public class SubscriptionPage extends AppCompatActivity {
 
         //region Nav Buttons
         Button userProfileButton = findViewById(R.id.userProfileNavButton);
-        Button AIPredictPLACEHOLDER = findViewById(R.id.AIPredictNavButton);
+        Button AIPredictPLACEHOLDER = findViewById(R.id.homeNavButton);
         Button FitnessPageButton = findViewById(R.id.FitnessNavButton);
         this.paymentPageButton = findViewById(R.id.SubscriptionPaymentButton);
 

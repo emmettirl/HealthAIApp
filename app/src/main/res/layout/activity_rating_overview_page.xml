@@ -64,7 +64,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/AIPredictNavButton"
+        android:id="@+id/homeNavButton"
         android:layout_width="110dp"
         android:layout_height="48dp"
         android:layout_marginStart="160dp"
@@ -83,7 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
-        android:text="@string/rating_page"
+        android:text="@string/rating_page_header"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

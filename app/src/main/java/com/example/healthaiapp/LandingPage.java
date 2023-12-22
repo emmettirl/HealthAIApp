@@ -36,9 +36,8 @@ public class LandingPage extends AppCompatActivity {
         }
 
         //region Nav Buttons
-        Button userProfileButton = findViewById(R.id.userProfileNavButton);
-        Button healthAIPredictButton = findViewById(R.id.AIPredictNavButton);
-        Button fitnessPageButton = findViewById(R.id.FitnessNavButton);
+        ImageButton userProfileButton = findViewById(R.id.userProfileNavButton);
+        ImageButton fitnessPageButton = findViewById(R.id.FitnessNavButton);
 
         fitnessPageButton.setOnClickListener(
             new View.OnClickListener() {
@@ -79,7 +78,7 @@ public class LandingPage extends AppCompatActivity {
         //endregion
 
         //region Quick Access Buttons
-        ImageButton healthAIButtonPLACEHOLDER = findViewById(R.id.fitnessOverviewButton);
+        ImageButton healthAIButtonPLACEHOLDER = findViewById(R.id.healthAIButton);
         ImageButton ratingButton = findViewById(R.id.RatingQuickAccessImageButton);
         ImageButton subscriptionButton = findViewById(R.id.subscriptionQuickAccessImageButton);
         ImageButton supportButton = findViewById(R.id.supportQuickAccessImageButton);
@@ -119,25 +118,9 @@ public class LandingPage extends AppCompatActivity {
                             finish();
                         }
                     });
-
-                    healthAIPredictButton.setOnClickListener(view -> {
-                        if (loggedInUser != null) {
-                            Intent intent = new Intent(LandingPage.this, AIPredictMainPage.class);
-                            intent.putExtra("loggedInUser", loggedInUser);
-                            Log.d("mydebug", loggedInUser.getUsername());
-                            startActivity(intent);
-                            finish();
-                        }
-                    });
                 }
                 else {
                     healthAIButtonPLACEHOLDER.setOnClickListener(view -> {
-                        Intent intent = new Intent(LandingPage.this, SubscriptionPage.class);
-                        intent.putExtra("loggedInUser", loggedInUser);
-                        startActivity(intent);
-                    });
-
-                    healthAIPredictButton.setOnClickListener(view -> {
                         Intent intent = new Intent(LandingPage.this, SubscriptionPage.class);
                         intent.putExtra("loggedInUser", loggedInUser);
                         startActivity(intent);
