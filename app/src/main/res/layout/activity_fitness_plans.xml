@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <LinearLayout
         android:id="@+id/headingLinearLayout"
         android:layout_width="match_parent"
@@ -29,65 +30,46 @@
 
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/fitnessOverviewButton"
-        android:layout_width="200dp"
-        android:layout_height="80dp"
-        app:layout_constraintStart_toEndOf="@+id/fitnessOverviewImage"
-        app:layout_constraintTop_toTopOf="@+id/fitnessOverviewImage"
-        android:src="@drawable/test_background" />
-
-    <ImageView
-        android:id="@+id/fitnessOverviewImage"
-        android:layout_width="82dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="36dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fitnessWelcomeTitle"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/fitnessOverviewText"
-        android:layout_width="wrap_content"
+    <!--WEIGHT LOSS EXPANDABLE-->
+    <LinearLayout
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="@string/fitnessOverview"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/fitnessOverviewButton"
-        app:layout_constraintTop_toTopOf="@+id/fitnessOverviewButton" />
-
-    <ImageButton
-        android:id="@+id/fitnessPlansButton"
-        android:layout_width="200dp"
-        android:layout_height="80dp"
-        app:layout_constraintStart_toEndOf="@+id/fitnessPlansImage"
-        app:layout_constraintTop_toTopOf="@+id/fitnessPlansImage"
-        android:src="@drawable/test_background" />
-
-    <ImageView
-        android:id="@+id/fitnessPlansImage"
-        android:layout_width="82dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="36dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fitnessOverviewButton"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/headingLinearLayout">
 
-    <TextView
-        android:id="@+id/fitnessPlansText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/fitnessPlans"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/fitnessPlansButton"
-        app:layout_constraintTop_toTopOf="@+id/fitnessPlansButton" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:onClick="toggleSection"
+            android:padding="8dp"
+            android:text="Expandable Section"
+            android:textSize="18sp" />
+
+        <ScrollView
+            android:id="@+id/expandableContent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your expandable text goes here" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/FitnessNavButton"
@@ -97,6 +79,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/button_style_1"
+        android:backgroundTint="#00DBFF"
         android:text="@string/fitness_button"
         android:textColor="#000000"
         android:textSize="11sp"
@@ -113,6 +96,7 @@
         android:layout_marginEnd="304dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/button_style_1"
+        android:backgroundTint="#00DBFF"
         android:text="@string/user_profile_button"
         android:textColor="#000000"
         android:textSize="11sp"
@@ -121,7 +105,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- THIS ONE WONT LEAD TO ANYWHERE IN SPRINT 1! -->
     <Button
         android:id="@+id/AIPredictNavButton"
         android:layout_width="110dp"
@@ -136,19 +119,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/fitnessWelcomeTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="@string/welcome_back"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headingLinearLayout" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

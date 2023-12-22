@@ -106,9 +106,6 @@ public class LandingPage extends AppCompatActivity {
             }
         });
 
-
-
-
         sm.checkActiveSubscription(this.loggedInUser.getStripeID(), new StripeModel.SubscriptionCallback(){
             @Override
             public void onSubscriptionCheckCompleted(boolean hasActiveSubscription) {

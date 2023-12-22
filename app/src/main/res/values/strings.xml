@@ -91,6 +91,7 @@
     <!--endregion -->
 
     <!--region FITNESS PAGE -->
+    <string name="fitnessPlans">Fitness Plans</string>
     <string name="fitnessOverview">Body Overview</string>
     <string name="bmi">BMI</string>
     <string name="bmr">BMR</string>
