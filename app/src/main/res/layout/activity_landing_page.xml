@@ -21,7 +21,8 @@
             android:id="@+id/Logo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            app:src=""/>
 
         <TextView
             android:id="@+id/Heading"
@@ -94,22 +95,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/fitnessOverviewImage"
-        android:layout_width="82dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="252dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
-
     <ImageButton
         android:id="@+id/fitnessOverviewButton"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="80dp"
-        app:layout_constraintStart_toEndOf="@+id/fitnessOverviewImage"
-        app:layout_constraintTop_toTopOf="@+id/fitnessOverviewImage"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:srcCompat="@drawable/test_background" />
 
     <TextView
@@ -124,72 +118,49 @@
         app:layout_constraintStart_toStartOf="@+id/fitnessOverviewButton"
         app:layout_constraintTop_toTopOf="@+id/fitnessOverviewButton" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="82dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fitnessOverviewImage"
-        tools:src="@tools:sample/avatars" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="82dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        tools:src="@tools:sample/avatars" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="82dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        tools:src="@tools:sample/avatars" />
-
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
-        android:layout_marginBottom="36dp"
         android:text="@string/quick_access"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/fitnessOverviewImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LandingPageWelcomeText" />
 
     <ImageButton
         android:id="@+id/RatingQuickAccessImageButton"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="80dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fitnessOverviewButton"
         app:srcCompat="@drawable/test_background" />
 
     <ImageButton
         android:id="@+id/subscriptionQuickAccessImageButton"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="80dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RatingQuickAccessImageButton"
         app:srcCompat="@drawable/test_background" />
 
     <ImageButton
         android:id="@+id/supportQuickAccessImageButton"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="80dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subscriptionQuickAccessImageButton"
         app:srcCompat="@drawable/test_background" />
 
     <TextView
