@@ -18,7 +18,8 @@ import java.util.Arrays;
 public class AIPredictMainPage extends AppCompatActivity {
     private User loggedInUser;
     private static final String TAG = AIPredictMainPage.class.getSimpleName();
-
+    String symptomLabels;
+    String prediction;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +28,39 @@ public class AIPredictMainPage extends AppCompatActivity {
 
         if (getIntent().hasExtra("loggedInUser")) {
             loggedInUser = (User) getIntent().getSerializableExtra("loggedInUser");
-            sendApiRequest();
+            symptomLabelsApiRequest();
+            sendPredictionApiRequest();
         }
     }
 
-    private void sendApiRequest() {
+    private void symptomLabelsApiRequest() {
+        String apiUrl = "http://10.0.2.2:5000/symptomsList";
+        JSONObject requestBody = new JSONObject(); // Create your request body here
+        Log.d(TAG, "sendApiRequest: " + requestBody);
+
+        // Create an instance of ApiCall
+        ApiCall apiCall = new ApiCall(apiUrl, requestBody, new ApiCall.ApiCallback() {
+            @Override
+            public void onApiCallComplete(ApiResponse result) {
+                if (result.getError() == null) {
+                    // Handle the successful response here
+                    String response = result.getStringValue();
+                    // Do something with the response
+                    Log.d(TAG, "onApiCallComplete: " + response);
+                    symptomLabels = response;
+                } else {
+                    // Handle the error here
+                    String error = result.getError();
+                    // Do something with the error
+                    Log.d(TAG, "onApiCallComplete: " + error);
+                }
+            }
+        });
+        apiCall.execute();
+
+    }
+
+    private void sendPredictionApiRequest() {
         String apiUrl = "http://10.0.2.2:5000/predictAI";
         JSONObject requestBody = createRequestBody(); // Create your request body here
         Log.d(TAG, "sendApiRequest: " + requestBody);
@@ -45,6 +74,7 @@ public class AIPredictMainPage extends AppCompatActivity {
                     String response = result.getStringValue();
                     // Do something with the response
                     Log.d(TAG, "onApiCallComplete: " + response);
+                    prediction = response;
                 } else {
                     // Handle the error here
                     String error = result.getError();
