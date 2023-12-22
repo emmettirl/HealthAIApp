@@ -31,7 +31,7 @@ public class AIPredictMainPage extends AppCompatActivity {
     }
 
     private void sendApiRequest() {
-        String apiUrl = "http://127.0.0.1:5000/predictAI";
+        String apiUrl = "http://10.0.2.2:5000/predictAI";
         Object requestBody = createRequestBody(); // Create your request body here
 
         // Create an instance of ApiCall
