@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import com.example.healthaiapp.data.User;
 import androidx.appcompat.app.AppCompatActivity;
@@ -90,7 +89,7 @@ public class FitnessPage extends AppCompatActivity {
                         Log.d("TAG", loggedInUser.getUsername());
 
                         if (loggedInUser != null) {
-                            Intent intent = new Intent(FitnessPage.this, FitnessPlanPage.class);
+                            Intent intent = new Intent(FitnessPage.this, NutritionPage.class);
                             intent.putExtra("loggedInUser", loggedInUser);
                             Log.d("mydebug", loggedInUser.getUsername());
                             startActivity(intent);

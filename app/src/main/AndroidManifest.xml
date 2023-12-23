@@ -75,7 +75,7 @@
             android:name=".AIPredictMainPage"
             android:exported="false" />
         <activity
-            android:name=".FitnessPlanPage"
+            android:name=".NutritionPage"
             android:exported="false" />
         <activity
             android:name=".Register"

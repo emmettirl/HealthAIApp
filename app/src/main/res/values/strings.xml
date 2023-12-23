@@ -109,7 +109,7 @@
     <!--endregion -->
 
     <!--region FITNESS PAGE -->
-    <string name="fitnessPlans">Fitness Plans</string>
+    <string name="nutritionPage">Nutrition Tips</string>
     <string name="fitnessOverview">Body Overview</string>
     <string name="bmi">BMI</string>
     <string name="bmr">BMR</string>
@@ -128,7 +128,21 @@ Remember to read the food labels and prepare food accordingly, and keep in mind 
         Remember to read the food labels and prepare food accordingly, and keep in mind that even though 1 kilogram of body-fat is around 7700 calories, you should not aim for that much. For most people, 3000 is a good amount.Rapid weight gain is not a positive thing, so make sure to make it a steady growth. \n
         Always make sure you stay within the daily recommended amounts of nutrients such as salt, fat, calcium, vitamins or sugar, and make sure your plan accommodates your liking. Additionally, if you feel like you still don\'t look fine, you may be suffering from body dysmorphia. Please, contact a professional in this regard. </string>
     <string name="recommended_caloric_intake_normal">Your BMI is normal! You can continue to eat as much as you do right now, but make sure to keep in mind for your daily recommended amounts of nutrients such as salt, fat,calcium, vitamins or sugar. It is important that you not only stay in a healthy weight range, but also consume the correct nutrients.  </string>
+
     <!--endregion -->
+
+    <!--region NUTRITION PAGE-->
+
+    <string name="nutrition">Nutrition</string>
+    <string name="fitness_begins_diet">Fitness begins with a good diet!</string>
+    <string name="daily_intake">Daily Recommended Intake</string>
+    <string name="daily_intake_explained">The Daily Recommended Intake is the value of a nutrient which should be enough for the average person to stay healthy. It\'s recommended to not cross over these values in sizeable and prolonged amounts, as it could lead to health issues. For example, excess of salt is best avoided.\n
+    The values are as follows:</string>
+    <string name="protein_intake">Some nutrients however, you might want a lot of. For example, to build muscle, you are recommended to consume 1.2–1.7 grams of protein per kilogram of bodyweight per day.</string>
+    <string name="build_plan">Build your diet and nutrient plan around your needs. Ensure to stay above/below/within your caloric needs. Make sure to get plenty of nutrients and vitamins, but not to overdo it on nutrients like sugar or salt.</string>
+    <!--endregion -->
+
+
 
     <!--region USER PAGE -->
     <string name="age">Age</string>

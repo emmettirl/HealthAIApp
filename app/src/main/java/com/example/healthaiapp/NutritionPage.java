@@ -10,11 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.healthaiapp.data.User;
 
-public class FitnessPlanPage extends AppCompatActivity {
+public class NutritionPage extends AppCompatActivity {
     private User loggedInUser;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fitness_plans);
+        setContentView(R.layout.activity_nutrition);
 
         if (getIntent().hasExtra("loggedInUser")) {
             loggedInUser = (User) getIntent().getSerializableExtra("loggedInUser");
@@ -33,7 +33,7 @@ public class FitnessPlanPage extends AppCompatActivity {
                         Log.d("TAG", loggedInUser.getUsername());
 
                         if (loggedInUser != null) {
-                            Intent intent = new Intent(FitnessPlanPage.this, FitnessPage.class);
+                            Intent intent = new Intent(NutritionPage.this, FitnessPage.class);
                             intent.putExtra("loggedInUser", loggedInUser);
                             Log.d("mydebug", loggedInUser.getUsername());
                             startActivity(intent);
@@ -51,7 +51,7 @@ public class FitnessPlanPage extends AppCompatActivity {
                         Log.d("TAG", loggedInUser.getUsername());
 
                         if (loggedInUser != null) {
-                            Intent intent = new Intent(FitnessPlanPage.this, LandingPage.class);
+                            Intent intent = new Intent(NutritionPage.this, LandingPage.class);
                             intent.putExtra("loggedInUser", loggedInUser);
                             Log.d("mydebug", loggedInUser.getUsername());
                             startActivity(intent);
@@ -69,7 +69,7 @@ public class FitnessPlanPage extends AppCompatActivity {
                         Log.d("TAG", loggedInUser.getUsername());
 
                         if (loggedInUser != null) {
-                            Intent intent = new Intent(FitnessPlanPage.this, UserProfilePage.class);
+                            Intent intent = new Intent(NutritionPage.this, UserProfilePage.class);
                             intent.putExtra("loggedInUser", loggedInUser);
                             Log.d("mydebug", loggedInUser.getUsername());
                             startActivity(intent);

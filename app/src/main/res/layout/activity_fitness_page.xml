@@ -94,7 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="108dp"
         android:layout_marginTop="24dp"
-        android:text="@string/fitnessPlans"
+        android:text="@string/nutritionPage"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/fitnessPlansButton"
