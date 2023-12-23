@@ -61,7 +61,7 @@ public class FitnessPage extends AppCompatActivity {
 
         //endregion
 
-        ImageButton bodyOverviewPage = findViewById(R.id.healthAIButton);
+        ImageButton bodyOverviewPage = findViewById(R.id.bodyOverviewButton);
         ImageButton fitnessPlansPage = findViewById(R.id.fitnessPlansButton);
 
         bodyOverviewPage.setOnClickListener(
