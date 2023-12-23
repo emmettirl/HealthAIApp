@@ -8,7 +8,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ToggleButton;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+
+import com.example.healthaiapp.data.GPUser;
 import com.example.healthaiapp.data.User;
+import com.example.healthaiapp.data.UserViewModel;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textfield.TextInputEditText;
 import android.net.Uri;
@@ -24,10 +28,16 @@ public class ContactPage extends AppCompatActivity {
     private ImageButton callButton;
     private User loggedInUser;
 
+    GPUser gpUser;
+    UserViewModel uvm;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_page);
+
+        uvm = new UserViewModel();
+
 
         if (getIntent().hasExtra("loggedInUser")) {
             loggedInUser = (User) getIntent().getSerializableExtra("loggedInUser");
@@ -127,9 +137,19 @@ public class ContactPage extends AppCompatActivity {
             } else {
                 // GP Phone
                 phoneNumber = "000";
-//                phoneNumber = loggedInUser.getMedicalDetails().getGpPhoneNumber();
+                uvm.getGPUserPhoneNumberById("e49cRAlS6dQB5tWtWaEFnZe2CC92");
+
+                uvm.getGPUserPhoneNumber().observe(this, new Observer<String>() {
+                    @Override
+                    public void onChanged(String phoneNumber) {
+                        if (phoneNumber != null) {
+                            makeCall(phoneNumber);
+                            // To avoid multiple observations, you can remove the observer after the call is made
+                            uvm.getGPUserPhoneNumber().removeObserver(this);
+                        }
+                    }
+                });
             }
-            makeCall(phoneNumber);
         });
     }
 

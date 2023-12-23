@@ -21,6 +21,7 @@ public class UserViewModel extends ViewModel {
 
     FirebaseDatabase database;
     DatabaseReference dbUsers;
+    private static final String TAG = "UserViewModel";
 
 
     public UserViewModel() {
@@ -124,6 +125,38 @@ public class UserViewModel extends ViewModel {
             }
         });
 
+    }
+
+    private MutableLiveData<String> gpUserPhoneNumber = new MutableLiveData<>();
+
+    public LiveData<String> getGPUserPhoneNumber() {
+        return gpUserPhoneNumber;
+    }
+
+    public void getGPUserPhoneNumberById(String userId) {
+        DatabaseReference dbGPUsers = database.getReference("GPusers");
+
+        dbGPUsers.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    GPUser gpUser = dataSnapshot.getValue(GPUser.class);
+                    if (gpUser != null) {
+                        gpUserPhoneNumber.postValue(gpUser.getPhonenumber());
+                        Log.d(TAG, "onDataChange: GPUser phone number is " + gpUser.getPhonenumber());
+                    } else {
+                        Log.d("MyDebug", "GPUser data is null");
+                    }
+                } else {
+                    Log.d("MyDebug", "GPUser with ID " + userId + " does not exist");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.d("MyDebug", "Error fetching GPUser phone number");
+            }
+        });
     }
 
 
