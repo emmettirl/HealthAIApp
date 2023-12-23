@@ -18,10 +18,10 @@ import java.util.Objects;
 public class ContactPage extends AppCompatActivity {
 
     private ToggleButton contactToggleButton;
-    private Button sendEmailButton;
+    private ImageButton sendEmailButton;
     private TextInputEditText emailTitleInput;
     private TextInputEditText emailContentInput;
-    private Button callButton;
+    private ImageButton callButton;
     private User loggedInUser;
 
     @Override

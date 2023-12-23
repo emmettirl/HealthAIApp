@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.healthaiapp.data.User;
@@ -15,10 +16,10 @@ import com.example.healthaiapp.data.UserViewModel;
 
 public class AdditionalInfo extends AppCompatActivity {
 
-    Button submitButton;
-    Button medicationsButton;
-    Button historyButton;
-    Button backButton;
+    ImageButton submitButton;
+    ImageButton medicationsButton;
+    ImageButton historyButton;
+    ImageButton backButton;
     User user;
     UserViewModel uvm;
 
@@ -39,10 +40,10 @@ public class AdditionalInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_additional_info);
 
-        submitButton = (Button) findViewById(R.id.buttonSubmit);
-        medicationsButton = (Button) findViewById(R.id.buttonMedications);
-        historyButton = (Button) findViewById(R.id.buttonHistory);
-        backButton = (Button) findViewById(R.id.buttonBack);
+        submitButton = (ImageButton) findViewById(R.id.buttonSubmit);
+        medicationsButton = (ImageButton) findViewById(R.id.buttonMedications);
+        historyButton = (ImageButton) findViewById(R.id.buttonHistory);
+        backButton = (ImageButton) findViewById(R.id.buttonBack);
 
 
         uvm = new UserViewModel();

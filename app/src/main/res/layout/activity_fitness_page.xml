@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/almost_black">
 
     <!--region HEADER-->
     <ImageView
@@ -42,64 +43,73 @@
     <!--endregion-->
 
     <ImageButton
-        android:id="@+id/healthAIButton"
-        android:layout_width="200dp"
+        android:id="@+id/bodyOverviewButton"
+        android:layout_width="300dp"
         android:layout_height="80dp"
-        app:layout_constraintStart_toEndOf="@+id/fitnessOverviewImage"
-        app:layout_constraintTop_toTopOf="@+id/fitnessOverviewImage"
-        android:src="@drawable/test_background" />
-
-    <ImageView
-        android:id="@+id/fitnessOverviewImage"
-        android:layout_width="82dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="56dp"
         android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fitnessWelcomeTitle"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@raw/big_button_dark"
+        android:background="@android:color/transparent"/>
 
     <TextView
-        android:id="@+id/healthAIText"
+        android:id="@+id/bodyOverviewButtonText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="24dp"
         android:text="@string/fitnessOverview"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/healthAIButton"
-        app:layout_constraintTop_toTopOf="@+id/healthAIButton" />
+        app:layout_constraintStart_toStartOf="@+id/bodyOverviewButton"
+        app:layout_constraintTop_toTopOf="@+id/bodyOverviewButton" />
+
+    <ImageView
+        android:id="@+id/bodyOverviewIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bodyOverviewButtonText"
+        app:layout_constraintEnd_toStartOf="@+id/bodyOverviewButtonText"
+        app:layout_constraintTop_toTopOf="@+id/bodyOverviewButtonText"
+        app:srcCompat="@raw/body_icon" />
 
     <ImageButton
         android:id="@+id/fitnessPlansButton"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="80dp"
-        app:layout_constraintStart_toEndOf="@+id/fitnessPlansImage"
-        app:layout_constraintTop_toTopOf="@+id/fitnessPlansImage"
-        android:src="@drawable/test_background" />
-
-    <ImageView
-        android:id="@+id/fitnessPlansImage"
-        android:layout_width="82dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/test_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/healthAIButton"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/bodyOverviewButton"
+        app:srcCompat="@raw/big_button_dark"
+        android:background="@android:color/transparent"/>
 
     <TextView
         android:id="@+id/fitnessPlansText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="24dp"
         android:text="@string/fitnessPlans"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/fitnessPlansButton"
         app:layout_constraintTop_toTopOf="@+id/fitnessPlansButton" />
+
+    <ImageView
+        android:id="@+id/FitnessPlansIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/fitnessPlansText"
+        app:layout_constraintEnd_toStartOf="@+id/fitnessPlansText"
+        app:layout_constraintTop_toTopOf="@+id/fitnessPlansText"
+        app:srcCompat="@raw/fitness_icon" />
 
     <!--region NAVBAR -->
     <ImageButton
@@ -186,7 +196,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/welcome_back"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
