@@ -103,11 +103,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="304dp"
         android:layout_marginBottom="4dp"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@raw/small_button_dark"
-        android:background="@android:color/transparent"/>
+        app:srcCompat="@raw/small_button_dark" />
 
     <TextView
         android:id="@+id/userProfileNavButtonText"
@@ -144,7 +144,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/type_a_message"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"/>
+            android:textColorHint="@color/white" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -152,11 +152,11 @@
         android:id="@+id/chatbotSendButton"
         android:layout_width="120dp"
         android:layout_height="60dp"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="@+id/chatbotRecyclerView"
         app:layout_constraintStart_toEndOf="@+id/chatbotTextInput"
         app:layout_constraintTop_toBottomOf="@+id/chatbotRecyclerView"
-        app:srcCompat="@raw/small_button_dark"
-        android:background="@android:color/transparent"/>
+        app:srcCompat="@raw/small_button_dark" />
 
     <ScrollView
         android:layout_width="340dp"

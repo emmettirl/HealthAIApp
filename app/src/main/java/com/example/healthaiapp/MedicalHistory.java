@@ -100,13 +100,13 @@ public class MedicalHistory extends AppCompatActivity {
         //endregion
 
 
-        submitButton = (ImageButton) findViewById(R.id.buttonSubmit);
-        backButton = (ImageButton) findViewById(R.id.buttonBack);
+        submitButton = findViewById(R.id.buttonSubmit);
+        backButton = findViewById(R.id.buttonBack);
 
-        history = (EditText) findViewById(R.id.textInputEditTextHistory);
+        history = findViewById(R.id.textInputEditTextHistory);
 
-        updatedStatus = (TextView) findViewById(R.id.updatedStatus);
-        displayHistory = (TextView)  findViewById(R.id.TextViewDisplayHistory);
+        updatedStatus = findViewById(R.id.updatedStatus);
+        displayHistory = findViewById(R.id.TextViewDisplayHistory);
 
         uvm = new UserViewModel();
 

@@ -15,19 +15,19 @@ public class User implements Serializable {
     Boolean isPremium;
     String stripeID;
 
-    public User(){
+    public User() {
         this.medicalDetails = new MedicalDetails();
 
     }
 
 
-    public User(String username, String password){
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
         this.medicalDetails = new MedicalDetails();
     }
 
-    public User(String username, String password, String fName, String lName, String email){
+    public User(String username, String password, String fName, String lName, String email) {
         this.username = username;
         this.password = password;
         this.fName = fName;
@@ -35,6 +35,7 @@ public class User implements Serializable {
         this.email = email;
         this.medicalDetails = new MedicalDetails();
     }
+
     public String getUsername() {
         return username;
     }
@@ -70,6 +71,7 @@ public class User implements Serializable {
     public void setUsername(String username) {
         this.username = username;
     }
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -89,7 +91,8 @@ public class User implements Serializable {
     public void setMedicalDetails(MedicalDetails medicalDetails) {
         this.medicalDetails = medicalDetails;
     }
-    public void setStripeID(String stripeID){
+
+    public void setStripeID(String stripeID) {
         this.stripeID = stripeID;
     }
 

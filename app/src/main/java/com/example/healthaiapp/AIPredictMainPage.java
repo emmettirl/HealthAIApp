@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -23,14 +22,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
 public class AIPredictMainPage extends AppCompatActivity {
     private User loggedInUser;
     private static final String TAG = AIPredictMainPage.class.getSimpleName();
-    List<String>symptomsList;
+    List<String> symptomsList;
     String prediction;
     RecyclerView recyclerView;
     SymptomRecyclerAdapter adapter;
@@ -49,8 +47,6 @@ public class AIPredictMainPage extends AppCompatActivity {
         symptomsList = new ArrayList<>(); // Initialize as empty list
         adapter = new SymptomRecyclerAdapter(symptomsList);
         recyclerView.setAdapter(adapter);
-
-        // ... rest of your onCreate method ...
 
         if (getIntent().hasExtra("loggedInUser")) {
             loggedInUser = (User) getIntent().getSerializableExtra("loggedInUser");
@@ -129,7 +125,6 @@ public class AIPredictMainPage extends AppCompatActivity {
                     Log.d(TAG, "Selected Item: " + item.getName());
                 }
 
-                // Now pass this list to the method that makes the API call
                 sendPredictionApiRequest(selectedSymptoms);
             }
         });
@@ -142,7 +137,6 @@ public class AIPredictMainPage extends AppCompatActivity {
         JSONObject requestBody = new JSONObject(); // Create your request body here
         Log.d(TAG, "sendApiRequest: " + requestBody);
 
-        // Create an instance of ApiCall
         ApiCall apiCall = new ApiCall(apiUrl, requestBody, new ApiCall.ApiCallback() {
             @Override
             public void onApiCallComplete(ApiResponse result) {
@@ -222,5 +216,4 @@ public class AIPredictMainPage extends AppCompatActivity {
             return null;
         }
     }
-
 }

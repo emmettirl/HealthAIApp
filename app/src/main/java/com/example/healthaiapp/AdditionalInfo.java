@@ -1,15 +1,14 @@
 package com.example.healthaiapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.healthaiapp.data.User;
 import com.example.healthaiapp.data.UserViewModel;
@@ -34,16 +33,15 @@ public class AdditionalInfo extends AppCompatActivity {
     TextView updatedStatus;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_additional_info);
 
-        submitButton = (ImageButton) findViewById(R.id.buttonSubmit);
-        medicationsButton = (ImageButton) findViewById(R.id.buttonMedications);
-        historyButton = (ImageButton) findViewById(R.id.buttonHistory);
-        backButton = (ImageButton) findViewById(R.id.buttonBack);
+        submitButton = findViewById(R.id.buttonSubmit);
+        medicationsButton = findViewById(R.id.buttonMedications);
+        historyButton = findViewById(R.id.buttonHistory);
+        backButton = findViewById(R.id.buttonBack);
 
 
         uvm = new UserViewModel();
@@ -55,16 +53,16 @@ public class AdditionalInfo extends AppCompatActivity {
         }
 
 
-        age = (EditText) findViewById(R.id.textInputEditTextAge);
-        height = (EditText) findViewById(R.id.textInputEditTextHeight);
-        weight = (EditText) findViewById(R.id.textInputEditTextWeight);
-        gender = (EditText) findViewById(R.id.textInputEditTextGender);
-        gpEmail = (EditText) findViewById(R.id.textInputEditTextGpEmail);
-        insuranceEmail = (EditText) findViewById(R.id.textInputEditTextInsuranceEmail);
-        insurancePhone = (EditText) findViewById(R.id.textInputEditTextInsurancePhone);
-        insuranceName = (EditText) findViewById(R.id.textInputEditTextInsuranceName);
+        age = findViewById(R.id.textInputEditTextAge);
+        height = findViewById(R.id.textInputEditTextHeight);
+        weight = findViewById(R.id.textInputEditTextWeight);
+        gender = findViewById(R.id.textInputEditTextGender);
+        gpEmail = findViewById(R.id.textInputEditTextGpEmail);
+        insuranceEmail = findViewById(R.id.textInputEditTextInsuranceEmail);
+        insurancePhone = findViewById(R.id.textInputEditTextInsurancePhone);
+        insuranceName = findViewById(R.id.textInputEditTextInsuranceName);
 
-        updatedStatus = (TextView) findViewById(R.id.updatedStatus);
+        updatedStatus = findViewById(R.id.updatedStatus);
 
         age.setText(user.getMedicalDetails().getAge());
         height.setText(user.getMedicalDetails().getHeight());
@@ -136,7 +134,5 @@ public class AdditionalInfo extends AppCompatActivity {
                     }
                 }
         );
-
-
     }
 }

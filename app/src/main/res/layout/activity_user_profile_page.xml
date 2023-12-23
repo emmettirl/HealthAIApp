@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/almost_black"
     android:theme="@style/Theme.HealthAIApp"
-    tools:context=".LandingPage"
-    android:background="@color/almost_black">
+    tools:context=".LandingPage">
 
     <!--region HEADER-->
     <ImageView
@@ -105,11 +105,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="304dp"
         android:layout_marginBottom="4dp"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@raw/small_button_current_page_dark"
-        android:background="@android:color/transparent"/>
+        app:srcCompat="@raw/small_button_current_page_dark" />
 
     <TextView
         android:id="@+id/userProfileNavButtonText"
@@ -174,11 +174,11 @@
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginBottom="40dp"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toTopOf="@+id/homeNavButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@android:color/transparent"
-        app:srcCompat="@raw/small_button_dark"/>
+        app:srcCompat="@raw/small_button_dark" />
 
     <TextView
         android:id="@+id/textView32"

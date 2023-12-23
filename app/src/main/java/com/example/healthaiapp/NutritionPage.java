@@ -12,6 +12,7 @@ import com.example.healthaiapp.data.User;
 
 public class NutritionPage extends AppCompatActivity {
     private User loggedInUser;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nutrition);

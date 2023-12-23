@@ -47,12 +47,12 @@
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:layout_marginTop="36dp"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fitnessWelcomeTitle"
-        app:srcCompat="@raw/big_button_dark"
-        android:background="@android:color/transparent"/>
+        app:srcCompat="@raw/big_button_dark" />
 
     <TextView
         android:id="@+id/bodyOverviewButtonText"
@@ -81,12 +81,12 @@
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:layout_marginTop="36dp"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bodyOverviewButton"
-        app:srcCompat="@raw/big_button_dark"
-        android:background="@android:color/transparent"/>
+        app:srcCompat="@raw/big_button_dark" />
 
     <TextView
         android:id="@+id/fitnessPlansText"
@@ -170,11 +170,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="304dp"
         android:layout_marginBottom="4dp"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@raw/small_button_dark"
-        android:background="@android:color/transparent"/>
+        app:srcCompat="@raw/small_button_dark" />
 
     <TextView
         android:id="@+id/userProfileNavButtonText"

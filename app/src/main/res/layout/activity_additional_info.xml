@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdditionalInfo"
-    android:background="@color/almost_black">
+    android:background="@color/almost_black"
+    tools:context=".AdditionalInfo">
 
 
     <!--region HEADER-->
@@ -47,9 +47,9 @@
     <ScrollView
         android:layout_width="300dp"
         android:layout_height="0dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header_bar">
 
@@ -247,8 +247,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <FrameLayout
                     android:layout_width="0dp"
@@ -259,8 +259,8 @@
                         android:id="@+id/buttonSubmit"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:srcCompat="@raw/small_button_dark"
-                        android:background="@android:color/transparent"/>
+                        android:background="@android:color/transparent"
+                        app:srcCompat="@raw/small_button_dark" />
 
                     <TextView
                         android:id="@+id/textSubmit"
@@ -269,7 +269,7 @@
                         android:gravity="center"
                         android:text="@string/submit"
                         android:textColor="@color/white"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp" />
                 </FrameLayout>
 
                 <FrameLayout
@@ -281,8 +281,8 @@
                         android:id="@+id/buttonBack"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:srcCompat="@raw/small_button_dark"
-                        android:background="@android:color/transparent"/>
+                        android:background="@android:color/transparent"
+                        app:srcCompat="@raw/small_button_dark" />
 
                     <TextView
                         android:id="@+id/textBack"
@@ -291,7 +291,7 @@
                         android:gravity="center"
                         android:text="@string/back"
                         android:textColor="@color/white"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp" />
                 </FrameLayout>
 
             </LinearLayout>
@@ -299,8 +299,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <FrameLayout
                     android:layout_width="0dp"
@@ -311,8 +311,8 @@
                         android:id="@+id/buttonHistory"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:srcCompat="@raw/small_button_dark"
-                        android:background="@android:color/transparent"/>
+                        android:background="@android:color/transparent"
+                        app:srcCompat="@raw/small_button_dark" />
 
                     <TextView
                         android:id="@+id/textHistory"
@@ -321,7 +321,7 @@
                         android:gravity="center"
                         android:text="@string/medical_history"
                         android:textColor="@color/white"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp" />
                 </FrameLayout>
 
                 <FrameLayout
@@ -333,8 +333,8 @@
                         android:id="@+id/buttonMedications"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:srcCompat="@raw/small_button_dark"
-                        android:background="@android:color/transparent"/>
+                        android:background="@android:color/transparent"
+                        app:srcCompat="@raw/small_button_dark" />
 
                     <TextView
                         android:id="@+id/textMedications"
@@ -343,7 +343,7 @@
                         android:gravity="center"
                         android:text="@string/medications"
                         android:textColor="@color/white"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp" />
                 </FrameLayout>
 
             </LinearLayout>

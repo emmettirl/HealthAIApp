@@ -15,6 +15,7 @@ import com.example.healthaiapp.data.User;
 public class UserProfilePage extends AppCompatActivity {
 
     private User loggedInUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

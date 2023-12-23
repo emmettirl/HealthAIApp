@@ -35,8 +35,6 @@ public class SubscriptionPage extends AppCompatActivity {
 
     UserViewModel uvm;
     StripeModel sm;
-
-
     private static final String TAG = "SubscriptionPage";
     User loggedInUser;
     String stripeID;
@@ -164,7 +162,7 @@ public class SubscriptionPage extends AppCompatActivity {
     }
 
 
-    private void createSubscription(){
+    private void createSubscription() {
         Fuel.INSTANCE.post("http://10.0.2.2:4567/create-subscription", null).responseString(new Handler<String>() {
 
             @Override
@@ -195,7 +193,7 @@ public class SubscriptionPage extends AppCompatActivity {
 
     private void presentPaymentSheet() {
 
-        final PaymentSheet.Configuration configuration = new PaymentSheet.Configuration.Builder("Example, Inc.")
+        final PaymentSheet.Configuration configuration = new PaymentSheet.Configuration.Builder("HealthAI.")
                 .customer(customerConfig)
                 .allowsDelayedPaymentMethods(true)
                 .build();
@@ -205,6 +203,7 @@ public class SubscriptionPage extends AppCompatActivity {
                 configuration
         );
     }
+
     void onPaymentSheetResult(final PaymentSheetResult paymentSheetResult) {
 
         if (paymentSheetResult instanceof PaymentSheetResult.Canceled) {

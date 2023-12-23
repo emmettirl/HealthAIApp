@@ -24,7 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RatingPage  extends AppCompatActivity {
+public class RatingPage extends AppCompatActivity {
     private User loggedInUser;
     private RecyclerView reviewsRecyclerView;
     private ReviewAdapter reviewAdapter;
@@ -137,6 +137,7 @@ public class RatingPage  extends AppCompatActivity {
                 }
                 updateRecyclerView();
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Log.d("Database Retrieval", "Failed to retrieve data");

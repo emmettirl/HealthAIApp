@@ -15,6 +15,7 @@ import com.example.healthaiapp.data.User;
 public class ReviewSuccess extends AppCompatActivity {
 
     private User loggedInUser;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_success_page);

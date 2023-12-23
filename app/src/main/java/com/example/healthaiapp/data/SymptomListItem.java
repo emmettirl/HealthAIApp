@@ -1,7 +1,7 @@
 package com.example.healthaiapp.data;
 
 public class SymptomListItem {
-    private String name;
+    private final String name;
     private boolean isSelected;
 
     public SymptomListItem(String symptomLabel) {

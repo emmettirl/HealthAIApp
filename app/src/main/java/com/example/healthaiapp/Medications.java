@@ -97,20 +97,20 @@ public class Medications extends AppCompatActivity {
 
         //endregion
 
-        submitButton = (ImageButton) findViewById(R.id.buttonSubmit);
-        backButton = (ImageButton) findViewById(R.id.buttonBack);
+        submitButton = findViewById(R.id.buttonSubmit);
+        backButton = findViewById(R.id.buttonBack);
 
-        medication = (EditText) findViewById(R.id.textInputEditTextHistory);
+        medication = findViewById(R.id.textInputEditTextHistory);
 
-        updatedStatus = (TextView) findViewById(R.id.updatedStatus);
-        displayMedications = (TextView)  findViewById(R.id.TextViewDisplayHistory);
+        updatedStatus = findViewById(R.id.updatedStatus);
+        displayMedications = findViewById(R.id.TextViewDisplayHistory);
 
         uvm = new UserViewModel();
 
         Intent thisIntent = getIntent();
         if (thisIntent.hasExtra("loggedInUser")) {
             this.user = (User) thisIntent.getSerializableExtra("loggedInUser");
-            }
+        }
 
         displayMedications.setText(user.getMedicalDetails().getMedications().toString());
 

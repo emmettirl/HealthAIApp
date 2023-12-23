@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.healthaiapp.data.StripeModel;
 import com.example.healthaiapp.data.User;
+
 import android.view.View;
 
 public class LandingPage extends AppCompatActivity {
@@ -40,21 +41,21 @@ public class LandingPage extends AppCompatActivity {
         ImageButton fitnessPageButton = findViewById(R.id.FitnessNavButton);
 
         fitnessPageButton.setOnClickListener(
-            new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Log.d("myDebug", "onClick: ");
-                    Log.d("TAG", loggedInUser.getUsername());
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("myDebug", "onClick: ");
+                        Log.d("TAG", loggedInUser.getUsername());
 
-                    if (loggedInUser != null) {
-                        Intent intent = new Intent(LandingPage.this, FitnessPage.class);
-                        intent.putExtra("loggedInUser", loggedInUser);
-                        Log.d("mydebug", loggedInUser.getUsername());
-                        startActivity(intent);
-                        finish();
+                        if (loggedInUser != null) {
+                            Intent intent = new Intent(LandingPage.this, FitnessPage.class);
+                            intent.putExtra("loggedInUser", loggedInUser);
+                            Log.d("mydebug", loggedInUser.getUsername());
+                            startActivity(intent);
+                            finish();
+                        }
                     }
                 }
-            }
         );
 
         userProfileButton.setOnClickListener(
@@ -105,7 +106,7 @@ public class LandingPage extends AppCompatActivity {
             }
         });
 
-        sm.checkActiveSubscription(this.loggedInUser.getStripeID(), new StripeModel.SubscriptionCallback(){
+        sm.checkActiveSubscription(this.loggedInUser.getStripeID(), new StripeModel.SubscriptionCallback() {
             @Override
             public void onSubscriptionCheckCompleted(boolean hasActiveSubscription) {
                 if (hasActiveSubscription) {
@@ -118,8 +119,7 @@ public class LandingPage extends AppCompatActivity {
                             finish();
                         }
                     });
-                }
-                else {
+                } else {
                     healthAIButtonPLACEHOLDER.setOnClickListener(view -> {
                         Intent intent = new Intent(LandingPage.this, SubscriptionPage.class);
                         intent.putExtra("loggedInUser", loggedInUser);

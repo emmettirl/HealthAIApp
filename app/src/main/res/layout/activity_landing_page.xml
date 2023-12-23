@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/almost_black"
     android:theme="@style/Theme.HealthAIApp"
-    tools:context=".LandingPage"
-    android:background="@color/almost_black">
+    tools:context=".LandingPage">
 
     <!--region HEADER-->
     <ImageView
@@ -104,11 +104,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="304dp"
         android:layout_marginBottom="4dp"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@raw/small_button_dark"
-        android:background="@android:color/transparent"/>
+        app:srcCompat="@raw/small_button_dark" />
 
     <TextView
         android:id="@+id/userProfileNavButtonText"
@@ -132,8 +132,8 @@
         android:layout_marginStart="130dp"
         android:layout_marginTop="141dp"
         android:layout_marginEnd="129dp"
-        android:textColor="@color/white"
         android:text="@string/landing_greeting"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -161,12 +161,12 @@
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:layout_marginTop="28dp"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:srcCompat="@raw/big_button_dark"
-        android:background="@android:color/transparent"/>
+        app:srcCompat="@raw/big_button_dark" />
 
     <TextView
         android:id="@+id/healthAIText"
@@ -198,12 +198,12 @@
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/healthAIButton"
-        app:srcCompat="@raw/big_button_dark"
-        android:background="@android:color/transparent"/>
+        app:srcCompat="@raw/big_button_dark" />
 
     <TextView
         android:id="@+id/leaveRatingText"
@@ -234,12 +234,12 @@
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RatingQuickAccessImageButton"
-        app:srcCompat="@raw/big_button_dark"
-        android:background="@android:color/transparent"/>
+        app:srcCompat="@raw/big_button_dark" />
 
     <TextView
         android:id="@+id/aiSubscriptionText"
@@ -270,12 +270,12 @@
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subscriptionQuickAccessImageButton"
-        app:srcCompat="@raw/big_button_dark"
-        android:background="@android:color/transparent"/>
+        app:srcCompat="@raw/big_button_dark" />
 
     <TextView
         android:id="@+id/contactButtonText"
@@ -301,8 +301,6 @@
     <!--endregion-->
 
     <!--endregion-->
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

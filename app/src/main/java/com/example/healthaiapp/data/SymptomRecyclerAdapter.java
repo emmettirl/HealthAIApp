@@ -14,7 +14,7 @@ import java.util.List;
 
 public class SymptomRecyclerAdapter extends RecyclerView.Adapter<SymptomRecyclerAdapter.ViewHolder> {
 
-    private List<SymptomListItem> itemList = new ArrayList<>();
+    private final List<SymptomListItem> itemList = new ArrayList<>();
 
     public SymptomRecyclerAdapter(List<String> symptomLabels) {
         updateData(symptomLabels);

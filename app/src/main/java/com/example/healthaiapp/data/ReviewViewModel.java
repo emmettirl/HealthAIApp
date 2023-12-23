@@ -1,15 +1,14 @@
 package com.example.healthaiapp.data;
 
-import static com.example.healthaiapp.data.Constants.NODE_USERS;
-
 import android.util.Log;
 
 import androidx.lifecycle.ViewModel;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class ReviewViewModel extends ViewModel {
-    private DatabaseReference reviewsReference;
+    private final DatabaseReference reviewsReference;
 
     public ReviewViewModel() {
         FirebaseDatabase database = FirebaseDatabase.getInstance();

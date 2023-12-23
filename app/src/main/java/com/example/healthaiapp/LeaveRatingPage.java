@@ -10,6 +10,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.lifecycle.ViewModelProvider;
+
 import com.example.healthaiapp.data.ReviewViewModel;
 import com.example.healthaiapp.data.User;
 import com.google.android.material.tabs.TabLayout;
@@ -18,6 +19,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LeaveRatingPage extends AppCompatActivity {
@@ -26,6 +28,7 @@ public class LeaveRatingPage extends AppCompatActivity {
     private ImageButton sendReviewButton;
     private ReviewViewModel reviewViewModel;
     private User loggedInUser;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leave_rating_page);
@@ -138,7 +141,8 @@ public class LeaveRatingPage extends AppCompatActivity {
         });
 
     }
-        private boolean isValidReview ( float rating, String title, String content, String userEmail){
-            return (rating > 0 && !title.isEmpty() && !content.isEmpty() && !userEmail.isEmpty());
-        }
+
+    private boolean isValidReview(float rating, String title, String content, String userEmail) {
+        return (rating > 0 && !title.isEmpty() && !content.isEmpty() && !userEmail.isEmpty());
     }
+}

@@ -7,7 +7,8 @@ public class ContactInfo implements Serializable {
     String phone;
     String email;
 
-    public ContactInfo(){}
+    public ContactInfo() {
+    }
 
     public String getName() {
         return name;

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ToggleButton;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 
@@ -15,6 +16,7 @@ import com.example.healthaiapp.data.User;
 import com.example.healthaiapp.data.UserViewModel;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textfield.TextInputEditText;
+
 import android.net.Uri;
 
 import java.util.Objects;
@@ -28,7 +30,6 @@ public class ContactPage extends AppCompatActivity {
     private ImageButton callButton;
     private User loggedInUser;
 
-    GPUser gpUser;
     UserViewModel uvm;
 
     @Override
@@ -38,12 +39,10 @@ public class ContactPage extends AppCompatActivity {
 
         uvm = new UserViewModel();
 
-
         if (getIntent().hasExtra("loggedInUser")) {
             loggedInUser = (User) getIntent().getSerializableExtra("loggedInUser");
         }
 
-        //region Nav Buttons
         ImageButton userProfileButton = findViewById(R.id.userProfileNavButton);
         ImageButton fitnessPageButton = findViewById(R.id.FitnessNavButton);
         ImageButton homePageButton = findViewById(R.id.homeNavButton);
@@ -158,7 +157,6 @@ public class ContactPage extends AppCompatActivity {
                     public void onChanged(String phoneNumber) {
                         if (phoneNumber != null) {
                             makeCall(phoneNumber);
-                            // To avoid multiple observations, you can remove the observer after the call is made
                             uvm.getGPUserPhoneNumber().removeObserver(this);
                         }
                     }

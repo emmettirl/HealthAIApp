@@ -26,21 +26,19 @@ public class Register extends AppCompatActivity {
     UserViewModel uvm;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        submitButton = (ImageButton) findViewById(R.id.buttonSubmitRegister);
+        submitButton = findViewById(R.id.buttonSubmitRegister);
         registerToLogin = findViewById(R.id.registerToLogin);
 
-        username = (EditText) findViewById(R.id.textInputEditTextUsernameRegister);
-        password = (EditText) findViewById(R.id.textInputEditTextPasswordRegister);
-        email = (EditText) findViewById(R.id.textInputEditTextEmailRegister);
-        fname = (EditText) findViewById(R.id.textInputEditTextFNameRegister);
-        lname = (EditText) findViewById(R.id.textInputEditTextLNameRegister);
+        username = findViewById(R.id.textInputEditTextUsernameRegister);
+        password = findViewById(R.id.textInputEditTextPasswordRegister);
+        email = findViewById(R.id.textInputEditTextEmailRegister);
+        fname = findViewById(R.id.textInputEditTextFNameRegister);
+        lname = findViewById(R.id.textInputEditTextLNameRegister);
 
         uvm = new UserViewModel();
 
@@ -85,7 +83,7 @@ public class Register extends AppCompatActivity {
                 intent.putExtra("registeredUser", registeredUser);
                 Log.d("mydebug", registeredUser.getUsername());
                 startActivity(intent);
-                finish(); // Close the RegisterActivity
+                finish();
             }
 
         });

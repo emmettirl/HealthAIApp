@@ -1,4 +1,5 @@
 package com.example.healthaiapp.data;
+
 import android.os.AsyncTask;
 
 import java.io.BufferedReader;
@@ -16,9 +17,9 @@ import org.json.JSONObject;
 
 public class ApiCall extends AsyncTask<Void, Void, ApiCall.ApiResponse> {
 
-    private ApiCallback callback;
-    private String apiUrl;
-    private Object requestBody;
+    private final ApiCallback callback;
+    private final String apiUrl;
+    private final Object requestBody;
 
     public ApiCall(String apiUrl, JSONObject requestBody, ApiCallback callback) {
         this.apiUrl = apiUrl;
@@ -86,9 +87,9 @@ public class ApiCall extends AsyncTask<Void, Void, ApiCall.ApiResponse> {
     }
 
     public static class ApiResponse {
-        private String stringValue;
+        private final String stringValue;
         private int intValue;
-        private String error;
+        private final String error;
 
         public ApiResponse(String stringValue, String error) {
             this.stringValue = stringValue;

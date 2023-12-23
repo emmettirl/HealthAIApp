@@ -5,11 +5,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+
 import com.example.healthaiapp.data.User;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class FitnessPage extends AppCompatActivity {
     private User loggedInUser;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fitness_page);

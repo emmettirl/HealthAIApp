@@ -1,21 +1,20 @@
 package com.example.healthaiapp.data;
 
+import static com.example.healthaiapp.data.Constants.NODE_USERS;
+
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-
-import static com.example.healthaiapp.data.Constants.NODE_USERS;
-
-import android.util.Log;
-
-import java.util.ArrayList;
 
 public class UserViewModel extends ViewModel {
 
@@ -29,15 +28,17 @@ public class UserViewModel extends ViewModel {
         dbUsers = database.getReference(NODE_USERS);
     }
 
-    private MutableLiveData<User> registeredUser = new MutableLiveData<>();
+    private final MutableLiveData<User> registeredUser = new MutableLiveData<>();
+
     public LiveData<User> getRegistrationSuccess() {
         return registeredUser;
-    };
+    }
 
-    private MutableLiveData<User> loggedInUser = new MutableLiveData<>();
+    private final MutableLiveData<User> loggedInUser = new MutableLiveData<>();
+
     public LiveData<User> getLoginSuccess() {
         return loggedInUser;
-    };
+    }
 
 
     public void addUser(User newUser) {
@@ -54,7 +55,7 @@ public class UserViewModel extends ViewModel {
                     Log.d("myDebug", "addUser: username already exists");
                 } else {
                     dbUsers.child(newUser.getUsername()).setValue(newUser);
-                    Log.d("MyDebug", "addUser: wrote to " + dbUsers.getRoot().toString() );
+                    Log.d("MyDebug", "addUser: wrote to " + dbUsers.getRoot());
 
                     registeredUser.postValue(newUser);
                 }
@@ -67,7 +68,7 @@ public class UserViewModel extends ViewModel {
         });
     }
 
-    public void updateUser(User updatedUser){
+    public void updateUser(User updatedUser) {
         FirebaseDatabase database = FirebaseDatabase.getInstance("https://healthai-group-project-default-rtdb.europe-west1.firebasedatabase.app/");
         DatabaseReference dbUsers = database.getReference(NODE_USERS);
 
@@ -127,7 +128,7 @@ public class UserViewModel extends ViewModel {
 
     }
 
-    private MutableLiveData<String> gpUserPhoneNumber = new MutableLiveData<>();
+    private final MutableLiveData<String> gpUserPhoneNumber = new MutableLiveData<>();
 
     public LiveData<String> getGPUserPhoneNumber() {
         return gpUserPhoneNumber;
@@ -160,7 +161,7 @@ public class UserViewModel extends ViewModel {
     }
 
 
-    private MutableLiveData<String> gpUserIdByEmail = new MutableLiveData<>();
+    private final MutableLiveData<String> gpUserIdByEmail = new MutableLiveData<>();
 
     public LiveData<String> getGPUserIdByEmail() {
         return gpUserIdByEmail;

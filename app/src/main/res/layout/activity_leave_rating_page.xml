@@ -102,11 +102,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="304dp"
         android:layout_marginBottom="4dp"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@raw/small_button_dark"
-        android:background="@android:color/transparent"/>
+        app:srcCompat="@raw/small_button_dark" />
 
     <TextView
         android:id="@+id/userProfileNavButtonText"
@@ -164,10 +164,10 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:hint="@string/leave_rating_small_textbox"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:textSize="15sp"
-            android:hint="@string/leave_rating_small_textbox" />
+            android:textSize="15sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <RatingBar
@@ -188,7 +188,7 @@
         app:layout_constraintEnd_toEndOf="@+id/reviewContentInput"
         app:layout_constraintTop_toBottomOf="@+id/reviewContentInput"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@raw/small_button_dark"/>
+        app:srcCompat="@raw/small_button_dark" />
 
     <TextView
         android:id="@+id/invalidReviewText"
@@ -196,8 +196,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/invalid_review"
-        android:textSize="16sp"
         android:textColor="#aa0000"
+        android:textSize="16sp"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -210,8 +210,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/invalid_review_explanation"
-        android:textSize="14sp"
         android:textColor="#aa0000"
+        android:textSize="14sp"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

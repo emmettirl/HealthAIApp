@@ -126,6 +126,7 @@ public class FitnessOverviewPage extends AppCompatActivity {
 
         //endregion
     }
+
     private double extractNumericValue(String stringWithUnit) {
         // Remove non-numeric characters and convert to a double
         try {
