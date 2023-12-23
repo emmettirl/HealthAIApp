@@ -22,7 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class LeaveRatingPage extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private RatingBar ratingBar;
-    private Button sendReviewButton;
+    private ImageButton sendReviewButton;
     private ReviewViewModel reviewViewModel;
     private User loggedInUser;
     protected void onCreate(Bundle savedInstanceState) {

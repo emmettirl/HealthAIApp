@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register">
+    tools:context=".Register"
+    android:background="@color/almost_black">
 
     <!--region HEADER-->
     <ImageView
@@ -47,15 +48,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/welcome"
+        android:textSize="20sp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header_bar"
         android:layout_marginTop="20dp"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:id="@+id/linearLayout2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8">
 
@@ -64,7 +69,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/user_name" />
+            android:text="@string/user_name"
+            android:textColor="@color/white" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutUsernameRegister"
@@ -76,7 +82,9 @@
                 android:id="@+id/textInputEditTextUsernameRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/user_name" />
+                android:hint="@string/user_name"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -85,7 +93,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/password" />
+            android:text="@string/password"
+            android:textColor="@color/white" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutPasswordRegister"
@@ -97,7 +106,9 @@
                 android:id="@+id/textInputEditTextPasswordRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/password" />
+                android:hint="@string/password"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -105,7 +116,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/first_name" />
+            android:text="@string/first_name"
+            android:textColor="@color/white" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutFNameRegister"
@@ -117,7 +129,9 @@
                 android:id="@+id/textInputEditTextFNameRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/first_name_hint" />
+                android:hint="@string/first_name_hint"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -126,7 +140,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/last_name" />
+            android:text="@string/last_name"
+            android:textColor="@color/white" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutLNameRegister"
@@ -138,7 +153,9 @@
                 android:id="@+id/textInputEditTextLNameRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/last_name_hint" />
+                android:hint="@string/last_name_hint"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -147,7 +164,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/email" />
+            android:text="@string/email"
+            android:textColor="@color/white" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutEmailRegister"
@@ -159,30 +177,73 @@
                 android:id="@+id/textInputEditTextEmailRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/email_hint" />
+                android:hint="@string/email_hint"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/buttonSubmitRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/register" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/already_member" />
-
-        <Button
-            android:id="@+id/registerToLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/login" />
-
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/buttonSubmitRegister"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:srcCompat="@raw/small_button_dark" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:text="@string/already_member"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/registerToLogin"
+        app:layout_constraintStart_toStartOf="@+id/registerToLogin"
+        app:layout_constraintTop_toBottomOf="@+id/registerToLogin" />
+
+    <ImageButton
+        android:id="@+id/registerToLogin"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toEndOf="@+id/buttonSubmitRegister"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:srcCompat="@raw/small_button_dark" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonSubmitRegister"
+        app:layout_constraintEnd_toEndOf="@+id/buttonSubmitRegister"
+        app:layout_constraintStart_toStartOf="@+id/buttonSubmitRegister"
+        app:layout_constraintTop_toTopOf="@+id/buttonSubmitRegister" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/registerToLogin"
+        app:layout_constraintEnd_toEndOf="@+id/registerToLogin"
+        app:layout_constraintStart_toStartOf="@+id/registerToLogin"
+        app:layout_constraintTop_toTopOf="@+id/registerToLogin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

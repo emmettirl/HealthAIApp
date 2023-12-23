@@ -8,14 +8,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.example.healthaiapp.data.User;
 import com.example.healthaiapp.data.UserViewModel;
 
 public class Register extends AppCompatActivity {
 
-    Button submitButton;
-    Button registerToLogin;
+    ImageButton submitButton;
+    ImageButton registerToLogin;
     EditText username;
     EditText password;
     EditText email;
@@ -32,7 +33,7 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        submitButton = (Button) findViewById(R.id.buttonSubmitRegister);
+        submitButton = (ImageButton) findViewById(R.id.buttonSubmitRegister);
         registerToLogin = findViewById(R.id.registerToLogin);
 
         username = (EditText) findViewById(R.id.textInputEditTextUsernameRegister);

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/almost_black">
 
     <!--region HEADER-->
     <ImageView
@@ -126,7 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/leave_a_rating"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -146,7 +147,8 @@
             android:layout_height="match_parent"
             android:gravity="start|top"
             android:hint="@string/leave_rating_large_textbox"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textSize="15sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -162,7 +164,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textSize="15sp"
             android:hint="@string/leave_rating_small_textbox" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -175,19 +178,17 @@
         app:layout_constraintStart_toStartOf="@+id/reviewContentInput"
         app:layout_constraintTop_toBottomOf="@+id/reviewContentInput" />
 
-    <Button
+    <ImageButton
         android:id="@+id/sendReviewButton"
         android:layout_width="109dp"
         android:layout_height="54dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="4dp"
-        android:background="@drawable/button_style_1"
-        android:textColor="@color/black"
-        android:text="@string/Send"
         app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
         app:layout_constraintEnd_toEndOf="@+id/reviewContentInput"
         app:layout_constraintTop_toBottomOf="@+id/reviewContentInput"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@raw/small_button_dark"/>
 
     <TextView
         android:id="@+id/invalidReviewText"
@@ -215,5 +216,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/invalidReviewText" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Send"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/sendReviewButton"
+        app:layout_constraintEnd_toEndOf="@+id/sendReviewButton"
+        app:layout_constraintStart_toStartOf="@+id/sendReviewButton"
+        app:layout_constraintTop_toTopOf="@+id/sendReviewButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

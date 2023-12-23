@@ -8,14 +8,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.example.healthaiapp.data.User;
 import com.example.healthaiapp.data.UserViewModel;
 
 public class LogIn extends AppCompatActivity {
 
-    Button submitButton;
-    Button loginToRegister;
+    ImageButton submitButton;
+    ImageButton loginToRegister;
     EditText username;
     EditText password;
     String usernameValue;
