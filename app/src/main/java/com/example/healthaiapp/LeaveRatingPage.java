@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.lifecycle.ViewModelProvider;
 import com.example.healthaiapp.data.ReviewViewModel;
 import com.example.healthaiapp.data.User;
+import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.FirebaseApp;

@@ -137,7 +137,21 @@ public class ContactPage extends AppCompatActivity {
             } else {
                 // GP Phone
                 phoneNumber = "000";
-                uvm.getGPUserPhoneNumberById("e49cRAlS6dQB5tWtWaEFnZe2CC92");
+
+
+                uvm.fetchGPUserIdByEmail(loggedInUser.getMedicalDetails().getGpEmail());
+                uvm.getGPUserIdByEmail().observe(this, new Observer<String>() {
+                    @Override
+                    public void onChanged(String gpUserId) {
+                        if (gpUserId != null) {
+                            Log.d("MyDebug", "GP User ID is: " + gpUserId);
+                            uvm.getGPUserPhoneNumberById(gpUserId);
+                        } else {
+                            Log.d("MyDebug", "GP User not found");
+                        }
+                    }
+                });
+
 
                 uvm.getGPUserPhoneNumber().observe(this, new Observer<String>() {
                     @Override

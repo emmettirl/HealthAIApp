@@ -160,4 +160,34 @@ public class UserViewModel extends ViewModel {
     }
 
 
+    private MutableLiveData<String> gpUserIdByEmail = new MutableLiveData<>();
+
+    public LiveData<String> getGPUserIdByEmail() {
+        return gpUserIdByEmail;
+    }
+
+    public void fetchGPUserIdByEmail(String email) {
+        DatabaseReference dbGPUsers = database.getReference("GPusers");
+
+        Query query = dbGPUsers.orderByChild("email").equalTo(email);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot gpUserSnapshot : dataSnapshot.getChildren()) {
+                        gpUserIdByEmail.postValue(gpUserSnapshot.getKey());
+                        break;
+                    }
+                } else {
+                    Log.d("MyDebug", "No GPUser found with the email: " + email);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.d("MyDebug", "Error fetching GPUser ID by email");
+            }
+        });
+    }
+
 }

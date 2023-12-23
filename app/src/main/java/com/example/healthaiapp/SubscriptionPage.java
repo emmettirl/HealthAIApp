@@ -134,20 +134,25 @@ public class SubscriptionPage extends AppCompatActivity {
             sm.checkActiveSubscription(stripeID, new StripeModel.SubscriptionCallback() {
                 @Override
                 public void onSubscriptionCheckCompleted(boolean hasActiveSubscription) {
-                    if (hasActiveSubscription) {
-                        subscriptionButtonText.setText(R.string.already_subscribed);
-                        paymentPageButton.setOnClickListener(view -> {
-                            Intent intent = new Intent(SubscriptionPage.this, LandingPage.class);
-                            intent.putExtra("loggedInUser", loggedInUser);
-                            startActivity(intent);
-                        });
-                    } else {
-                        subscriptionButtonText.setText(getString(R.string.subscribe));
-                        paymentPageButton.setOnClickListener(view -> {
-                            createSubscription();
-                        });
-                    }
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (hasActiveSubscription) {
+                                subscriptionButtonText.setText(R.string.already_subscribed);
+                                paymentPageButton.setOnClickListener(view -> {
+                                    Intent intent = new Intent(SubscriptionPage.this, LandingPage.class);
+                                    intent.putExtra("loggedInUser", loggedInUser);
+                                    startActivity(intent);
+                                });
+                            } else {
+                                subscriptionButtonText.setText(getString(R.string.subscribe));
+                                paymentPageButton.setOnClickListener(view -> {
+                                    createSubscription();
+                                });
+                            }
 
+                        }
+                    });
                 }
             });
         } else {
