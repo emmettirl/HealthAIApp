@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.HealthAIApp"
-    tools:context=".LandingPage">
+    tools:context=".LandingPage"
+    android:background="@color/almost_black">
 
     <!--region HEADER-->
     <ImageView
@@ -131,7 +132,7 @@
         android:layout_marginEnd="129dp"
         android:text="@string/subscription_page_header"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -145,7 +146,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="110dp"
         android:text="@string/subscribe_benefits"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.48"
@@ -154,86 +155,72 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="182dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        app:srcCompat="@raw/heart_icon" />
 
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="182dp"
-        android:layout_height="57dp"
+        android:layout_height="100dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        app:srcCompat="@raw/chatbot_icon_1" />
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="182dp"
-        android:layout_height="57dp"
-
-        android:layout_marginTop="32dp"
+    <ImageButton
+        android:id="@+id/SubscriptionPaymentButton"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        app:srcCompat="@raw/big_button_dark" />
+
+    <TextView
+        android:id="@+id/subscriptionButtonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/loading_subscription_status"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/SubscriptionPaymentButton"
+        app:layout_constraintEnd_toEndOf="@+id/SubscriptionPaymentButton"
+        app:layout_constraintStart_toStartOf="@+id/SubscriptionPaymentButton"
+        app:layout_constraintTop_toTopOf="@+id/SubscriptionPaymentButton" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/subscribe_benefit_1"
-        android:textColor="@color/common_google_signin_btn_text_dark"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView5"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+        android:text="@string/gpt_powered"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/subscribe_benefit_2"
-        android:textColor="@color/common_google_signin_btn_text_dark"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView6"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="@+id/imageView6"
-        app:layout_constraintTop_toTopOf="@+id/imageView6" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/subscribe_benefit_3"
-        android:textColor="@color/common_google_signin_btn_text_dark"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView7"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/imageView7" />
-
-    <Button
-        android:id="@+id/SubscriptionPaymentButton"
-        android:layout_width="180dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/button_style_1"
-        android:text="@string/loading_subscription_status"
-        android:textColor="#000000"
-        android:textSize="14sp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/health_oriented"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/imageView5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

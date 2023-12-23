@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/almost_black">
 
     <!--region HEADER-->
     <ImageView
@@ -120,29 +121,20 @@
         app:layout_constraintStart_toStartOf="@+id/userProfileNavButton"
         app:layout_constraintTop_toTopOf="@+id/userProfileNavButton" />
     <!--endregion-->
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/chatbot_title"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header_bar" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatbotRecyclerView"
         android:layout_width="340dp"
         android:layout_height="320dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/header_bar" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/chatbotTextInput"
-        android:layout_width="263dp"
+        android:layout_width="220dp"
         android:layout_height="59dp"
         app:layout_constraintStart_toStartOf="@+id/chatbotRecyclerView"
         app:layout_constraintTop_toBottomOf="@+id/chatbotRecyclerView">
@@ -150,18 +142,21 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/type_a_message" />
+            android:hint="@string/type_a_message"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"/>
+
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/chatbotSendButton"
-        android:layout_width="76dp"
+        android:layout_width="120dp"
         android:layout_height="60dp"
-        android:text="@string/Send"
-        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/chatbotRecyclerView"
         app:layout_constraintStart_toEndOf="@+id/chatbotTextInput"
-        app:layout_constraintTop_toBottomOf="@+id/chatbotRecyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/chatbotRecyclerView"
+        app:srcCompat="@raw/small_button_dark"
+        android:background="@android:color/transparent"/>
 
     <ScrollView
         android:layout_width="340dp"
@@ -188,13 +183,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/disclaimer"
-                android:textColor="#00aaaa"
+                android:textColor="@color/bright_cyan"
                 android:textSize="14sp"
                 tools:layout_editor_absoluteX="65dp"
                 tools:layout_editor_absoluteY="584dp" />
 
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Send"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/chatbotSendButton"
+        app:layout_constraintEnd_toEndOf="@+id/chatbotSendButton"
+        app:layout_constraintStart_toEndOf="@+id/chatbotTextInput"
+        app:layout_constraintTop_toTopOf="@+id/chatbotSendButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -74,10 +74,10 @@
     <!--region SUBSCRIPTION PAGE -->
     <string name="subscription_page_header">Health AI&#10;Subscription</string>
     <string name="subscribe">Proceed To Payment</string>
-    <string name="subscribe_benefits">Discover The Benefits</string>
-    <string name="subscribe_benefit_1">Benefit 1</string>
-    <string name="subscribe_benefit_2">Benefit 2</string>
-    <string name="subscribe_benefit_3">Benefit 3</string>
+    <string name="subscribe_benefits">Gain Access to our Chat AI!</string>
+    <string name="gpt_powered">ChatGPT Powered</string>
+    <string name="subscribe_today">Subscribe Today</string>
+    <string name="health_oriented">Health Oriented</string>
     <!--endregion -->
 
     <!--region RATING PAGE -->

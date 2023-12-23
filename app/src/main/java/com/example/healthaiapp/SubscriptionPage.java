@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,7 +43,8 @@ public class SubscriptionPage extends AppCompatActivity {
     PaymentSheet paymentSheet;
     private String paymentClientSecret;
     PaymentSheet.CustomerConfiguration customerConfig;
-    Button paymentPageButton;
+    ImageButton paymentPageButton;
+    TextView subscriptionButtonText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,6 +126,8 @@ public class SubscriptionPage extends AppCompatActivity {
 
         //endregion
 
+        subscriptionButtonText = findViewById(R.id.subscriptionButtonText);
+
         this.stripeID = this.loggedInUser.getStripeID();
         if (stripeID != null) {
 
@@ -131,14 +135,14 @@ public class SubscriptionPage extends AppCompatActivity {
                 @Override
                 public void onSubscriptionCheckCompleted(boolean hasActiveSubscription) {
                     if (hasActiveSubscription) {
-                        paymentPageButton.setText(R.string.already_subscribed);
+                        subscriptionButtonText.setText(R.string.already_subscribed);
                         paymentPageButton.setOnClickListener(view -> {
                             Intent intent = new Intent(SubscriptionPage.this, LandingPage.class);
                             intent.putExtra("loggedInUser", loggedInUser);
                             startActivity(intent);
                         });
                     } else {
-                        paymentPageButton.setText(getString(R.string.subscribe));
+                        subscriptionButtonText.setText(getString(R.string.subscribe));
                         paymentPageButton.setOnClickListener(view -> {
                             createSubscription();
                         });
@@ -147,7 +151,7 @@ public class SubscriptionPage extends AppCompatActivity {
                 }
             });
         } else {
-            paymentPageButton.setText(getString(R.string.subscribe));
+            subscriptionButtonText.setText(getString(R.string.subscribe));
             paymentPageButton.setOnClickListener(view -> {
                 createSubscription();
             });
@@ -207,7 +211,7 @@ public class SubscriptionPage extends AppCompatActivity {
         } else if (paymentSheetResult instanceof PaymentSheetResult.Completed) {
             loggedInUser.setStripeID(customerConfig.getId());
             loggedInUser.setPremium(Boolean.TRUE);
-            paymentPageButton.setText(R.string.already_subscribed);
+            subscriptionButtonText.setText(R.string.already_subscribed);
             paymentPageButton.setOnClickListener(view -> {
                 Intent intent = new Intent(SubscriptionPage.this, LandingPage.class);
                 intent.putExtra("loggedInUser", loggedInUser);

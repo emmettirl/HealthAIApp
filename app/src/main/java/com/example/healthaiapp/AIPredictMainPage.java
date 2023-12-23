@@ -36,8 +36,6 @@ public class AIPredictMainPage extends AppCompatActivity {
     SymptomRecyclerAdapter adapter;
     TextView predictionTextView;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +62,7 @@ public class AIPredictMainPage extends AppCompatActivity {
         ImageButton userProfileButton = findViewById(R.id.userProfileNavButton);
         ImageButton fitnessPageButton = findViewById(R.id.FitnessNavButton);
         ImageButton homePageButton = findViewById(R.id.homeNavButton);
-        Button chatbotSendButton = findViewById(R.id.chatbotSendButton);
+        ImageButton chatbotSendButton = findViewById(R.id.chatbotSendButton);
 
         fitnessPageButton.setOnClickListener(
                 new View.OnClickListener() {
