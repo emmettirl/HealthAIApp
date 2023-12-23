@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,10 +33,14 @@ public class UserProfilePage extends AppCompatActivity {
         }
 
 
+        if (getIntent().hasExtra("loggedInUser")) {
+            loggedInUser = (User) getIntent().getSerializableExtra("loggedInUser");
+        }
+
         //region Nav Buttons
-        Button editUserProfileButton = findViewById(R.id.editUserDetailsButton);
-        Button AIPredictPLACEHOLDER = findViewById(R.id.homeNavButton);
-        Button fitnessPageButton = findViewById(R.id.FitnessNavButton);
+        ImageButton userProfileButton = findViewById(R.id.userProfileNavButton);
+        ImageButton fitnessPageButton = findViewById(R.id.FitnessNavButton);
+        ImageButton homePageButton = findViewById(R.id.homeNavButton);
 
         fitnessPageButton.setOnClickListener(
                 new View.OnClickListener() {
@@ -55,7 +60,7 @@ public class UserProfilePage extends AppCompatActivity {
                 }
         );
 
-        editUserProfileButton.setOnClickListener(
+        homePageButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -63,7 +68,25 @@ public class UserProfilePage extends AppCompatActivity {
                         Log.d("TAG", loggedInUser.getUsername());
 
                         if (loggedInUser != null) {
-                            Intent intent = new Intent(UserProfilePage.this, AdditionalInfo.class);
+                            Intent intent = new Intent(UserProfilePage.this, LandingPage.class);
+                            intent.putExtra("loggedInUser", loggedInUser);
+                            Log.d("mydebug", loggedInUser.getUsername());
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                }
+        );
+
+        userProfileButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("myDebug", "onClick: ");
+                        Log.d("TAG", loggedInUser.getUsername());
+
+                        if (loggedInUser != null) {
+                            Intent intent = new Intent(UserProfilePage.this, UserProfilePage.class);
                             intent.putExtra("loggedInUser", loggedInUser);
                             Log.d("mydebug", loggedInUser.getUsername());
                             startActivity(intent);

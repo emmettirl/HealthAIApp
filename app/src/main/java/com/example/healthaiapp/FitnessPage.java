@@ -20,19 +20,10 @@ public class FitnessPage extends AppCompatActivity {
         }
 
         //region Nav Buttons
-        Button userProfileButton = findViewById(R.id.userProfileNavButton);
-        Button healthAIPredictButton = findViewById(R.id.homeNavButton);
-        userProfileButton.setOnClickListener(view -> {
-            Intent intent = new Intent(FitnessPage.this, UserProfilePage.class);
-            startActivity(intent);
-        });
-        //endregion
+        ImageButton userProfileButton = findViewById(R.id.userProfileNavButton);
+        ImageButton homePageButton = findViewById(R.id.homeNavButton);
 
-        ImageButton bodyOverviewPage = findViewById(R.id.healthAIButton);
-        ImageButton fitnessPlansPage = findViewById(R.id.fitnessPlansButton);
-
-
-        healthAIPredictButton.setOnClickListener(
+        homePageButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -40,7 +31,7 @@ public class FitnessPage extends AppCompatActivity {
                         Log.d("TAG", loggedInUser.getUsername());
 
                         if (loggedInUser != null) {
-                            Intent intent = new Intent(FitnessPage.this, AIPredictMainPage.class);
+                            Intent intent = new Intent(FitnessPage.this, LandingPage.class);
                             intent.putExtra("loggedInUser", loggedInUser);
                             Log.d("mydebug", loggedInUser.getUsername());
                             startActivity(intent);
@@ -49,6 +40,29 @@ public class FitnessPage extends AppCompatActivity {
                     }
                 }
         );
+
+        userProfileButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("myDebug", "onClick: ");
+                        Log.d("TAG", loggedInUser.getUsername());
+
+                        if (loggedInUser != null) {
+                            Intent intent = new Intent(FitnessPage.this, UserProfilePage.class);
+                            intent.putExtra("loggedInUser", loggedInUser);
+                            Log.d("mydebug", loggedInUser.getUsername());
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                }
+        );
+
+        //endregion
+
+        ImageButton bodyOverviewPage = findViewById(R.id.healthAIButton);
+        ImageButton fitnessPlansPage = findViewById(R.id.fitnessPlansButton);
 
         bodyOverviewPage.setOnClickListener(
                 new View.OnClickListener() {

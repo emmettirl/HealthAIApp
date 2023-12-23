@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -64,18 +66,64 @@ public class FitnessOverviewPage extends AppCompatActivity {
         //endregion
 
         //region Nav Buttons
+        ImageButton userProfileButton = findViewById(R.id.userProfileNavButton);
+        ImageButton fitnessPageButton = findViewById(R.id.FitnessNavButton);
+        ImageButton homePageButton = findViewById(R.id.homeNavButton);
 
-        Button userProfileButton = findViewById(R.id.userProfileNavButton);
-        Button AIPredictPLACEHOLDER = findViewById(R.id.homeNavButton);
-        Button FitnessPageButton = findViewById(R.id.FitnessNavButton);
-        userProfileButton.setOnClickListener(view -> {
-            Intent intent = new Intent(FitnessOverviewPage.this, UserProfilePage.class);
-            startActivity(intent);
-        });
-        FitnessPageButton.setOnClickListener(view -> {
-            Intent intent = new Intent(FitnessOverviewPage.this, FitnessPage.class);
-            startActivity(intent);
-        });
+        fitnessPageButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("myDebug", "onClick: ");
+                        Log.d("TAG", loggedInUser.getUsername());
+
+                        if (loggedInUser != null) {
+                            Intent intent = new Intent(FitnessOverviewPage.this, FitnessPage.class);
+                            intent.putExtra("loggedInUser", loggedInUser);
+                            Log.d("mydebug", loggedInUser.getUsername());
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                }
+        );
+
+        homePageButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("myDebug", "onClick: ");
+                        Log.d("TAG", loggedInUser.getUsername());
+
+                        if (loggedInUser != null) {
+                            Intent intent = new Intent(FitnessOverviewPage.this, LandingPage.class);
+                            intent.putExtra("loggedInUser", loggedInUser);
+                            Log.d("mydebug", loggedInUser.getUsername());
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                }
+        );
+
+        userProfileButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("myDebug", "onClick: ");
+                        Log.d("TAG", loggedInUser.getUsername());
+
+                        if (loggedInUser != null) {
+                            Intent intent = new Intent(FitnessOverviewPage.this, UserProfilePage.class);
+                            intent.putExtra("loggedInUser", loggedInUser);
+                            Log.d("mydebug", loggedInUser.getUsername());
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                }
+        );
+
         //endregion
     }
     private double extractNumericValue(String stringWithUnit) {

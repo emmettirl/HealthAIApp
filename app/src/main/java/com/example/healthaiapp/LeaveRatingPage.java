@@ -2,8 +2,10 @@ package com.example.healthaiapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -30,17 +32,64 @@ public class LeaveRatingPage extends AppCompatActivity {
 
 
         //region Nav Buttons
-        Button userProfileButton = findViewById(R.id.userProfileNavButton);
-        Button AIPredictPLACEHOLDER = findViewById(R.id.homeNavButton);
-        Button FitnessPageButton = findViewById(R.id.FitnessNavButton);
-        userProfileButton.setOnClickListener(view -> {
-            Intent intent = new Intent(LeaveRatingPage.this, UserProfilePage.class);
-            startActivity(intent);
-        });
-        FitnessPageButton.setOnClickListener(view -> {
-            Intent intent = new Intent(LeaveRatingPage.this, FitnessPage.class);
-            startActivity(intent);
-        });
+        ImageButton userProfileButton = findViewById(R.id.userProfileNavButton);
+        ImageButton fitnessPageButton = findViewById(R.id.FitnessNavButton);
+        ImageButton homePageButton = findViewById(R.id.homeNavButton);
+
+        fitnessPageButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("myDebug", "onClick: ");
+                        Log.d("TAG", loggedInUser.getUsername());
+
+                        if (loggedInUser != null) {
+                            Intent intent = new Intent(LeaveRatingPage.this, FitnessPage.class);
+                            intent.putExtra("loggedInUser", loggedInUser);
+                            Log.d("mydebug", loggedInUser.getUsername());
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                }
+        );
+
+        homePageButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("myDebug", "onClick: ");
+                        Log.d("TAG", loggedInUser.getUsername());
+
+                        if (loggedInUser != null) {
+                            Intent intent = new Intent(LeaveRatingPage.this, LandingPage.class);
+                            intent.putExtra("loggedInUser", loggedInUser);
+                            Log.d("mydebug", loggedInUser.getUsername());
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                }
+        );
+
+        userProfileButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("myDebug", "onClick: ");
+                        Log.d("TAG", loggedInUser.getUsername());
+
+                        if (loggedInUser != null) {
+                            Intent intent = new Intent(LeaveRatingPage.this, UserProfilePage.class);
+                            intent.putExtra("loggedInUser", loggedInUser);
+                            Log.d("mydebug", loggedInUser.getUsername());
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                }
+        );
+
         //endregion
 
         if (getIntent().hasExtra("loggedInUser")) {

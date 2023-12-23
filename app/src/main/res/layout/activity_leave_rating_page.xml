@@ -41,53 +41,84 @@
         app:srcCompat="@raw/logo_white" />
     <!--endregion-->
 
-    <Button
+    <!--region NAVBAR -->
+    <ImageButton
+        android:id="@+id/homeNavButton"
+        android:layout_width="110dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="4dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/FitnessNavButton"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toEndOf="@+id/userProfileNavButton"
+        app:srcCompat="@raw/small_button_dark" />
+
+    <TextView
+        android:id="@+id/homeNavButtonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/home"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/homeNavButton"
+        app:layout_constraintTop_toTopOf="@+id/homeNavButton" />
+
+    <ImageButton
         android:id="@+id/FitnessNavButton"
         android:layout_width="110dp"
         android:layout_height="48dp"
         android:layout_marginStart="304dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="4dp"
-        android:background="@drawable/button_style_1"
+        android:background="@android:color/transparent"
         android:text="@string/fitness_button"
         android:textColor="#000000"
         android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:srcCompat="@raw/small_button_dark" />
 
-    <Button
+    <TextView
+        android:id="@+id/FitnessNavButtonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/fitness_button"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/FitnessNavButton"
+        app:layout_constraintTop_toTopOf="@+id/FitnessNavButton" />
+
+    <ImageButton
         android:id="@+id/userProfileNavButton"
         android:layout_width="110dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="304dp"
         android:layout_marginBottom="4dp"
-        android:background="@drawable/button_style_1"
-        android:text="@string/user_profile_button"
-        android:textColor="#000000"
-        android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@raw/small_button_dark"
+        android:background="@android:color/transparent"/>
 
-    <!-- THIS ONE WONT LEAD TO ANYWHERE IN SPRINT 1! -->
-    <Button
-        android:id="@+id/homeNavButton"
-        android:layout_width="110dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginBottom="4dp"
-        android:background="@drawable/button_style_1"
-        android:text="@string/ai_predict_button"
-        android:textColor="#000000"
-        android:textSize="11sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <TextView
+        android:id="@+id/userProfileNavButtonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/user_profile_button"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/userProfileNavButton"
+        app:layout_constraintTop_toTopOf="@+id/userProfileNavButton" />
+    <!--endregion-->
 
     <TextView
         android:id="@+id/LeaveARatingTitle"
