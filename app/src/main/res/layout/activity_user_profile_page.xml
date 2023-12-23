@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.HealthAIApp"
-    tools:context=".LandingPage">
+    tools:context=".LandingPage"
+    android:background="@color/almost_black">
 
     <!--region HEADER-->
     <ImageView
@@ -129,6 +130,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/user_name_header"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -149,6 +151,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/placeholder_paragraph"
+            android:textColor="@color/white"
             android:textSize="18sp" />
 
     </ScrollView>
@@ -160,22 +163,35 @@
         android:layout_marginTop="20dp"
         android:text="@string/health_ai_title"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userPageNameText" />
 
-    <Button
+    <ImageButton
         android:id="@+id/editUserDetailsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="40dp"
-        android:background="@drawable/button_style_1"
-        android:text="@string/edit_user_details"
-        android:textColor="#000000"
-        android:textSize="11sp"
         app:layout_constraintBottom_toTopOf="@+id/homeNavButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@android:color/transparent"
+        app:srcCompat="@raw/small_button_dark"/>
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_user_details"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/editUserDetailsButton"
+        app:layout_constraintEnd_toEndOf="@+id/editUserDetailsButton"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="@+id/editUserDetailsButton"
+        app:layout_constraintTop_toTopOf="@+id/editUserDetailsButton"
+        app:layout_constraintVertical_bias="0.452" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

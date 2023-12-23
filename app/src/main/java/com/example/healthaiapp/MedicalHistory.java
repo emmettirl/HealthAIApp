@@ -20,8 +20,8 @@ public class MedicalHistory extends AppCompatActivity {
     User user;
     UserViewModel uvm;
 
-    Button submitButton;
-    Button backButton;
+    ImageButton submitButton;
+    ImageButton backButton;
     EditText history;
     TextView updatedStatus;
     TextView displayHistory;
@@ -100,8 +100,8 @@ public class MedicalHistory extends AppCompatActivity {
         //endregion
 
 
-        submitButton = (Button) findViewById(R.id.buttonSubmit);
-        backButton = (Button) findViewById(R.id.buttonBack);
+        submitButton = (ImageButton) findViewById(R.id.buttonSubmit);
+        backButton = (ImageButton) findViewById(R.id.buttonBack);
 
         history = (EditText) findViewById(R.id.textInputEditTextHistory);
 

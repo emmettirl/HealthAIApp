@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Medications">
+    tools:context=".Medications"
+    android:background="@color/almost_black">
 
 
     <!--region HEADER-->
@@ -44,12 +45,14 @@
     <!--endregion-->
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/linearLayout3"
+        android:layout_width="300dp"
         android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/header_bar"
         android:layout_marginTop="20dp"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_bar">
 
         <TextView
             android:id="@+id/updatedStatus"
@@ -63,7 +66,8 @@
             android:id="@+id/textViewAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter Medications:" />
+            android:text="@string/medications"
+            android:textColor="@color/white"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutAge"
@@ -74,20 +78,10 @@
                 android:id="@+id/textInputEditTextHistory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="medication" />
+                android:hint="@string/medications"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
-
-        <Button
-            android:id="@+id/buttonSubmit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Submit" />
-
-        <Button
-            android:id="@+id/buttonBack"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Back" />
 
         <TextView
             android:id="@+id/TextViewDisplayHistory"
@@ -96,11 +90,35 @@
             android:layout_weight="10"
             android:ems="10"
             android:gravity="start|top" />
-
-
     </LinearLayout>
 
+    <ImageButton
+        android:id="@+id/buttonSubmit"
+        android:layout_width="110dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/buttonBack"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        android:background="@android:color/transparent"
+        app:srcCompat="@raw/small_button_dark"/>
+
+    <ImageButton
+        android:id="@+id/buttonBack"
+        android:layout_width="110dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        android:background="@android:color/transparent"
+        app:srcCompat="@raw/small_button_dark"/>
+
+
     <!--region NAVBAR -->
+
     <ImageButton
         android:id="@+id/homeNavButton"
         android:layout_width="110dp"
@@ -177,6 +195,30 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/userProfileNavButton"
         app:layout_constraintTop_toTopOf="@+id/userProfileNavButton" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonSubmit"
+        app:layout_constraintEnd_toEndOf="@+id/buttonSubmit"
+        app:layout_constraintStart_toStartOf="@+id/buttonSubmit"
+        app:layout_constraintTop_toTopOf="@+id/buttonSubmit" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonBack"
+        app:layout_constraintEnd_toEndOf="@+id/buttonBack"
+        app:layout_constraintStart_toStartOf="@+id/buttonBack"
+        app:layout_constraintTop_toTopOf="@+id/buttonBack" />
     <!--endregion-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

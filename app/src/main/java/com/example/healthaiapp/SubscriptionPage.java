@@ -63,10 +63,6 @@ public class SubscriptionPage extends AppCompatActivity {
             this.loggedInUser = loggedInUser;
         }
 
-        if (getIntent().hasExtra("loggedInUser")) {
-            loggedInUser = (User) getIntent().getSerializableExtra("loggedInUser");
-        }
-
         //region Nav Buttons
         ImageButton userProfileButton = findViewById(R.id.userProfileNavButton);
         ImageButton fitnessPageButton = findViewById(R.id.FitnessNavButton);

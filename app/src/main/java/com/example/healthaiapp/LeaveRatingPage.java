@@ -123,7 +123,9 @@ public class LeaveRatingPage extends AppCompatActivity {
             if (loggedInUser != null && isValidReview(rating, reviewTitle, reviewContent, userEmail)) {
                 reviewViewModel.addReview(rating, reviewTitle, reviewContent, userEmail);
 
-                Intent successIntent = new Intent(LeaveRatingPage.this, ReviewSuccess.class);
+                Intent successIntent = new Intent(LeaveRatingPage.this, LandingPage.class);
+                intent.putExtra("loggedInUser", loggedInUser);
+                Log.d("mydebug", loggedInUser.getUsername());
                 startActivity(successIntent);
                 finish();
             } else {

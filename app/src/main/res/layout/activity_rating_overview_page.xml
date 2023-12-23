@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/almost_black">
 
     <!--region HEADER-->
     <ImageView
@@ -126,7 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
         android:text="@string/rating_page_header"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -138,24 +139,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/existing_ratings"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
-    <Button
+    <ImageButton
         android:id="@+id/leave_rating_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@drawable/button_style_1"
-        android:text="@string/leave_a_rating"
-        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingRecyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/ratingRecyclerView"
+        app:srcCompat="@raw/small_button_dark"
+        android:background="@android:color/transparent"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ratingRecyclerView"
@@ -165,5 +165,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/leave_a_rating"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/leave_rating_button"
+        app:layout_constraintEnd_toEndOf="@+id/leave_rating_button"
+        app:layout_constraintStart_toStartOf="@+id/leave_rating_button"
+        app:layout_constraintTop_toTopOf="@+id/leave_rating_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

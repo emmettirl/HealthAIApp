@@ -32,10 +32,25 @@ public class UserProfilePage extends AppCompatActivity {
             userPageNameText.setText(greeting);
         }
 
+        ImageButton editUserDetailsButton = findViewById(R.id.editUserDetailsButton);
 
-        if (getIntent().hasExtra("loggedInUser")) {
-            loggedInUser = (User) getIntent().getSerializableExtra("loggedInUser");
-        }
+        editUserDetailsButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("myDebug", "onClick: ");
+                        Log.d("TAG", loggedInUser.getUsername());
+
+                        if (loggedInUser != null) {
+                            Intent intent = new Intent(UserProfilePage.this, AdditionalInfo.class);
+                            intent.putExtra("loggedInUser", loggedInUser);
+                            Log.d("mydebug", loggedInUser.getUsername());
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                }
+        );
 
         //region Nav Buttons
         ImageButton userProfileButton = findViewById(R.id.userProfileNavButton);

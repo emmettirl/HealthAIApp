@@ -102,7 +102,7 @@ public class RatingPage  extends AppCompatActivity {
             loggedInUser = (User) getIntent().getSerializableExtra("loggedInUser");
             Log.d("RatingPage", "Intent has 'loggedInUser' extra: " + getIntent().hasExtra("loggedInUser"));
             if (loggedInUser != null) {
-                Button leaveRatingButton = findViewById(R.id.leave_rating_button);
+                ImageButton leaveRatingButton = findViewById(R.id.leave_rating_button);
                 leaveRatingButton.setOnClickListener(view -> {
                     Intent intent = new Intent(RatingPage.this, LeaveRatingPage.class);
                     Log.d("RatingPage", "User: " + loggedInUser.getUsername());

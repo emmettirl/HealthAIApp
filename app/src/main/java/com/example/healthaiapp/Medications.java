@@ -20,8 +20,8 @@ public class Medications extends AppCompatActivity {
     User user;
     UserViewModel uvm;
 
-    Button submitButton;
-    Button backButton;
+    ImageButton submitButton;
+    ImageButton backButton;
     EditText medication;
     TextView updatedStatus;
     TextView displayMedications;
@@ -97,8 +97,8 @@ public class Medications extends AppCompatActivity {
 
         //endregion
 
-        submitButton = (Button) findViewById(R.id.buttonSubmit);
-        backButton = (Button) findViewById(R.id.buttonBack);
+        submitButton = (ImageButton) findViewById(R.id.buttonSubmit);
+        backButton = (ImageButton) findViewById(R.id.buttonBack);
 
         medication = (EditText) findViewById(R.id.textInputEditTextHistory);
 
