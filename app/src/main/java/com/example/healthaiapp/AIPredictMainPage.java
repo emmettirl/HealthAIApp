@@ -4,41 +4,67 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.healthaiapp.data.ApiCall;
 import com.example.healthaiapp.data.ApiCall.ApiResponse;
+import com.example.healthaiapp.data.SymptomListItem;
+import com.example.healthaiapp.data.SymptomRecyclerAdapter;
 import com.example.healthaiapp.data.User;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
 public class AIPredictMainPage extends AppCompatActivity {
     private User loggedInUser;
     private static final String TAG = AIPredictMainPage.class.getSimpleName();
-    String symptomLabels;
+    List<String>symptomsList;
     String prediction;
+    RecyclerView recyclerView;
+    SymptomRecyclerAdapter adapter;
+    TextView predictionTextView;
 
 
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ai_predict_main);
+        predictionTextView = findViewById(R.id.tv_predict);
+
+
+        recyclerView = findViewById(R.id.chatbotRecyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        symptomsList = new ArrayList<>(); // Initialize as empty list
+        adapter = new SymptomRecyclerAdapter(symptomsList);
+        recyclerView.setAdapter(adapter);
+
+        // ... rest of your onCreate method ...
 
         if (getIntent().hasExtra("loggedInUser")) {
             loggedInUser = (User) getIntent().getSerializableExtra("loggedInUser");
             symptomLabelsApiRequest();
-            sendPredictionApiRequest();
+
         }
 
         //region Nav Buttons
         ImageButton userProfileButton = findViewById(R.id.userProfileNavButton);
         ImageButton fitnessPageButton = findViewById(R.id.FitnessNavButton);
         ImageButton homePageButton = findViewById(R.id.homeNavButton);
+        Button chatbotSendButton = findViewById(R.id.chatbotSendButton);
 
         fitnessPageButton.setOnClickListener(
                 new View.OnClickListener() {
@@ -94,6 +120,22 @@ public class AIPredictMainPage extends AppCompatActivity {
                 }
         );
 
+        chatbotSendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                List<SymptomListItem> selectedSymptomsItems = adapter.getSelectedItems();
+                List<String> selectedSymptoms = new ArrayList<>();
+
+                for (SymptomListItem item : selectedSymptomsItems) {
+                    selectedSymptoms.add(item.getName());
+                    Log.d(TAG, "Selected Item: " + item.getName());
+                }
+
+                // Now pass this list to the method that makes the API call
+                sendPredictionApiRequest(selectedSymptoms);
+            }
+        });
+
         //endregion
     }
 
@@ -107,15 +149,28 @@ public class AIPredictMainPage extends AppCompatActivity {
             @Override
             public void onApiCallComplete(ApiResponse result) {
                 if (result.getError() == null) {
-                    // Handle the successful response here
                     String response = result.getStringValue();
-                    // Do something with the response
                     Log.d(TAG, "onApiCallComplete: " + response);
-                    symptomLabels = response;
+
+                    try {
+                        JSONObject responseObject = new JSONObject(response);
+                        JSONArray symptomsJsonArray = responseObject.getJSONArray("symptoms");
+                        List<String> symptomsList = new ArrayList<>();
+
+                        for (int i = 0; i < symptomsJsonArray.length(); i++) {
+                            symptomsList.add(symptomsJsonArray.getString(i));
+                        }
+
+                        // Update adapter data
+                        runOnUiThread(() -> {
+                            adapter.updateData(symptomsList);
+                        });
+
+                    } catch (Exception e) {
+                        Log.e(TAG, "Error in parsing response", e);
+                    }
                 } else {
-                    // Handle the error here
                     String error = result.getError();
-                    // Do something with the error
                     Log.d(TAG, "onApiCallComplete: " + error);
                 }
             }
@@ -124,25 +179,28 @@ public class AIPredictMainPage extends AppCompatActivity {
 
     }
 
-    private void sendPredictionApiRequest() {
+    private void sendPredictionApiRequest(List<String> selectedSymptoms) {
         String apiUrl = "http://10.0.2.2:5000/predictAI";
-        JSONObject requestBody = createRequestBody(); // Create your request body here
+        JSONObject requestBody = createRequestBody(selectedSymptoms);
         Log.d(TAG, "sendApiRequest: " + requestBody);
 
-        // Create an instance of ApiCall
+
         ApiCall apiCall = new ApiCall(apiUrl, requestBody, new ApiCall.ApiCallback() {
             @Override
             public void onApiCallComplete(ApiResponse result) {
                 if (result.getError() == null) {
-                    // Handle the successful response here
                     String response = result.getStringValue();
-                    // Do something with the response
-                    Log.d(TAG, "onApiCallComplete: " + response);
-                    prediction = response;
+                    try {
+                        JSONObject responseObject = new JSONObject(response);
+                        Log.d(TAG, "onApiCallComplete: " + response);
+                        prediction = responseObject.getString("prediction");
+                        predictionTextView.setText("Prediction: " + prediction);
+                    } catch (JSONException e) {
+                        Log.d(TAG, "onApiCallComplete: " + "error in parsing response");
+                    }
+
                 } else {
-                    // Handle the error here
                     String error = result.getError();
-                    // Do something with the error
                     Log.d(TAG, "onApiCallComplete: " + error);
                 }
             }
@@ -150,20 +208,21 @@ public class AIPredictMainPage extends AppCompatActivity {
         apiCall.execute();
     }
 
-    private JSONObject createRequestBody() {
+    private JSONObject createRequestBody(List<String> selectedSymptoms) {
         try {
-            // Create a JSON object
             JSONObject requestBody = new JSONObject();
+            JSONArray symptomsJsonArray = new JSONArray();
 
-            // Add the symptoms list to the JSON object
-            JSONArray symptomsJsonArray = new JSONArray(Arrays.asList("redness_of_eyes", "restlessness", "runny_nose"));
+            for (String symptom : selectedSymptoms) {
+                symptomsJsonArray.put(symptom);
+            }
 
             requestBody.put("symptomsList", symptomsJsonArray);
-
             return requestBody;
         } catch (Exception e) {
             Log.e(TAG, "Error in creating request body", e);
             return null;
         }
     }
+
 }
