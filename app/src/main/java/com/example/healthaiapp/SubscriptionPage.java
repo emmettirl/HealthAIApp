@@ -53,6 +53,7 @@ public class SubscriptionPage extends AppCompatActivity {
         uvm = new UserViewModel();
         sm = new StripeModel();
         paymentSheet = new PaymentSheet(this, this::onPaymentSheetResult);
+        paymentPageButton = findViewById(R.id.SubscriptionPaymentButton);
 
         Intent thisIntent = getIntent();
         if (thisIntent.hasExtra("loggedInUser")) {
