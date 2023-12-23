@@ -129,8 +129,8 @@ public class AIPredictMainPage extends AppCompatActivity {
             }
         });
 
-        //endregion
     }
+    //endregion
 
     private void symptomLabelsApiRequest() {
         String apiUrl = "http://10.0.2.2:5000/symptomsList";

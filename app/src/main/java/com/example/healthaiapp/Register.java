@@ -78,7 +78,6 @@ public class Register extends AppCompatActivity {
 
         uvm.getRegistrationSuccess().observe(this, registeredUser -> {
             if (registeredUser != null) {
-                // Registration is successful, navigate to LoginActivity
                 Intent intent = new Intent(Register.this, LogIn.class);
                 intent.putExtra("registeredUser", registeredUser);
                 Log.d("mydebug", registeredUser.getUsername());

@@ -133,31 +133,3 @@ public class ApiCall extends AsyncTask<Void, Void, ApiCall.ApiResponse> {
         }
     }
 }
-
-//region USAGE EXAMPLE!
-//String apiUrl = "";
-//
-//    YourObject yourObject = new YourObject();
-//    Replace YourObject with the actual class of the object you want to send
-//
-//    ApiCall apiCall = new ApiCall(apiUrl, yourObject, new ApiCall.ApiCallback() {
-//        @Override
-//        public void onApiCallComplete(ApiCall.ApiResponse result) {
-//            // API response handling
-//            if (result != null) {
-//                if (result.getError() != null) {
-//                    // If error occurs
-//                    // result.getError()
-//                } else {
-//                    // Either result.getStringValue() or result.getIntValue()
-//                    String stringValue = result.getStringValue();
-//                    int intValue = result.getIntValue();
-//
-//                    // Further handling based on what's needed
-//                }
-//            }
-//        }
-//    });
-//
-//apiCall.execute();
-//endregion
